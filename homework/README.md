@@ -41,6 +41,29 @@ star(5);
 6
 7
 8
+
+第二題ANSWER
+```
+function between(a,b)
+{
+    for(var a; a<=b; a++)
+    {
+        console.log(a);
+    }
+}
+
+between(3,8);
+```
+執行結果
+```
+3
+4
+5
+6
+7
+8
+```
+
 加分題
 
 3 請寫一個函數 primeBetween(a,b) 可以印出 a..b 之間的質數
@@ -53,3 +76,43 @@ star(5);
 11
 13
 記得善用函數，先寫一個判斷是否為質數的函數 isPrime(n) 去判斷會比較好
+
+第三題ANSWER
+```
+function isPrime(n)
+{
+    var flag=0;
+    for(var i=2; i<=n/2; i++)
+    {
+        if(n==1)
+        {
+            flag=0;
+        }
+        else if(n%i==0)
+        {
+            flag++;
+        }
+    }
+    if(flag == 0)
+    {
+        console.log(n);
+    }
+}
+function primeBetween(a,b)
+{
+    for(var a; a<=b; a++)
+    {
+        isPrime(a);
+    }
+}
+
+primeBetween(3,15);
+```
+執行結果
+```
+3
+5
+7
+11
+13
+```
