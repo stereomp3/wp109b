@@ -39,7 +39,7 @@ class vector{
 var x = new vector([1,2,3]);
 var y = new vector([1,1,1]);
 
-console.log('x.add(y)=', x.add(y));
+console.log('x.add(y)=', x.add(y).add(x).add(y));
 console.log('x.sub(y)=', x.sub(y));
 console.log('x.dot(y)=', x.dot(y));
 console.log('x.neg()=', x.neg());
