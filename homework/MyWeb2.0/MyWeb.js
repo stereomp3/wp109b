@@ -36,3 +36,40 @@ function none(){
     gam.style.display = "none";
     otr.style.display = "none";
 }
+
+function MainGame(){
+
+}
+
+/*document.addEventListener("keydown", (event) => {
+    switch (event.keyCode) {
+      case 27:
+        game.togglePause();
+        break;
+
+      case 32:
+        game.init();
+        break;
+
+      case 65:
+        player.moveLeft();
+        break;
+
+      case 87:
+        player.moveUp();
+
+        break;
+
+      case 68:
+        player.moveRight();
+
+        break;
+
+      case 83:
+        player.moveDown();
+        break;
+
+      default:
+        break;
+    }
+})*/
