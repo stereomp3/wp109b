@@ -189,8 +189,8 @@ function preload() {
   { 
       var a
       if(i<6) a = i;
-      else a = 0;
-       
+      else a = 5;
+
       preloadImages[i] = new Image();  
       if(dirFlag) preloadImages[i].src = "picture/material/R/"+loadWord[i]+"/"+a+".png";
       if(!dirFlag) preloadImages[i].src = "picture/material/L/"+loadWord[i]+"/"+a+".png";
@@ -202,8 +202,8 @@ function upgrade(){
 }
 
 function draw(){
-    preload();
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    preload();
     Backgroumd.draw();
     Player.draw();
 }
