@@ -5,10 +5,10 @@ var gam = document.getElementById("game");
 var otr = document.getElementById("others");
 
 var canvas, Img, ctx, SubImg, backImg; 
-var loadWord = ['idle','move','jump','shift','attackJ','attackJS','attackJW'];
+var loadWord = ['idle','move','jump','shift','attackJ','attackJS','attackJW', 'jump'];
 //矩陣填到矩陣裡
-var preloadImagesR = Array(7).fill().map(() => Array(6));//m列n行
-var preloadImagesL = Array(7).fill().map(() => Array(6));//m列n行
+var preloadImagesR = Array(8).fill().map(() => Array(6));//m列n行
+var preloadImagesL = Array(8).fill().map(() => Array(6));//m列n行
 
 var flag = 0, Jflag = 0, Pflag = 0, WPflag = 0, SPflag = 0, timer = 0; 
 
@@ -188,14 +188,27 @@ Backgroumd = {
 
 function preload() { 
   //preload img
-  for (i = 0; i < 7; i++) 
+  for (i = 0; i < 8; i++) 
   { 
-      for (a=0 ; a<6; a++)
+      if(i==7)
       {
-        preloadImagesR[i][a] = new Image();
-        preloadImagesL[i][a] = new Image(); 
-        preloadImagesR[i][a].src = "picture/material/R/"+loadWord[i]+"/"+a+".png";
-        preloadImagesL[i][a].src = "picture/material/L/"+loadWord[i]+"/"+a+".png";
+        for (a=6 ; a<12; a++)
+        {
+          preloadImagesR[i][a] = new Image();
+          preloadImagesL[i][a] = new Image(); 
+          preloadImagesR[i][a].src = "picture/material/R/"+loadWord[i]+"/"+a+".png";
+          preloadImagesL[i][a].src = "picture/material/L/"+loadWord[i]+"/"+a+".png";
+        }
+      }
+      else
+      {
+        for (a=0 ; a<6; a++)
+        {
+          preloadImagesR[i][a] = new Image();
+          preloadImagesL[i][a] = new Image(); 
+          preloadImagesR[i][a].src = "picture/material/R/"+loadWord[i]+"/"+a+".png";
+          preloadImagesL[i][a].src = "picture/material/L/"+loadWord[i]+"/"+a+".png";
+        }
       }
   } 
 }
