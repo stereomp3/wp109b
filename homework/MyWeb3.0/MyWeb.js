@@ -11,6 +11,7 @@ var dirFlag = true;//左右
 var init = 0;//當1時就不進行遊戲
 var RightDir = 68, LeftDir = 65, UpDir = 87, downDir = 83,Jump = 75, shift = 76, punch = 74,keystate={};//wasd, jkl
 
+window.onload = MainGame;
 
 function Introduction(){
     none();
