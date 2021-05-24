@@ -5,7 +5,7 @@ var gam = document.getElementById("game");
 var otr = document.getElementById("others");
 
 var canvas, Img, ctx, SubImg, backImg; 
-var loadWord = ['idle','move','shift','attackJ','attackJS','attackJW','jump'];
+var loadWord = ['idle','move','jump','shift','attackJ','attackJS','attackJW'];
 //矩陣填到矩陣裡
 var preloadImagesR = Array(7).fill().map(() => Array(6));//m列n行
 var preloadImagesL = Array(7).fill().map(() => Array(6));//m列n行
