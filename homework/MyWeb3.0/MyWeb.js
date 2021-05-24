@@ -187,9 +187,13 @@ function preload() {
   //preliad img
   for (i = 0; i < 9; i++) 
   { 
+      var a
+      if(i<6) a = i;
+      else a = 0;
+       
       preloadImages[i] = new Image();  
-      if(dirFlag) preloadImages[i].src = "picture/material/R/"+loadWord[i]+"/"+flag+".png";
-      if(!dirFlag) preloadImages[i].src = "picture/material/L/"+loadWord[i]+"/"+flag+".png";
+      if(dirFlag) preloadImages[i].src = "picture/material/R/"+loadWord[i]+"/"+a+".png";
+      if(!dirFlag) preloadImages[i].src = "picture/material/L/"+loadWord[i]+"/"+a+".png";
   } 
 }
 
