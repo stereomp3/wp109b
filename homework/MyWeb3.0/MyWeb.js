@@ -187,7 +187,7 @@ Backgroumd = {
 }
 
 function preload() { 
-  //preliad img
+  //preload img
   for (i = 0; i < 7; i++) 
   { 
       for (a=0 ; a<6; a++)
