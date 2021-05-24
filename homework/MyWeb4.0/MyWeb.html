@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel= "stylesheet" href="MyWeb.css">
+</head>
+<body onload="preload();">
+
+    <div class="header">
+	    <marquee height="30">110910541</marquee>
+  	    <h1>Website</h1>
+    </div>
+
+    <div class="topnav" >
+        <button class="warning" onclick="Notices()">notices</button>
+        <button class="normal" onclick="Informations()">Informations</button>
+	    <button class="normal" onclick="Introduction()">Introduction</button>
+        <button class="info" onclick="Game()">game</button>
+        <button class="info" onclick="Others()">others</button>
+    </div>
+
+    <div class="topnav">
+  	    <div class= "side">
+            <div class= "dropdown">
+                <p style="color: #ff0000; font-size: 50px;">introdution</p>
+                <div class= "dropdown-content">
+
+                    <div class= "side">
+                        <p class= "form1">
+                        姓名:魏仲彥
+                        </p>
+                        <p class= "form1">
+                        學歷:高中畢業
+                        </p>
+                        <p class= "form1">
+                        興趣:鋼琴，畫畫，在電腦前面耍費
+                        </p>
+                        <p class= "form1">
+                        專長:吃飯，睡覺
+                        </p>
+                        <p class= "form1">
+                        個人特質:擅長看別人甚麼時候生氣，吃飯絕對不請客
+                        </p>
+                        <p class= "form1">
+                        其他:這就要由大家一起來觀察了>0<
+                        </p>
+                    </div>
+    
+                    <div class= "side">
+                        <img src="picture/boy.jpg" alt="error" style="width:540px;height:360px;">
+                    </div>
+         	    </div>
+ 		    </div>
+
+        <br>
+
+             <div class= "dropdown">
+                 <p style="color: #ff0000; font-size: 50px;">notices</p>
+                 <div class= "dropdown-content">
+ 
+                     <div class= "side">
+                         <p class= "form1">
+                         注意!!
+                         </p>
+                         <p class= "form1">
+                         注意注意!!!
+                         </p>
+                         <p class= "form1">
+                         注意注意注意注意!!!!
+                         </p>
+                         <p class= "form1">
+                         注意注意注意注意注意!!!!!注意注意注意注意注意!!!!!
+                         </p>
+                     </div>
+     
+                     <div class= "side">
+                         <img src="picture/notices.jpg" alt="error" style="width:540px;height:360px;">
+                     </div>
+                  </div>
+              </div>
+
+    	<br>
+
+      	    <div class= "dropdown">
+                <p style="color: #ff0000; font-size: 50px;">information</p>
+                <div class= "dropdown-content">
+                    <div class= "side">
+                        <a href="https://www.facebook.com/ericjjkk" target= _blank; class="form1">
+                        my facebook <br><br>
+                        </a>
+                        <a href="https://github.com/stereomp3/wp109b/wiki" target= _blank; class="form1">
+                        My git hub <br><br>
+                        </a>
+                        <a href="https://www.w3schools.com/" target= _blank; class="form1">
+                        learning HTML <br><br>
+                        </a>
+                    </div>
+                    
+                    <div class= "side">
+                        <img src="picture/photo.jpg" alt="error" style="width:610px;height:475px;">
+                    </div>>
+                </div>
+      	    </div>
+        
+        <br>
+
+            <div class= "dropdown">
+                <p style="color: #ff0000; font-size: 50px;">game</p>
+                <div class= "dropdown-content">
+
+                    <div class= "side">
+                        <p class= "form1">
+                        遊戲介紹
+                        </p>
+                        <p class= "form1">
+                        製作人 : 魏仲彥
+                        </p>
+                        <p class= "form1">
+                        繪師 : 魏仲彥
+                        </p>
+                        <p class= "form1">
+                        指導老師 : 陳鍾誠老師
+                        </p>
+                    </div>
+
+                    <div class= "side">
+                        <img src="picture/GAME.png" alt="error" style="width:540px;height:360px;">
+                    </div>
+                </div>
+            </div>
+
+        <br>
+
+            <div class= "dropdown">
+                <p style="color: #ff0000; font-size: 50px;">others</p>
+                <div class= "dropdown-content">
+
+                    <div class= "side">
+                        <p class= "form1">
+                        其他沒其他
+                        </p>
+                        <p class= "form1">
+                        我愛鋼琴
+                        </p>
+                        <p class= "form1">
+                        也愛睡覺
+                        </p>
+                        <p class= "form1">
+                        愛看動漫(刀劍好棒，入間更棒)
+                        </p>
+                        <p class= "form1">
+                        其他沒其他了
+                        </p>
+                    </div>
+
+                    <div class= "side">
+                        <img src="picture/others.png" alt="error" style="width:540px;height:360px;">
+                    </div>
+                </div>
+            </div>
+        
+        <br>    
+
+            <div class= "dropdown">
+                <p style="color: #ff0000; font-size: 50px; height: 400px;"></p>
+            </div>
+
+        </div>
+
+        <div class= "column">
+            <div id= "introduction" style="display: none;">
+                <h2 style="padding: 0px 20px 50px 20px; color: #aa5b1a; text-align: center; font-size: 50px;" >&nbsp;&nbsp;&nbsp;&nbsp;歡迎到網站簡介</h2>
+                <h3>   在人生的歷程中，網站簡介的出現是必然的。若到今天結束時我們都還無法釐清網站簡介的意義，那想必我們昨天也無法釐清。不要先入為主覺得網站簡介很複雜，實際上，網站簡介可能比你想的還要更複雜。這必定是個前衛大膽的想法。做好網站簡介這件事，可以說已經成為了全民運動。
+
+                    杜威講過一句值得人反覆尋思的話，所謂惡人，無論有過多麼善良的過去，也已滑向墮落的道路而消逝其善良性; 所謂善人，即使有過道德上不堪提及的過去，但他還是向著善良前進的人。這不禁令我重新仔細的思考。胡適曾經提到過，無目的讀書是散步而不是學習。強烈建議大家把這段話牢牢記住。把網站簡介輕鬆帶過，顯然並不適合。貝納姆相信，路走錯了，奔跑又有什麼用呢？ 這句話決定了一切。我們一般認為，抓住了問題的關鍵，其他一切則會迎刃而解。李奧貝納說過，我所享有的任何成就，完全歸因於對客戶與工作的高度責任感，不惜付出自我而成就完美的熱情，以及絕不容忍馬虎的想法，草率粗心的工作，與差強人意的作品。這段話雖短，卻足以改變人類的歷史。我們不得不面對一個非常尷尬的事實，那就是，話雖如此，我們卻也不能夠這麼篤定。儘管如此，我們仍然需要對網站簡介保持懷疑的態度。杜伽爾曾說過，生活是一種綿延不絕的渴望，渴望不斷上升，變得更偉大而高貴。這把視野帶到了全新的高度。若能夠洞悉網站簡介各種層面的含義，勢必能讓思維再提高一個層級。恩格斯在不經意間這樣說過，任何宗教教義都不足以支持一個遙遙欲墜的社會。帶著這句話，我們還要更加慎重的審視這個問題。網站簡介究竟是怎麼樣的存在，始終是個謎題。透過逆向歸納，得以用最佳的策略去分析網站簡介。我們都很清楚，這是個嚴謹的議題。網站簡介勢必能夠左右未來。布爾沃說過一句很有意思的話，要掌握書，莫被書掌握；要為生而讀，莫為讀而生。這句話幾乎解讀出了問題的根本。
+            
+                    在這種不可避免的衝突下，我們必須解決這個問題。若沒有網站簡介的存在，那麼後果可想而知。了解清楚網站簡介到底是一種怎麼樣的存在，是解決一切問題的關鍵。申居鄖講過一段耐人尋思的話，人生至愚是惡聞已過，人生至惡是善談人過。但願各位能從這段話中獲得心靈上的滋長。我們要學會站在別人的角度思考。網站簡介絕對是史無前例的。網站簡介因何而發生？一般來說，網站簡介似乎是一種巧合，但如果我們從一個更大的角度看待問題，這似乎是一種不可避免的事實。薩迪曾經說過，你在兩個仇人之間說話要有分寸，以免他們和好後你將無地自容。這段話讓我的心境提高了一個層次。 
+                </h3>
+                <br>
+                <a href="https://howtobullshit.me/" target= _blank; class="form">
+                    以上由唬爛產生器提供(click to go)
+                </a>
+            </div>
+        </div>
+
+        <div class= "column">
+            <div id= "notices" style="display: block; text-align: center;">
+                <h2 style="padding: 0px 20px 50px 20px; color: rgb(245, 32, 32); font-size: 50px;">&nbsp;&nbsp;&nbsp;&nbsp;注意注意!!!!!!注意注意!!!!!!</h>
+                <h3 style="color: rgb(228, 130, 100); font-size: 50px;"> 左邊的東東，滑鼠可以移上去喔0.0
+                </h>
+                <br>
+            </div>
+        </div>
+
+        <div class= "column">
+            <div id= "informations" style="display: none; text-align: center;">
+                <h2 style="padding: 0px 20px 50px 20px; color: rgb(32, 89, 245); font-size: 50px; ">&nbsp;&nbsp;&nbsp;&nbsp;歡迎到資訊介紹</h2>
+                <h3  style="font-size: 30px;"> 下面有不錯的時事網址可以看優 
+                    <a href="https://www.ithome.com.tw/" target= _blank; style="font-size: 40px;"> <br><br>
+                        資訊業時事
+                    </a>
+                    <a href="https://www.mem.com.tw/" target= _blank; style="font-size: 40px;"> <br><br>
+                        電子雜誌
+                    </a>
+                    <a href="https://www.itri.org.tw/ListStyle.aspx?DisplayStyle=13&SiteID=1&MmmID=1036233405427625204" target= _blank; style="font-size: 40px;"> <br><br>
+                        技術研究院
+                    </a>
+                    <a href="https://www.edntaiwan.com//" target= _blank; style="font-size: 40px;"> <br><br>
+                        電子業時事 
+                    </a>
+                    <a href="https://www.eettaiwan.com/news/" target= _blank; style="font-size: 40px;"> <br><br>
+                        電子工程 
+                    </a>
+                </h3>
+                <br>
+            </div>
+        </div>
+
+        <div class= "column">
+            <div id= "game" style="display: none; text-align: center;">
+                <canvas id="MyCanvas" width="800" height="550" style="border:0.1px solid rgb(82, 80, 79) "></canvas>
+
+                <div style="display: none;">
+                    <img src="picture/material/R/move/0.png" alt="error" style="width:273px;height:517px;" id= "picture">
+                    <img src="picture/material/0.png" alt="error" style="width:273px;height:517px;" id= "SubPicture">
+                    <img src="picture/material/background/0.png" alt="error" style="width:273px;height:517px;" id= "background">
+                </div>
+                <div class= "NormalDropdown">
+                    <p style="color: #e0d9d9;" >資料來源 (hover me!)</p>
+                        <div class= "DropdownContent">
+                        人物:https://opengameart.org/content/3-cyberpunk-characters <br>
+                        背景:https://opengameart.org/content/city-background-repetitive-3 <br>
+                        素材:
+                        </div>
+                </div>
+                <br>
+            </div>
+        </div>
+        <h3 class="side" id="GameText" style="display: none;"> 
+            <p style="color: rgb(250, 249, 244); font-size: 30px;">歡迎來到遊戲區!!</p>
+            <br>
+            <p style="color: rgb(243, 112, 61);">角色控制 :</p>
+            <li> a (左)</li>
+            <li> d (右)</li>
+            <li> k (跳) </li>
+            <br>
+            <p style="color: rgb(243, 112, 61);">技能施放 :</p>
+            <li> j (踢)</li>
+            <li> j + w (出拳)</li>
+            <li> j + s (特攻)</li>       
+        
+        </h3>
+
+        <div class= "column">
+            <div id= "others" style="display: none; text-align: center;">
+                <h2 style="padding: 0px 20px 50px 20px; color: #e65f20; font-size: 50px;">&nbsp;&nbsp;&nbsp;&nbsp;其他補充</h2>
+                <h3> 真的沒什麼好補充的了，可以到<a href="https://github.com/stereomp3/wp109b/wiki">git hub</a> 去看我的精美小筆記 (^ V ^)/
+                </h3>
+                <br>
+            </div>
+        </div>
+
+    
+    </div>
+
+    <script src="MyWeb.js"></script>
+</body>
+</html>
