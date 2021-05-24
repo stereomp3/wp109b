@@ -5,7 +5,7 @@ var gam = document.getElementById("game");
 var otr = document.getElementById("others");
 
 var canvas, Img, ctx, SubImg, backImg; 
-var preloadImages = [], loadWord = ['idle','left','right','shift','attackJ','attackJS','attackJW','shift','jump'];
+var preloadImagesR = [], preloadImagesL = [], loadWord = ['idle','left','right','shift','attackJ','attackJS','attackJW','shift','jump'];
 
 var flag = 0, Jflag = 0, Pflag = 0, WPflag = 0, SPflag = 0, timer = 0; 
 
@@ -191,9 +191,10 @@ function preload() {
       if(i<6) a = i;
       else a = 5;
 
-      preloadImages[i] = new Image();  
-      if(dirFlag) preloadImages[i].src = "picture/material/R/"+loadWord[i]+"/"+a+".png";
-      if(!dirFlag) preloadImages[i].src = "picture/material/L/"+loadWord[i]+"/"+a+".png";
+      preloadImagesR[i] = new Image();
+      preloadImagesL[i] = new Image(); 
+      preloadImagesR[i].src = "picture/material/R/"+loadWord[i]+"/"+a+".png";
+      preloadImagesL[i].src = "picture/material/L/"+loadWord[i]+"/"+a+".png";
   } 
 }
 
