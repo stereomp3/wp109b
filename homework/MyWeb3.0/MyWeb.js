@@ -5,7 +5,10 @@ var gam = document.getElementById("game");
 var otr = document.getElementById("others");
 
 var canvas, Img, ctx, SubImg, backImg; 
-var preloadImagesR = [], preloadImagesL = [], loadWord = ['idle','left','right','shift','attackJ','attackJS','attackJW','shift','jump'];
+var loadWord = ['idle','move','shift','attackJ','attackJS','attackJW','jump'];
+//矩陣填到矩陣裡
+var preloadImagesR = Array(7).fill().map(() => Array(6));//m列n行
+var preloadImagesL = Array(7).fill().map(() => Array(6));//m列n行
 
 var flag = 0, Jflag = 0, Pflag = 0, WPflag = 0, SPflag = 0, timer = 0; 
 
@@ -141,14 +144,14 @@ Player = {
         dirFlag = true;
         x += dx;
         flag++;
-        Img.src = "picture/material/R/right/"+flag+".png"
+        Img.src = "picture/material/R/move/"+flag+".png"
       }
       else if(keystate[LeftDir] && Jflag==0 && Pflag==0 && WPflag==0 && SPflag==0) 
       {
         dirFlag = false;
         x -= dx;
         flag++;
-        Img.src = "picture/material/L/left/"+flag+".png"
+        Img.src = "picture/material/L/move/"+flag+".png"
       }
       else if(Jflag==0 && Pflag==0 && dirFlag && WPflag==0 && SPflag==0)
       {
@@ -185,16 +188,15 @@ Backgroumd = {
 
 function preload() { 
   //preliad img
-  for (i = 0; i < 9; i++) 
+  for (i = 0; i < 7; i++) 
   { 
-      var a
-      if(i<6) a = i;
-      else a = 5;
-
-      preloadImagesR[i] = new Image();
-      preloadImagesL[i] = new Image(); 
-      preloadImagesR[i].src = "picture/material/R/"+loadWord[i]+"/"+a+".png";
-      preloadImagesL[i].src = "picture/material/L/"+loadWord[i]+"/"+a+".png";
+      for (a=0 ; a<6; a++)
+      {
+        preloadImagesR[i][a] = new Image();
+        preloadImagesL[i][a] = new Image(); 
+        preloadImagesR[i][a].src = "picture/material/R/"+loadWord[i]+"/"+a+".png";
+        preloadImagesL[i][a].src = "picture/material/L/"+loadWord[i]+"/"+a+".png";
+      }
   } 
 }
 
@@ -204,7 +206,6 @@ function upgrade(){
 
 function draw(){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    preload();
     Backgroumd.draw();
     Player.draw();
 }
