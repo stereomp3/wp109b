@@ -5,13 +5,14 @@ var gam = document.getElementById("game");
 var otr = document.getElementById("others");
 
 var canvas, Img, ctx, SubImg, backImg; 
+var preloadImages = [], loadWord = ['idle','left','right','shift','attackJ','attackJS','attackJW','shift','jump'];
+
 var flag = 0, Jflag = 0, Pflag = 0, WPflag = 0, SPflag = 0, timer = 0; 
+
 var x=10, y=10, dx=20, dy=30, Sx = 0, Sy = 0;//玩家位置和速度
 var dirFlag = true;//左右
 var init = 0;//當1時就不進行遊戲
-var RightDir = 68, LeftDir = 65, UpDir = 87, downDir = 83,Jump = 75, shift = 76, punch = 74,keystate={};//wasd, jkl
-
-window.onload = MainGame;
+var RightDir = 68, LeftDir = 65, UpDir = 87, downDir = 83,Jump = 75, shift = 76, punch = 74,keystate=[];//wasd, jkl
 
 function Introduction(){
     none();
@@ -126,11 +127,14 @@ Player = {
         if(!dirFlag) 
         {
           x -= dx; Sx = 20;
-          SubImg.src = "picture/material/R/shift/0.png"
+          SubImg.src = "picture/material/L/shift/0.png"
         }
       }
-      else SubImg.src = "picture/material/0.png"
-
+      else 
+      {
+        SubImg.src = "picture/material/0.png"
+        Sx = 0;
+      }
       //move //direction Flag = true is right，else is false
       if(keystate[RightDir] && Jflag==0 && Pflag==0 && WPflag==0 && SPflag==0)  
       {
@@ -149,12 +153,12 @@ Player = {
       else if(Jflag==0 && Pflag==0 && dirFlag && WPflag==0 && SPflag==0)
       {
         flag++;
-        Img.src = "picture/material/R/idle/"+flag+".png"
+        Img.src = "picture/material/R/"+loadWord[0]+"/"+flag+".png"
       }
       else if(Jflag==0 && Pflag==0 && !dirFlag && WPflag==0 && SPflag==0)
       {
         flag++;
-        Img.src = "picture/material/L/idle/"+flag+".png"
+        Img.src = "picture/material/L/"+loadWord[0]+"/"+flag+".png"
       }
       if(flag>=5) flag = 0;
       timer = 0;
@@ -179,11 +183,22 @@ Backgroumd = {
   }
 }
 
+function preload() { 
+  //preliad img
+  for (i = 0; i < 9; i++) 
+  { 
+      preloadImages[i] = new Image();  
+      if(dirFlag) preloadImages[i].src = "picture/material/R/"+loadWord[i]+"/"+flag+".png";
+      if(!dirFlag) preloadImages[i].src = "picture/material/L/"+loadWord[i]+"/"+flag+".png";
+  } 
+}
+
 function upgrade(){
     Player.upgrade();
 }
 
 function draw(){
+    preload();
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     Backgroumd.draw();
     Player.draw();
