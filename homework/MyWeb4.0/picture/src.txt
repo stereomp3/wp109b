@@ -1,6 +1,6 @@
 人物:https://opengameart.org/content/3-cyberpunk-characters
 背景:https://opengameart.org/content/city-background-repetitive-3
-素材:
+素材:https://opengameart.org/content/explosion-set-1-m484-games
 
 moster : https://opengameart.org/content/animated-skeleton
 https://opengameart.org/content/animated-snake
