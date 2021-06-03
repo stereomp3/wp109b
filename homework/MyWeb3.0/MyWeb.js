@@ -60,7 +60,7 @@ Player = {
 
       //if(img.width+x>canvas.width && dx>0 && dirFlag) dx = -dx
       //if(x<0 && dx<0 && dirFlag) dx = -dx
-
+    
     if(timer == 10)
     {
       //jump flag == 0 is on the ground

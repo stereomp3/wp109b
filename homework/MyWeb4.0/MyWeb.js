@@ -1,5 +1,5 @@
 var itd = document.getElementById("introduction");
-var nti = document.getElementById("notices");
+var src = document.getElementById("source");
 var ifm = document.getElementById("informations");
 var gam = document.getElementById("game");
 var otr = document.getElementById("others");
@@ -8,7 +8,7 @@ var canvas, Img, ctx, SubImg, backImg, MonsterImg;
 
 var x=10, y=430, dx=20, dy=30, Sx = 0, Sy = 0;//玩家位置和速度
 var Mx=300, My=450, dMx=5, dMy=30//怪物位置和速度
-var RightDir = 68, LeftDir = 65, UpDir = 87, downDir = 83,Jump = 75, shift = 76, punch = 74,keystate=[];//wasd, jkl
+var RightDir = "KeyD", LeftDir = "KeyA", UpDir = "KeyW", downDir = "KeyS",Jump = "KeyK", shift = "KeyL", punch = "KeyJ",keystate = [];//wasd, jkl
 var GameStart = 1, MonsterStart = 0;//GameStart=0 is gameOver, MonsterStart = 0 is snake
 
 var loadWord = ['idle','move','jump','shift','attackJ','attackJS','attackJW', 'jump', 'death'];
@@ -20,16 +20,35 @@ let preloadImagesL = Array(9).fill().map(() => Array(6));//m列n行
 let preloadMonsterImgsR = Array(5).fill().map(() => Array(10));//0~4: snake
 let preloadMonsterImgsL = Array(5).fill().map(() => Array(10));
 
+var fps, fpsInterval, startTime, timestamp = Date.now(), preTimestamp, progress;
+
 let init = 0;//當1時就不進行遊戲
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+function sideOptionOpen(){
+  /*document.querySelectorAll(".dropdown").style.display = "block";*/
+  for(let i = 0; i <=5; i++) document.getElementsByClassName("dropdown")[i].style.display = "inline-block";
+  document.getElementsByClassName("SideOption")[0].style.display = "block";
+  document.getElementById("sideOptionClose").style.display = "block";
+  document.getElementById("sideOptionOpen").style.display = "none";
+}
+function sideOptionClose(){
+  /*document.querySelectorAll(".dropdown").style.display = "block";*/
+  for(let i = 0; i <=5; i++) document.getElementsByClassName("dropdown")[i].style.display = "none";
+  document.getElementsByClassName("SideOption")[0].style.display = "none";
+  document.getElementById("sideOptionOpen").style.display = "block";
+  document.getElementById("sideOptionClose").style.display = "none";
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 function Introduction(){
     none();
     itd.style.display = "block";
 }
 
-function Notices(){
+function Source(){
     none();
-    nti.style.display = "block";
+    src.style.display = "block";
 }
 
 function Informations(){
@@ -53,12 +72,14 @@ function Others(){
 
 function none(){
     itd.style.display = "none";
-    nti.style.display = "none";
+    src.style.display = "none";
     ifm.style.display = "none";
     gam.style.display = "none";
     otr.style.display = "none";
+    for(let i = 0; i <= 4; i++)document.getElementsByTagName("button")[i].style.Backgroumd = "rgba(0,0,0,0.24)";
     document.getElementById("GameText").style.display = "none";
 }
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 function preload() { 
   //preload img
@@ -124,7 +145,16 @@ function draw(){
     if(MonsterStart==0) Monster.draw();
 }
 
+// initialize the timer variables and start the animation
+
+function startAnimating(fps) {
+  fpsInterval = 1000 / fps;
+  preTimestamp =  Date.now();
+  startTime = preTimestamp;
+}
+
 function MainGame(){
+    startAnimating(12);//設置fps
     if(init == 1) return;
     SubImg = document.getElementById("SubPicture");
     Img = document.getElementById("picture");
@@ -133,28 +163,34 @@ function MainGame(){
     canvas = document.getElementById("MyCanvas");
     ctx = canvas.getContext("2d");
 
-    document.addEventListener("keydown", function(evt) {//這裡的evt是接收玩家的鍵盤事件
-      keystate[evt.keyCode] = true;//鍵盤按下
-    });
-    document.addEventListener("keyup", function(evt) {
-      delete keystate[evt.keyCode];//放開取消事件，避免短期按太多按件
-    });
+    document.addEventListener("keydown", function(event) {//這裡的evt是接收玩家的鍵盤事件
+      keystate[event.code] = true//鍵盤按下
+    }, true);
+    document.addEventListener("keyup", function(event) {
+      keystate[event.code] = false;//放開取消事件，避免短期按太多按件
+    }, true);
 
-    var loop = function(){
-      if(GameStart==1)
+    var loop = function(){ 
+      timestamp =  Date.now();//調整速率
+      progress = timestamp - preTimestamp;
+      
+      if (progress > fpsInterval)
       {
-        upgrade();
-        draw();
-        window.requestAnimationFrame(loop, canvas);
+        startAnimating(12);
+        if(GameStart==1)
+        {
+          upgrade();
+          draw();
+        }
+        else
+        {
+          backImg.src = "picture/material/end/0.png";
+          ctx.drawImage(backImg, 0, 0, canvas.width, canvas.height);
+          ctx.drawImage(Img, x, y, 60, 100);
+        }
       }
-      else
-      {
-        backImg.src = "picture/material/end/0.png";
-        ctx.drawImage(backImg, 0, 0, canvas.width, canvas.height);
-        ctx.drawImage(Img, x, y, 60, 100);
-        window.requestAnimationFrame(loop, canvas);
-      }
+      window.requestAnimationFrame(loop, canvas);
     }
-
     window.requestAnimationFrame(loop, canvas);
 }
+
