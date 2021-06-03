@@ -12,7 +12,7 @@
 我的筆記| [總筆記整理(期中所有筆記)](https://github.com/stereomp3/wp109b/wiki/NoteSortOut.md)
 我的網站| **[我的網站  (目前網頁3.0版)](https://stereomp3.github.io/wp109b/homework/MyWeb3.0/MyWeb.html)**
 !所有筆記都含有圖片!  |  !每個筆記最上方都有word檔可以提供下載筆記內容!
-重要常忘筆記整理 | [額外重點統整](keypoint.md)
+重要常忘筆記整理 | **[額外重點統整](keypoint.md)**
 第一次上課筆記   | [(2/26)內容: 第一次上課做markdown筆記和一些基礎介紹](week1.md)
 第二次上課筆記   | **[(3/05)內容: HTML功能詳細介紹，CSS功能部分詳細介紹](week2.md)**
 第三次上課筆記   | **[(3/12)內容: !CSS功能詳細介紹!](week3.md)**
@@ -24,5 +24,6 @@
 第九次上課筆記   | [(5/07)內容: JavaScript進階應用說明和範例演練](week11.md)
 第十次上課筆記   | **[(5/14)內容: JavaScript BOM & DOM 介紹](week12.md)**
 第十一次上課筆記 | **[(5/21)內容: DOM, module, storage, canvas介紹](week13.md)**
-第十二次上課筆記 | [(5/28)內容:](week14.md)
+第十二次上課筆記 | [(5/28)內容: 網站布局介紹，使用書籤功能換分頁，繪畫版說明](week14.md)
+第十三次上課筆記 | [(6/04)內容:](week15.md)
 
