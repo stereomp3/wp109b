@@ -16,11 +16,12 @@ Player = {
         //jump flag == 0 is on the ground
         if(keystate[Jump] || Jflag!=0)
         {
-          if(dirFlag) Img.src = "picture/material/R/jump/"+Jflag+".png"
-          if(!dirFlag) Img.src = "picture/material/L/jump/"+Jflag+".png"
+          
           if(Jflag>=6) y += dy;
           else y -= dy
     
+          if(dirFlag) Img.src = "picture/material/R/jump/"+Jflag+".png"
+          if(!dirFlag) Img.src = "picture/material/L/jump/"+Jflag+".png"
           if(Jflag>=11) Jflag=0;
           else Jflag++;
     
@@ -51,8 +52,8 @@ Player = {
             if(dirFlag) Img.src = "picture/material/R/attackJW/"+WPflag+".png"
             if(!dirFlag) Img.src = "picture/material/L/attackJW/"+WPflag+".png"            
             //循環判定
+            WPflag++;
             if(WPflag>5) WPflag=0;
-            else WPflag++;
           }
           else if((keystate[downDir] || SPflag!=0) && WPflag==0 && Pflag==0)
           {
@@ -62,8 +63,8 @@ Player = {
             if(dirFlag) Img.src = "picture/material/R/attackJS/"+SPflag+".png"
             if(!dirFlag) Img.src = "picture/material/L/attackJS/"+SPflag+".png"
             //循環判定
+            SPflag++;
             if(SPflag>5) SPflag=0;
-            else SPflag++;
           }
           else if(WPflag==0 && SPflag==0)
           {
@@ -73,8 +74,8 @@ Player = {
             if(dirFlag) Img.src = "picture/material/R/attackJ/"+Pflag+".png"
             if(!dirFlag) Img.src = "picture/material/L/attackJ/"+Pflag+".png"
             //循環判定
+            Pflag++;
             if(Pflag>5) Pflag=0;
-            else Pflag++;
           }
         }
     
