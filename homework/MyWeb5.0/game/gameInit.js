@@ -9,8 +9,9 @@ var loadWordM = ['idle', 'walk', 'gesture', 'attack', 'death'];
 let preloadImage = [];
 let preloadImagesR = Array(9).fill().map(() => Array(6));//m列n行Array(m).fill().map(() => Array(n))
 let preloadImagesL = Array(9).fill().map(() => Array(6));//m列n行
-let preloadMonsterImgsR = Array(5).fill().map(() => Array(10));//0~4: snake
-let preloadMonsterImgsL = Array(5).fill().map(() => Array(10));
+let preloadSnakeImgsR = Array(5).fill().map(() => Array(10));
+let preloadSnakeImgsL = Array(5).fill().map(() => Array(10));
+let preloadBossImgs = Array(5).fill().map(() => Array(8));
 
 var fps, fpsInterval, startTime, timestamp = Date.now(), preTimestamp, progress;
 
@@ -20,6 +21,7 @@ let init = 0;//當1時就不進行遊戲
 function preload() {
     //preload img
 
+    //
     //character
     for (i = 0; i < 9; i++) {
         if (i == 7)//jump有兩次
@@ -42,26 +44,26 @@ function preload() {
     }
 
     //background
-    for (i = 0; i < 54; i++) {
-        preloadImagesR[i] = new Image();
-        preloadImagesR[i].src = "picture/material/background/" + i + ".png";
+    for (i = 0; i < 59; i++) {
+        preloadImage[i] = new Image();
+        preloadImage[i].src = "picture/material/background/" + i + ".png";
     }
 
     //monster 
     //snake
     for (i = 0; i < 5; i++) {
         for (a = 0; a < 10; a++) {
-            preloadMonsterImgsR[i][a] = new Image();
-            preloadMonsterImgsL[i][a] = new Image();
-            preloadMonsterImgsR[i][a].src = "picture/material/monster/snake/R/" + loadWordM[i] + "/" + a + ".png";
-            preloadMonsterImgsL[i][a].src = "picture/material/monster/snake/L/" + loadWordM[i] + "/" + a + ".png";
+            preloadSnakeImgsR[i][a] = new Image();
+            preloadSnakeImgsL[i][a] = new Image();
+            preloadSnakeImgsR[i][a].src = "picture/material/monster/snake/R/" + loadWordM[i] + "/" + a + ".png";
+            preloadSnakeImgsL[i][a].src = "picture/material/monster/snake/L/" + loadWordM[i] + "/" + a + ".png";
         }
     }
     //boss
     for (i = 0; i < 5; i++) {
         for (a = 0; a < 8; a++) {
-            preloadMonsterImgsL[i][a] = new Image();
-            preloadMonsterImgsL[i][a].src = "picture/material/monster/boss/" + loadWordM[i] + "/" + a + ".png";
+            preloadBossImgs[i][a] = new Image();
+            preloadBossImgs[i][a].src = "picture/material/monster/boss/" + loadWordM[i] + "/" + a + ".png";
         }
     }
 }
@@ -109,10 +111,10 @@ function MainGame() {
         if (progress > fpsInterval) {
             startAnimating(12);
             if (MonsterStart == 2) {
-                backImg.src = "picture/material/end/2.png";//win
+                backImg.src = "picture/material/background/58.png";//win
                 ctx.drawImage(backImg, 0, 0, canvas.width, canvas.height);
                 document.getElementById("GameInitOption").style.display = "block";
-                document.getElementById("GameInitOption").src = "picture/material/end/d.png";
+                document.getElementById("GameInitOption").src = "picture/material/background/56.png";
             }
             else if (GameStart == 1)//Game ing
             {
@@ -120,11 +122,11 @@ function MainGame() {
                 draw();
             }
             else {
-                backImg.src = "picture/material/end/1.png";//death
+                backImg.src = "picture/material/background/57.png";//death
                 ctx.drawImage(backImg, 0, 0, canvas.width, canvas.height);
                 ctx.drawImage(Img, x, y, 60, 100);
                 document.getElementById("GameInitOption").style.display = "block";
-                document.getElementById("GameInitOption").src = "picture/material/end/d.png";
+                document.getElementById("GameInitOption").src = "picture/material/background/56.png";
             }
         }
         window.requestAnimationFrame(loop, canvas);
@@ -147,6 +149,6 @@ function GameInit() {
     ctx = canvas.getContext("2d");
 
     backImg = document.getElementById("background");
-    backImg.src = "picture/material/end/a.png";//first
+    backImg.src = "picture/material/background/54.png";//first
     ctx.drawImage(backImg, 0, 0, canvas.width, canvas.height);
 }
