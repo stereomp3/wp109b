@@ -25,17 +25,17 @@ function PBinit() {
     Pcanvas.onmouseup = function (e) {
         drawMode = false;
     }
-    document.getElementById('cSketchPadImg').src = null;
+    document.getElementById('cSketchPadImg').src = '';
 }
 
-function changePenColor(){
+function changePenColor() {
     p_color = document.getElementById("colorChooser").value
 }
-function changePenWidth(){
+function changePenWidth() {
     p_width = document.getElementById("WidthChooser").value;
 }
 
-function save(){
+function save() {
     // save canvas image as data url (png format by default)
     var dataURL = Pcanvas.toDataURL();
     // set cSketchPadImg image src to dataURL

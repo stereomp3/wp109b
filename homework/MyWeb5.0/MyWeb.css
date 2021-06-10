@@ -3,11 +3,11 @@ body{
     margin: 0;
 }
 li{
-    color: rgb(255, 255, 255);
     font-family: 'Courier New', Courier, monospace;
 }
 
 #header{
+    color: rgb(146, 133, 113);
     width: 100%;
     padding: 0 0;
     border: 1px solid #ddd;
@@ -154,6 +154,7 @@ li{
     float: left;
     display: block;
     color: black;
+    background-color: darkgray;
     text-align: center;
     margin: 10px;
     padding: 15px 22px;

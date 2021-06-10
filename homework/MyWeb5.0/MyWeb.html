@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <link rel= "stylesheet" href="MyWeb.css">
+    <link rel="stylesheet" href="MyWeb.css">
 </head>
-<body onload="preload(); MainGame(); PBinit();">
+
+<body onload="preload(); GameInit(); PBinit();">
 
     <script>//下滑改變屬型  
-        function getScrollTop(){//參考http://www.eion.com.tw/Blogger/?Pid=1154       
+        function getScrollTop() {//參考http://www.eion.com.tw/Blogger/?Pid=1154       
             var bodyTop = 0;
             if (typeof window.pageYOffset != "undefined") {
                 bodyTop = window.pageYOffset;
 
             } else if (typeof document.compatMode != "undefined"
-                        && document.compatMode != "BackCompat") {
+                && document.compatMode != "BackCompat") {
                 bodyTop = document.documentElement.scrollTop;
 
             } else if (typeof document.body != "undefined") {
@@ -20,16 +22,20 @@
             }
             //顯示出捲動後的高度值
             //document.getElementById("jsScrollTop").innerHTML = bodyTop;
-            if(bodyTop>=80) document.getElementById("TopMenu").style.position="fixed";
-            else document.getElementById("TopMenu").style.position="relative";
+            if (bodyTop >= 80) document.getElementById("TopMenu").style.position = "fixed";
+            else document.getElementById("TopMenu").style.position = "relative";
             window.requestAnimationFrame(getScrollTop);
         }
         window.requestAnimationFrame(getScrollTop);
     </script>
 
     <div id="header">
-  	    <h1 id="jsScrollTop">Website 4.0 (^ V ^)/</h1>
-          
+        <h1 id="jsScrollTop">
+            Website 5.0 (^ W ^)/
+            <a onclick="morningMode();" id="morning"
+                style="display: block; float: right; cursor: pointer; ">&#127765</a>
+            <a onclick="nightMode();" id="night" style="display: block; float: right; cursor: pointer; ">&#127761</a>
+        </h1>
     </div>
 
     <div id="TopMenu">
@@ -37,155 +43,154 @@
         <button onclick="Others()">others</button>
         <button onclick="Game()">game</button>
         <button onclick="Informations()">Informations</button>
-        <button onclick="Introduction()">Introduction</button> 
-        <a onclick="sideOptionOpen()" id="sideOptionOpen">&#9776</a> 
-        <a onclick="sideOptionClose()" id="sideOptionClose" style="display: none;">&#9587</a>   
+        <button onclick="Introduction()" style="background: #777474d2;">Introduction</button>
+        <a onclick="sideOptionOpen()" id="sideOptionOpen">&#9776</a>
+        <a onclick="sideOptionClose()" id="sideOptionClose" style="display: none;">&#9587</a>
     </div>
-   
-    <div class= "side" >&nbsp;</div>
-<!--////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
-    <div style="width: 100%; height: 1696px;">       
-  	    <div class= "SideOption">
 
-            <div class= "dropdown">
+    <div class="side">&nbsp;</div>
+    <!--////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+    <div style="width: 100%; height: 1696px;">
+        <div class="SideOption">
+
+            <div class="dropdown">
                 <p style="color: black; font-size: 50px;">introdution</p>
-                <div class= "dropdown-content">
+                <div class="dropdown-content">
                     <div class="side">
-                        <p class= "form1">
-                        姓名:魏仲彥
+                        <p class="form1">
+                            姓名:魏仲彥
                         </p>
-                        <p class= "form1">
-                        學歷:高中畢業
+                        <p class="form1">
+                            學歷:高中畢業
                         </p>
-                        <p class= "form1">
-                        興趣:鋼琴，畫畫，在電腦前面耍費
+                        <p class="form1">
+                            興趣:鋼琴，畫畫，在電腦前面耍費
                         </p>
-                        <p class= "form1">
-                        專長:吃飯，睡覺
+                        <p class="form1">
+                            專長:吃飯，睡覺
                         </p>
-                        <p class= "form1">
-                        個人特質:擅長看別人甚麼時候生氣，吃飯絕對不請客
+                        <p class="form1">
+                            個人特質:擅長看別人甚麼時候生氣，吃飯絕對不請客
                         </p>
-                        <p class= "form1">
-                        其他:這就要由大家一起來觀察了>0<
-                        </p>
+                        <p class="form1">
+                            其他:這就要由大家一起來觀察了>0< </p>
                     </div>
-    
-                    <div class= "side">
+
+                    <div class="side">
                         <img src="picture/boy.jpg" alt="error" style="width:540px;height:360px;">
                     </div>
-                 </div>
-             </div>
-            
-        <br>
+                </div>
+            </div>
 
-            <div class= "dropdown">
+            <br>
+
+            <div class="dropdown">
                 <p style="color: black; font-size: 50px;">information</p>
-                <div class= "dropdown-content">
-                    <div class= "side">
-                        <a href="https://www.facebook.com/ericjjkk" target= _blank; class="form1">
-                        my facebook <br><br>
+                <div class="dropdown-content">
+                    <div class="side">
+                        <a href="https://www.facebook.com/ericjjkk" target=_blank; class="form1">
+                            my facebook <br><br>
                         </a>
-                        <a href="https://github.com/stereomp3/wp109b/wiki" target= _blank; class="form1">
-                        My git hub <br><br>
+                        <a href="https://github.com/stereomp3/wp109b/wiki" target=_blank; class="form1">
+                            My git hub <br><br>
                         </a>
-                        <a href="https://www.w3schools.com/" target= _blank; class="form1">
-                        learning HTML <br><br>
+                        <a href="https://www.w3schools.com/" target=_blank; class="form1">
+                            learning HTML <br><br>
                         </a>
                     </div>
-                    
-                    <div class= "side">
+
+                    <div class="side">
                         <img src="picture/photo.jpg" alt="error" style="width:610px;height:475px;">
                     </div>>
                 </div>
-            </div>       
-    	
-        <br>
+            </div>
 
-            <div class= "dropdown">
+            <br>
+
+            <div class="dropdown">
                 <p style="color: black; font-size: 50px;">others</p>
-                <div class= "dropdown-content">
+                <div class="dropdown-content">
 
-                    <div class= "side">
-                        <p class= "form1">
-                        其他沒其他
+                    <div class="side">
+                        <p class="form1">
+                            其他沒其他
                         </p>
-                        <p class= "form1">
-                        我愛鋼琴
+                        <p class="form1">
+                            我愛鋼琴
                         </p>
-                        <p class= "form1">
-                        也愛睡覺
+                        <p class="form1">
+                            也愛睡覺
                         </p>
-                        <p class= "form1">
-                        愛看動漫(刀劍，柯南，入間，航海王)
+                        <p class="form1">
+                            愛看動漫(刀劍，柯南，入間，航海王)
                         </p>
-                        <p class= "form1">
-                        也愛畫畫
+                        <p class="form1">
+                            也愛畫畫
                         </p>
-                        <p class= "form1">
-                        其他沒其他了
+                        <p class="form1">
+                            其他沒其他了
                         </p>
                     </div>
 
-                    <div class= "side">
+                    <div class="side">
                         <img src="picture/others.png" alt="error" style="width:540px;height:360px;">
                     </div>
                 </div>
             </div>
-        
-        <br>
 
-            <div class= "dropdown">
+            <br>
+
+            <div class="dropdown">
                 <p style="color: black; font-size: 50px;">game</p>
-                <div class= "dropdown-content">
+                <div class="dropdown-content">
 
-                    <div class= "side">
-                        <p class= "form1">
-                        遊戲介紹
+                    <div class="side">
+                        <p class="form1">
+                            遊戲介紹
                         </p>
-                        <p class= "form1">
-                        製作人 : 魏仲彥
+                        <p class="form1">
+                            製作人 : 魏仲彥
                         </p>
-                        <p class= "form1">
-                        繪師 : 魏仲彥
+                        <p class="form1">
+                            繪師 : 魏仲彥
                         </p>
-                        <p class= "form1">
-                        指導老師 : 陳鍾誠老師
+                        <p class="form1">
+                            指導老師 : 陳鍾誠老師
                         </p>
                     </div>
 
-                    <div class= "side">
+                    <div class="side">
                         <img src="picture/GAME.png" alt="error" style="width:540px;height:360px;">
                     </div>
                 </div>
             </div>
 
-        <br>
+            <br>
 
-            <div class= "dropdown">
+            <div class="dropdown">
                 <p style="color: black; font-size: 50px;">source</p>
-                <div class= "dropdown-content">
+                <div class="dropdown-content">
 
-                    <div class= "side" style="width: 100%;">
-                        <p class= "form1">
+                    <div class="side" style="width: 100%;">
+                        <p class="form1">
                             人物:https://opengameart.org/content/3-cyberpunk-characters
                         </p>
-                        <p class= "form1">
+                        <p class="form1">
                             背景:https://opengameart.org/content/city-background-repetitive-3
                         </p>
-                        <p class= "form1">
+                        <p class="form1">
                             素材:https://opengameart.org/content/explosion-set-1-m484-games
-                                https://opengameart.org/content/meteor-animated-64x64
-                                https://opengameart.org/content/explosion
-                                https://opengameart.org/content/animated-fireball
-                                https://opengameart.org/content/sparks-fire-ice-blood
+                            https://opengameart.org/content/meteor-animated-64x64
+                            https://opengameart.org/content/explosion
+                            https://opengameart.org/content/animated-fireball
+                            https://opengameart.org/content/sparks-fire-ice-blood
                         </p>
-                        <p class= "form1">
+                        <p class="form1">
                             moster : https://opengameart.org/content/animated-skeleton
                             https://opengameart.org/content/animated-snake
                             https://opengameart.org/content/bosses-and-monsters-spritesheets-ars-notoria
                         </p>
-                        <p class= "form1">
+                        <p class="form1">
                             參考版面: https://www.taipeitimes.com/
                             https://www.w3schools.com/css/css_form.asp
                         </p>
@@ -193,36 +198,36 @@
                 </div>
             </div>
 
-        <br>    
+            <br>
 
-            <div class= "dropdown">
+            <div class="dropdown">
                 <p style="color: black; font-size: 50px; height: 800px;"></p>
             </div>
 
         </div>
-<!--////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
-        
-        <div class= "column">
-            <div id= "introduction" style="display: block;">
+        <!--////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+        <div class="column">
+            <div id="introduction" style="display: block;">
                 <h2>&nbsp;&nbsp;&nbsp;&nbsp;歡迎到網站簡介(Introduction)</h2>
                 <h3 style="font-size: 40px;" class="container">
-                    (￣▽￣)~*可以到<a href="https://github.com/stereomp3/wp109b/wiki" target= _blank;>git hub</a> 去看我的課堂筆記呦~~
+                    (￣▽￣)~*可以到<a href="https://github.com/stereomp3/wp109b/wiki" target=_blank;>git hub</a> 去看我的課堂筆記呦~~
                 </h3>
                 <table style="width:100%;">
                     <tr>
                         <th>網站介紹</th>
                         <td>
-                            左邊的 &#9776 可以看到影藏的選單 <br> 
-                            點擊information可以看到我的資訊 <br> 
-                            點擊game可以玩精心製作的小遊戲(有夠難做இдஇ) <br> 
-                            點擊information可以看到我的資訊 <br> 
-                            點擊oters可以看到其他有的沒的 <br> 
-                            點擊soure可以看到資料參考和圖片來源 <br> 
+                            左邊的 &#9776 可以看到影藏的選單 <br>
+                            點擊information可以看到我的資訊 <br>
+                            點擊game可以玩精心製作的小遊戲(有夠難做இдஇ) <br>
+                            點擊information可以看到我的資訊 <br>
+                            點擊oters可以看到其他有的沒的 <br>
+                            點擊soure可以看到資料參考和圖片來源 <br>
                         </td>
                         <td>重要度: &#10031&#10031&#10031</td>
                     </tr>
                     <tr>
-                        <th>資訊介紹</th> 
+                        <th>資訊介紹</th>
                         <td>有用沒用的資訊都在這大概</td>
                         <td>重要度: &#10031</td>
                     </tr>
@@ -233,7 +238,7 @@
                             寫邏輯真的難 (ఠ్ఠ ˓̭ ఠ్ఠ) <br>
                             我寫的遊戲沒有用框架，完全純手工打造~~ <br>
                             只有圖片是外面來的spirtsheet，資料來源遊戲下面和source
-                            
+
                         </td>
                         <td>重要度: &#10031&#10031&#10031&#10031&#10031&#10031</td>
                     </tr>
@@ -252,94 +257,103 @@
             </div>
         </div>
 
-        <div class= "column">
-            <div id= "informations" style="display: none;" >
+        <div class="column">
+            <div id="informations" style="display: none;">
                 <h2>&nbsp;&nbsp;&nbsp;&nbsp;歡迎到資訊介紹(Information)</h2>
-                
-                <h3  style="font-size: 40px;" class="container"> 我的網站連結</h3> 
 
-                    <h3 style="font-size: 30px;">
-                        可以到<a href="https://github.com/stereomp3/wp109b/wiki" target= _blank;>git hub</a>看我的精美筆記喔 (=`д´=)                  
-                    </h3>  
-                    <a href="https://www.facebook.com/ericjjkk" target= _blank; style="font-size: 30px;">
-                        my facebook <br><br>
-                    </a>
-                    
-                    <a href="https://www.w3schools.com/" target= _blank; style="font-size: 30px;">
-                        learning HTML <br><br>
-                    </a>
+                <h3 style="font-size: 40px;" class="container"> 我的網站連結</h3>
 
-                <h3  style="font-size: 40px;" class="container"> 下面有不錯的時事網址可以看優</h3> 
-                    <br><br>
-                    <a href="https://www.ithome.com.tw/" target= _blank; style="font-size: 30px;"> 
-                        資訊業時事&nbsp;&nbsp;&nbsp;&nbsp;
-                    </a>
-                    <a href="https://www.mem.com.tw/" target= _blank; style="font-size: 30px;"> 
-                        電子雜誌&nbsp;&nbsp;&nbsp;&nbsp;
-                    </a>
-                    <a href="https://www.itri.org.tw/ListStyle.aspx?DisplayStyle=13&SiteID=1&MmmID=1036233405427625204" target= _blank; style="font-size: 30px;"> <br><br>
-                        技術研究院&nbsp;&nbsp;&nbsp;&nbsp;
-                    </a>
-                    <a href="https://www.edntaiwan.com//" target= _blank; style="font-size: 30px;"> 
-                        電子業時事 &nbsp;&nbsp;&nbsp;&nbsp;
-                    </a>
-                    <a href="https://www.eettaiwan.com/news/" target= _blank; style="font-size: 30px;"> 
-                        電子工程 &nbsp;&nbsp;&nbsp;&nbsp;
-                    </a>
-                
-                    <h3 style="font-size: 40px;" class="container">
-                        O-(///￣皿￣)☞ ─═≡☆<a href="https://github.com/stereomp3/wp109b/wiki">git hub</a>有我的課堂筆記！！
-                    </h3>
+                <h3 style="font-size: 30px;">
+                    可以到<a href="https://github.com/stereomp3/wp109b/wiki" target=_blank;>git hub</a>看我的精美筆記喔 (=`д´=)
+                </h3>
+                <a href="https://www.facebook.com/ericjjkk" target=_blank; style="font-size: 30px;">
+                    my facebook <br><br>
+                </a>
+
+                <a href="https://www.w3schools.com/" target=_blank; style="font-size: 30px;">
+                    learning HTML <br><br>
+                </a>
+
+                <h3 style="font-size: 40px;" class="container"> 下面有不錯的時事網址可以看優</h3>
+                <br><br>
+                <a href="https://www.ithome.com.tw/" target=_blank; style="font-size: 30px;">
+                    資訊業時事&nbsp;&nbsp;&nbsp;&nbsp;
+                </a>
+                <a href="https://www.mem.com.tw/" target=_blank; style="font-size: 30px;">
+                    電子雜誌&nbsp;&nbsp;&nbsp;&nbsp;
+                </a>
+                <a href="https://www.itri.org.tw/ListStyle.aspx?DisplayStyle=13&SiteID=1&MmmID=1036233405427625204"
+                    target=_blank; style="font-size: 30px;"> <br><br>
+                    技術研究院&nbsp;&nbsp;&nbsp;&nbsp;
+                </a>
+                <a href="https://www.edntaiwan.com//" target=_blank; style="font-size: 30px;">
+                    電子業時事 &nbsp;&nbsp;&nbsp;&nbsp;
+                </a>
+                <a href="https://www.eettaiwan.com/news/" target=_blank; style="font-size: 30px;">
+                    電子工程 &nbsp;&nbsp;&nbsp;&nbsp;
+                </a>
+
+                <h3 style="font-size: 40px;" class="container">
+                    O-(///￣皿￣)☞ ─═≡☆<a href="https://github.com/stereomp3/wp109b/wiki">git hub</a>有我的課堂筆記！！
+                </h3>
                 <br>
             </div>
         </div>
 
-        <div class= "column">
-            <div id= "game" style="display: none; text-align: center;">
-                <canvas id="MyCanvas" width="800" height="550" style="border:0.1px solid rgb(82, 80, 79) "></canvas>
-
+        <div class="column">
+            <div id="game" style="display: none; text-align: center;">
+                <img onclick="GameInit(); MainGame();" id="GameInitOption" src="picture/material/end/b.png" alt="error" style="position: absolute; z-index: 2; cursor: pointer; width:240px;height:60px;">
+                <canvas id="MyCanvas" width="800" height="550" style="border:0.1px solid rgb(82, 80, 79) "></canvas>      
                 <div style="display: none;">
-                    <img src="picture/material/R/move/0.png" alt="error" style="width:273px;height:517px;" id= "picture">
-                    <img src="picture/material/0.png" alt="error" style="width:273px;height:517px;" id= "SubPicture">
-                    <img src="picture/material/background/0.png" alt="error" style="width:273px;height:517px;" id= "background">
-                    <img src="picture/material/monster/snake/L/idle/0.png" alt="error" style="width:273px;height:517px;" id= "monster">
+                    <img src="picture/material/R/move/0.png" alt="error" style="width:273px;height:517px;" id="picture">
+                    <img src="picture/material/0.png" alt="error" style="width:273px;height:517px;" id="SubPicture">
+                    <img src="picture/material/background/0.png" alt="error" style="width:273px;height:517px;"
+                        id="background">
+                    <img src="picture/material/monster/snake/L/idle/0.png" alt="error" style="width:273px;height:517px;"
+                        id="monster">
+                    <img src="picture/material/monster/boss/attack/0.png" alt="error" style="width:273px;height:517px;"
+                        id="monsterAttack">
                 </div>
-                <div class= "NormalDropdown">
-                    <p style="color: #e0d9d9;" >資料來源 (hover me!)</p>
-                        <div class= "DropdownContent">
-                        <a href="https://opengameart.org/content/3-cyberpunk-characters" target= _blank;>人物:https://opengameart.org/content/3-cyberpunk-characters</a> <br>
-                        <a href="https://opengameart.org/content/city-background-repetitive-3" target= _blank;>背景:https://opengameart.org/content/city-background-repetitive-3</a> <br>
-                        <a href="https://opengameart.org/content/animated-snake" target= _blank;>monster:https://opengameart.org/content/animated-snake</a>
-                        </div>
-                </div> 
+                <div class="NormalDropdown">
+                    <p style="color: #ff3d3d;">資料來源 (hover me!)</p>
+                    <div class="DropdownContent">
+                        <a href="https://opengameart.org/content/3-cyberpunk-characters"
+                            target=_blank;>人物:https://opengameart.org/content/3-cyberpunk-characters</a> <br>
+                        <a href="https://opengameart.org/content/city-background-repetitive-3"
+                            target=_blank;>背景:https://opengameart.org/content/city-background-repetitive-3</a> <br>
+                        <a href="https://opengameart.org/content/animated-snake"
+                            target=_blank;>monster:https://opengameart.org/content/animated-snake</a>
+                    </div>
+                </div>
                 <br>
 
-                <h3 style="font-size: 40px;" class="container"> 
-                    <a href="https://github.com/stereomp3/wp109b/tree/main/homework/MyWeb4.0" target= _blank;>git hub</a> 裡面有遊戲程式碼哦!ლ(ﾟдﾟლ) ! 
+                <h3 style="font-size: 40px;" class="container">
+                    <a href="https://github.com/stereomp3/wp109b/tree/main/homework/MyWeb4.0" target=_blank;>git hub</a>
+                    裡面有遊戲程式碼哦!ლ(ﾟдﾟლ) !
                 </h3>
 
             </div>
         </div>
-        <h3 id="GameText" style="display: none; position: absolute; right: 20px;"> 
-            <p style="color: rgb(250, 249, 244); font-size: 30px;">歡迎來到遊戲區!!</p>
+        <h3 id="GameText" style="display: none; position: absolute; right: 20px; color: rgb(250, 249, 244);">
+            <p style="font-size: 30px;">歡迎來到遊戲區!!</p>
             <br>
-            <p style="color: rgb(243, 112, 61);">角色控制 :</p>
+            <p>角色控制 :</p>
             <li> a (左)</li>
             <li> d (右)</li>
             <li> k (跳) </li>
             <li> l (加速) </li>
             <br>
-            <p style="color: rgb(243, 112, 61);">技能施放 :</p>
+            <p>技能施放 :</p>
             <li> j (踢)</li>
             <li> j + w (出拳)</li>
-            <li> j + s (特攻)</li>       
-        
-            <p>遊戲還在趕工中  >w<</p>
+            <li> j + s (特攻)</li>
+
+            <p>遊戲還在趕工中 >w<< /p>
         </h3>
 
 
-        <div class= "column">
-            <div id= "others" style="display: none; font-size: 30px;">
+        <div class="column">
+            <div id="others" style="display: none; font-size: 30px;">
                 <h2>&nbsp;&nbsp;&nbsp;&nbsp;其他補充(others)</h2>
                 <button onclick="formTable()">留言板</button>
                 <button onclick="PaintBoard()">繪畫板</button>
@@ -350,22 +364,23 @@
                             <label for="Qution">你覺得這個網站哪個地方最吸引你?</label>
                         </div>
                         <div>
-                        <select id="Qution" name="Qution">
-                          <option>精心設計的文字內容</option>
-                          <option>充滿特色的版面設計</option>
-                          <option>製作人的名字</option>
-                          <option>指導老師的名字</option>
-                          <option>我覺得是好吃的滷肉飯</option>
-                          <option>我覺得是好吃的牛排</option>
-                        </select>
-                      </div>
+                            <select id="Qution" name="Qution">
+                                <option>精心設計的文字內容</option>
+                                <option>充滿特色的版面設計</option>
+                                <option>製作人的名字</option>
+                                <option>指導老師的名字</option>
+                                <option>我覺得是好吃的滷肉飯</option>
+                                <option>我覺得是好吃的牛排</option>
+                            </select>
+                        </div>
                     </div>
                     <div class="row">
                         <div>
                             <label for="subject">對網站的意見和看法?</label>
                         </div>
                         <div>
-                            <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+                            <textarea id="subject" name="subject" placeholder="Write something.."
+                                style="height:200px"></textarea>
                         </div>
                     </div>
                     <div class="row">
@@ -373,71 +388,78 @@
                     </div>
                 </div>
 
-                <div id="paintBoard"  style="display: block;">
-                    <canvas id="cSketchPad" width="900" height="400" style="border:0.1px solid rgb(82, 80, 79) "></canvas>
-                    <img id="cSketchPadImg">
-                    <p style="color: rgb(217, 251, 252);">
+                <div id="paintBoard" style="display: block;">
+                    <canvas id="cSketchPad" width="900" height="400"
+                        style="border:0.1px solid rgb(82, 80, 79) "></canvas>
+                    <img id="cSketchPadImg" οnerrοr="this.style.display='none'">
+                    <!--不顯示，直到有圖片-->
+                    <p style="color: rgb(7, 7, 7);">
                         參考至canvas裡的05-painter和04-save ٩(๑❛ᴗ❛๑)۶
                     </p>
                 </div>
-                  
-                  <h3 style="font-size: 40px;" class="container"> 
-                    真的沒什麼好補充的了，可以到<a href="https://github.com/stereomp3/wp109b/wiki" target= _blank;>git hub</a> 去看我的精美小筆記 ლ(・ω・ლ)
+
+                <h3 style="font-size: 40px;" class="container">
+                    真的沒什麼好補充的了，可以到<a href="https://github.com/stereomp3/wp109b/wiki" target=_blank;>git hub</a>
+                    去看我的精美小筆記 ლ(・ω・ლ)
                 </h3>
                 <br>
             </div>
-            
+
         </div>
         <div>
-            <h3 id="DrawChooser" style="display: none; position: absolute; right: 20px;"> 
+            <h3 id="DrawChooser" style="display: none; position: absolute; right: 200px; color: white;">
                 <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
-                <p style="color: rgb(217, 251, 252);">選擇顏色</p>
-                <input type="color" id="colorChooser" value="#000000" > <br>
+                <p>選擇顏色</p>
+                <input type="color" id="colorChooser" value="#000000"> <br>
                 <button onclick="changePenColor();">confirm color</button> <br>
-                <p style="color: rgb(217, 251, 252);">選擇筆寬</p>
+                <p>選擇筆寬</p>
                 <input type="number" id="WidthChooser" value="3" min="1" max="30"> <br>
                 <button onclick="changePenWidth();">confirm width</button> <br><br>
-            
-                <button onclick="Pctx.fillStyle = 'white'; Pctx.fillRect(0, 0, Pcanvas.width, Pcanvas.height)">clear img</button> <br>
+
+                <button onclick="Pctx.fillStyle = 'white'; Pctx.fillRect(0, 0, Pcanvas.width, Pcanvas.height)">clear
+                    img</button> <br>
                 <button onclick="save()">save img</button>
             </h3>
         </div>
 
-        <div class= "column">
-            <div id= "source" style="display: none;">
+        <div class="column">
+            <div id="source" style="display: none;">
                 <h2>&nbsp;&nbsp;&nbsp;&nbsp;這裡介紹參考來源(source)</h>
 
-                <h3 style="font-size: 40px;" class="container"> 
-                    <a href="https://github.com/stereomp3/wp109b/wiki" target= _blank;>git hub: </a> https://github.com/stereomp3/wp109b/wiki (●'ω`●）
-                </h3> 
+                    <h3 style="font-size: 40px;" class="container">
+                        <a href="https://github.com/stereomp3/wp109b/wiki" target=_blank;>git hub: </a>
+                        https://github.com/stereomp3/wp109b/wiki (●'ω`●）
+                    </h3>
 
-                <h3 style="color: #929299;"> 
-                    人物:https://opengameart.org/content/3-cyberpunk-characters <br>
-                    背景:https://opengameart.org/content/city-background-repetitive-3 <br>
-                    素材:https://opengameart.org/content/explosion-set-1-m484-games <br>
-                    https://opengameart.org/content/meteor-animated-64x64 <br>
-                    https://opengameart.org/content/explosion <br>
-                    https://opengameart.org/content/animated-fireball <br>
-                    https://opengameart.org/content/sparks-fire-ice-blood <br>
+                    <h3 style="color: #929299;">
+                        人物:https://opengameart.org/content/3-cyberpunk-characters <br>
+                        背景:https://opengameart.org/content/city-background-repetitive-3 <br>
+                        素材:https://opengameart.org/content/explosion-set-1-m484-games <br>
+                        https://opengameart.org/content/meteor-animated-64x64 <br>
+                        https://opengameart.org/content/explosion <br>
+                        https://opengameart.org/content/animated-fireball <br>
+                        https://opengameart.org/content/sparks-fire-ice-blood <br>
 
-                    moster : https://opengameart.org/content/animated-skeleton <br>
-                    https://opengameart.org/content/animated-snake <br>
-                    https://opengameart.org/content/bosses-and-monsters-spritesheets-ars-notoria <br>
-                    參考網頁: https://www.taipeitimes.com/ <br>
-                    https://www.w3schools.com/css/css_form.asp <br>
-                    https://www.w3schools.com/css/tryit.asp?filename=trycss_form_responsive<br>
-                    https://www.w3schools.com/html/tryit.asp?filename=tryhtml_table_id2 <br>
-                    符號: https://www.w3schools.com/charsets/ref_utf_dingbats.asp <br>
-                    https://aileens.pixnet.net/blog/post/37773448-%E7%B6%B2%E8%B7%AF%E8%A1%A8%E6%83%85%E7%AC%A6%E8%99%9F%E5%A4%A7%E5%85%A8%28%E8%BD%89%29 <br>
-                    https://lovefree365.pixnet.net/blog/post/403192625-%E4%BE%86%E8%87%AA%E6%97%A5%E6%9C%AC%E7%9A%84%E8%A1%A8%E6%83%85%E7%AC%A6%E8%99%9F% <br>
-                    E0%B2%A0_%E0%B2%A0~%E9%A1%8F%E6%96%87%E5%AD%97%E3%8A%95%E8%A1%A8%E6%83%85%E7%AC%A6%E8%99%9F <br>
-                     
-                </h>
-                <br>
+                        moster : https://opengameart.org/content/animated-skeleton <br>
+                        https://opengameart.org/content/animated-snake <br>
+                        https://opengameart.org/content/bosses-and-monsters-spritesheets-ars-notoria <br>
+                        參考網頁: https://www.taipeitimes.com/ <br>
+                        https://www.w3schools.com/css/css_form.asp <br>
+                        https://www.w3schools.com/css/tryit.asp?filename=trycss_form_responsive<br>
+                        https://www.w3schools.com/html/tryit.asp?filename=tryhtml_table_id2 <br>
+                        符號: https://www.w3schools.com/charsets/ref_utf_dingbats.asp <br>
+                        https://aileens.pixnet.net/blog/post/37773448-%E7%B6%B2%E8%B7%AF%E8%A1%A8%E6%83%85%E7%AC%A6%E8%99%9F%E5%A4%A7%E5%85%A8%28%E8%BD%89%29
+                        <br>
+                        https://lovefree365.pixnet.net/blog/post/403192625-%E4%BE%86%E8%87%AA%E6%97%A5%E6%9C%AC%E7%9A%84%E8%A1%A8%E6%83%85%E7%AC%A6%E8%99%9F%
+                        <br>
+                        E0%B2%A0_%E0%B2%A0~%E9%A1%8F%E6%96%87%E5%AD%97%E3%8A%95%E8%A1%A8%E6%83%85%E7%AC%A6%E8%99%9F <br>
+
+                        </h>
+                        <br>
             </div>
         </div>
     </div>
-    
+
     <div id="footer">
         <marquee height="30" style="font-size: 20px;">110910541's Website (金門大學 資工系 魏仲彥 製作)</marquee>
     </div>
@@ -445,6 +467,8 @@
     <script src="game/Background.js"></script>
     <script src="game/Player.js"></script>
     <script src="game/Monster.js"></script>
+    <script src="game/gameInit.js"></script>
     <script src="others/paintBoard.js"></script>
 </body>
+
 </html>
