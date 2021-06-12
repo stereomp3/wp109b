@@ -97,6 +97,7 @@ function MainGame() {
     document.getElementById("GameInitOption").style.display = "none";
     startAnimating(12);//設置fps
     if (init == 1) return;
+    
     document.addEventListener("keydown", function (event) {//這裡的evt是接收玩家的鍵盤事件
         keystate[event.code] = true//鍵盤按下
     }, true);
