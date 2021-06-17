@@ -136,7 +136,7 @@ function MainGame() {
 }
 
 function GameInit() {
-    PlayerBlood = 50; MosterBlood = 10;
+    PlayerBlood = 50; MosterBlood = 30;
     x = 10, y = 430;
     Mx = 300, My = 450, dMx = 5, dMy = 30//怪物位置和速度
     GameStart = 1, MonsterStart = 0;
