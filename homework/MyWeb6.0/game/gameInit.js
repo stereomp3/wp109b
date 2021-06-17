@@ -140,6 +140,7 @@ function GameInit() {
     x = 10, y = 430;
     Mx = 300, My = 450, dMx = 5, dMy = 30//怪物位置和速度
     GameStart = 1, MonsterStart = 0;
+
     preload();
     SubImg = document.getElementById("SubPicture");
     Img = document.getElementById("picture");
@@ -148,9 +149,6 @@ function GameInit() {
     MonsterAttcakImg = document.getElementById("monsterAttack");
     canvas = document.getElementById("MyCanvas");
     ctx = canvas.getContext("2d");
-
     backImg = document.getElementById("background");
-    backImg.src = "picture/material/background/54.png";//first
     ctx.drawImage(backImg, 0, 0, canvas.width, canvas.height);
 }
-

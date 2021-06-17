@@ -48,10 +48,10 @@
         <a onclick="sideOptionClose()" id="sideOptionClose" style="display: none;">&#9587</a>
     </div>
 
-    <div class="side">&nbsp;</div>
+    <div id="LeftSideSpace">&nbsp;</div>
     <!--////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
     <div style="width: 100%; height: 1696px;">
-        <div class="SideOption">
+        <div id="SideOption">
 
             <div class="dropdown">
                 <p style="color: black; font-size: 50px;">introdution</p>
@@ -302,8 +302,10 @@
 
         <div class="column">
             <div id="game" style="display: none; text-align: center;">
-                <img onclick="GameInit(); MainGame();" id="GameInitOption" src="picture/material/background/55.png" alt="error" style="position: absolute; z-index: 2; cursor: pointer; width:240px;height:60px;">
-                <canvas id="MyCanvas" width="800" height="550" style="border:0.1px solid rgb(82, 80, 79) "></canvas>      
+                <img onclick="GameInit(); MainGame();" id="GameInitOption" src="picture/material/background/55.png"
+                    alt="error">
+                <canvas id="MyCanvas" width="800" height="550"
+                    style="border:0.1px solid rgb(82, 80, 79); width: 100%;  height: auto;"></canvas>
                 <div style="display: none;">
                     <img src="picture/material/R/move/0.png" alt="error" style="width:273px;height:517px;" id="picture">
                     <img src="picture/material/0.png" alt="error" style="width:273px;height:517px;" id="SubPicture">
@@ -334,7 +336,7 @@
 
             </div>
         </div>
-        <h3 id="GameText" style="display: none; position: absolute; right: 20px; color: rgb(250, 249, 244);">
+        <h3 id="GameText">
             <p style="font-size: 30px;">歡迎來到遊戲區!!</p>
             <br>
             <p>角色控制 :</p>
@@ -348,7 +350,7 @@
             <li> j + w (出拳)</li>
             <li> j + s (特攻)</li>
 
-            <p>遊戲還在趕工中 >w<< /p>
+            <p>遊戲還在趕工中 >w< </p>
         </h3>
 
 
@@ -357,6 +359,7 @@
                 <h2>&nbsp;&nbsp;&nbsp;&nbsp;其他補充(others)</h2>
                 <button onclick="formTable()">留言板</button>
                 <button onclick="PaintBoard()">繪畫板</button>
+                <button onclick="go()">彩蛋</button>
                 <br> <br>
                 <div class="container" id="FormTable" style="display: none;">
                     <div class="row">
@@ -390,7 +393,7 @@
 
                 <div id="paintBoard" style="display: block;">
                     <canvas id="cSketchPad" width="900" height="400"
-                        style="border:0.1px solid rgb(82, 80, 79) "></canvas>
+                        style="border:0.1px solid rgb(82, 80, 79);"></canvas>
                     <img id="cSketchPadImg" οnerrοr="this.style.display='none'">
                     <!--不顯示，直到有圖片-->
                     <p style="color: rgb(7, 7, 7);">
@@ -407,7 +410,7 @@
 
         </div>
         <div>
-            <h3 id="DrawChooser" style="display: none; position: absolute; right: 200px; color: white;">
+            <h3 id="DrawChooser">
                 <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
                 <p>選擇顏色</p>
                 <input type="color" id="colorChooser" value="#000000"> <br>
@@ -424,7 +427,7 @@
 
         <div class="column">
             <div id="source" style="display: none;">
-                <h2>&nbsp;&nbsp;&nbsp;&nbsp;這裡介紹參考來源(source)</h>
+                <h2>&nbsp;&nbsp;&nbsp;&nbsp;參考來源(source)</h>
 
                     <h3 style="font-size: 40px;" class="container">
                         <a href="https://github.com/stereomp3/wp109b/wiki" target=_blank;>git hub: </a>
@@ -469,7 +472,9 @@
     <script src="game/Monster.js"></script>
     <script src="game/gameInit.js"></script>
     <script src="others/paintBoard.js"></script>
+    <script src="others/zerg_rush_google_cheat.js"></script>
+    <script src="http://code.jquery.com/jquery-2.2.0.js"></script>
+    
 </body>
 
 </html>
-
