@@ -242,7 +242,7 @@ function sideOptionClose() {
 * other: <br>
 裡面使用的顯示隱藏技術和前面的Main_1.一樣，在此不贅述。 <br>
 
-  1. 留言板: <br>
+1. 留言板: <br>
 技術說明: 利用CSS進行排版(row, container)，再用select做出下拉選單，option做出選項，再用textarea讓使用者可以在裡面打字，本來input裡面的type要用submit，但因為沒有伺服器，所以這裡設置成button。 <br>
 [MyWeb.html](https://github.com/stereomp3/wp109b/blob/main/homework/MyWeb6.0/MyWeb.html) <br>
 
@@ -280,7 +280,7 @@ function sideOptionClose() {
 </div>
 ```
 
-  2. 繪畫板: <br>
+2. 繪畫板: <br>
 
 繪畫說明: 這邊設置2個function: changePenColor()和changePenWidth()對應到button上的onclick，可以讓選到的顏色和筆寬放入Pctx.strokeStyle和Pctx.lineWidth裡面。 <br>
 [paintBoard.js](https://github.com/stereomp3/wp109b/blob/main/homework/MyWeb6.0/others/paintBoard.js) <br>
@@ -337,7 +337,7 @@ function save() {
 }
 ```
 
-  3. 彩蛋: <br>
+3. 彩蛋: <br>
 參考另一篇README <br>
 -> [Zerg](https://github.com/stereomp3/wp109b/tree/main/homework/MyWeb6.0/others)
 
