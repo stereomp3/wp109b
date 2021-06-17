@@ -2,7 +2,7 @@
 
 * main: <br>
 參考網址： https://www.taipeitimes.com/ <br>
-https://www.w3schools.com/css/css_form.asp
+https://www.w3schools.com/css/css_form.asp <br>
 **版面配置沒有使用套版** <br>
 
 * game: <br>
