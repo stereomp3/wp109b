@@ -53,5 +53,9 @@ https://stereomp3.github.io/wp109b/homework/MyWeb5.0/MyWeb.html
 ## 第六版網站(MyWeb6.0) 
 <li>遊戲封面改動，一些能力調整</li>
 <li>整體畫面可隨者裝置不同而做調整</li>
-<li> </li>
-<li>新增遊戲封面和結束畫面，加入新怪物</li>
+<li>新增彩蛋</li>
+<li>整體優化</li>
+
+https://stereomp3.github.io/wp109b/homework/MyWeb6.0/MyWeb.html
+
+<hr>

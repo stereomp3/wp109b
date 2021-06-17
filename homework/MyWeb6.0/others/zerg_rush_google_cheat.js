@@ -17,8 +17,8 @@
 
         this.rush = rush; // ZergRush instance
         this.speed = 3;
-        this.x = x;
-        this.y = y;
+        this.x = x+700;
+        this.y = y+500;
 
         this.width = 10;
         this.height = 10;
@@ -34,8 +34,8 @@
             position: 'absolute',
             display: 'block',
             background: 'red',
-            left: x,
-            top: y,
+            left: x+700,
+            top: y+500,
             borderRadius: '5px',
             zIndex: 9999
         }).appendTo(body);
