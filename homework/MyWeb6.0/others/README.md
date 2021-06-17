@@ -133,8 +133,8 @@ function ZergRush(nZerglings) {
   for (var i = 0; i < nZerglings; ++i) {
     zerglings.push(
       new Zergling(
-        Math.random() * 100,
-        Math.random() * 100,
+        Math.random() * 300,
+        Math.random() * 300,
         this
       )
     );
@@ -148,8 +148,8 @@ function ZergRush(nZerglings) {
 ```
 
 
-所有Zerg從頁面左上角的隨機位置開始
-（從{0,0}到 的任意位置{100,100}）。
+所有Zerg從頁面中間的隨機位置開始
+（從{700,500}到 的任意位置{300,300}）。
 
 Zerg目前只是小紅點，如下所示：
 
@@ -163,8 +163,8 @@ this.dom = $('<zergling>').css({
   position: 'absolute',
   display: 'block',
   background: 'red',
-  left: x,
-  top: y,
+  left: x+700,
+  top: y+500,
   borderRadius: '5px',
   zIndex: 9999
 }).

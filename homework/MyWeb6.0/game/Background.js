@@ -5,14 +5,17 @@ Backgroumd = {
         if (MonsterStart == 0) {
             BackImgFlag == 0;
         }
+        
         else {
             if (x < 100 && BackImgFlag > 0) {
                 x = 100;
                 BackImgFlag--;
+                if(keystate[shift] && BackImgFlag > 0) BackImgFlag--
             }
             if (x > 600 && BackImgFlag < 53) {
                 x = 600;
                 BackImgFlag++;
+                if(keystate[shift] && BackImgFlag < 53) BackImgFlag++
             }
         }
         if (x <= 0) x = 0;
@@ -24,5 +27,6 @@ Backgroumd = {
     },
     draw: function () {
         ctx.drawImage(backImg, 0, 0, canvas.width, canvas.height);
+        if(BackImgFlag < 50 && MonsterStart == 1) ctx.fillText("走到最底才能打到boss，GO->->", 150, 150,);//字, x, y
     }
 }

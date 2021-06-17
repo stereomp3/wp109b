@@ -3,11 +3,11 @@ let MonsterFlag = 0; MonsterTimer = 0;
 let MosterBlood = 30;
 let MonsterDir = true, MonsterAttack = false;
 
-let MonsterAttackX = [600, 600, 560, 660, 600, 600, 600, 560, 660, 600]
-let MonsterAttackY = [250, 300, 250, 250, 300, 250, 300, 250, 250, 300]
+let MonsterAttackX = [600, 600, 560, 660, 600, 600, 600, 560, 660, 600, 520, 480, 420, 520, 480, 420, 520, 480, 420, 100]
+let MonsterAttackY = [250, 300, 250, 250, 300, 250, 300, 250, 250, 300, 250, 300, 350, 350, 250, 300, 300, 350, 250, 100]
 
-let Mdx = [10, 5, -8, 3, -10, -10, -5, 8, -3, 10]
-let Mdy = [10, 5, -8, -3, 10, -10, -5, 8, 3, -10]
+let Mdx = [10, 5, -8, 3, -10, -10, -5, 8, -3, 10, 10, 5, -8, -3, 10, -10, -5, 8, 3, 20]
+let Mdy = [10, 5, -8, -3, 10, -10, -5, 8, 3, -10, 10, 5, -8, -3, 10, -10, -5, 8, 3, 20]
 Monster = {
     SnakeUpgrade: function () {
         MonsterFlag++;
@@ -82,51 +82,47 @@ Monster = {
     },
 
     BossUpgrade: function () {
-        Mx = 700, My = 300//boss location
+
         MonsterFlag++;
 
         //alive
         //mode1
         if (MosterBlood > 20) {
+            Mx = 700, My = 300//boss location
             MonsterImg.src = "picture/material/monster/boss/idle/" + MonsterFlag + ".png";
             //attack
             MonsterAttcakImg.src = "picture/material/monster/boss/attack/" + MonsterFlag + ".png";
-            if (MonsterAttackX[0] < x) {
-                MonsterAttackX[0] += 5;
+            for (let v = 0; v < 3; v++) {
+                if (MonsterAttackX[v] - 20 < x) MonsterAttackX[v] += 3 + 3 * v;
+                if (MonsterAttackX[v] - 20 >= x) MonsterAttackX[v] -= 3 + 3 * v;
+                if (MonsterAttackY[v] - 40 < y) MonsterAttackY[v] += 3 + 3 * v;
+                if (MonsterAttackY[v] - 40 >= y) MonsterAttackY[v] -= 3 + 3 * v;
+                if (Math.abs(x - MonsterAttackX[v] + 20) <= 32 && Math.abs(y - MonsterAttackY[v] + 40) <= 32) PlayerBlood -= 1;
             }
-            if (MonsterAttackX[0] >= x) {
-                MonsterAttackX[0] -= 5;
-            }
-            if (MonsterAttackY[0] < y) {
-                MonsterAttackY[0] += 5;
-            }
-            if (MonsterAttackY[0] >= y) {
-                MonsterAttackY[0] -= 5;
-            }
-            if (Math.abs(x - MonsterAttackX[0]) <= 32 && Math.abs(y - MonsterAttackY[0]) <= 32) PlayerBlood -= 1;
         }
         //mode2
         else if (MosterBlood <= 20 && MosterBlood > 0) {
+            if (Math.abs(x - Mx) <= 30 && Math.abs(y - My) <= 20 && (WPflag == 5 || SPflag == 5 || Pflag == 5)) {
+                Mx = getRandomArbitrary(0, 700), My = getRandomArbitrary(400, 300)
+            }
             MonsterImg.src = "picture/material/monster/boss/walk/" + MonsterFlag + ".png";
             //attack     
             MonsterAttcakImg.src = "picture/material/monster/boss/gesture/" + MonsterFlag + ".png";
 
-            for(let i = 0; i < 10; i++)
-            {
+            for (let i = 0; i < 20; i++) {
                 MonsterAttackX[i] += Mdx[i]; MonsterAttackY[i] += Mdy[i];
                 if (MonsterAttackX[i] < 0 && Mdx[i] < 0)//撞到左邊的牆且速度(S*X)向左
-                Mdx[i] = -1 * Mdx[i];//變向
+                    Mdx[i] = -1 * Mdx[i];//變向
                 else if (MonsterAttackX[i] + MonsterAttcakImg.width >= canvas.width && Mdx[i] > 0)//撞到右邊的牆且速度(S*X)向右
-                Mdx[i] = -1 * Mdx[i];
+                    Mdx[i] = -1 * Mdx[i];
                 if (MonsterAttackY[i] < 0 && Mdy[i] < 0)//撞到上面的牆且速度(S*X)向上
-                Mdy[i] = -1 * Mdy[i];
+                    Mdy[i] = -1 * Mdy[i];
                 else if (MonsterAttackY[i] + MonsterAttcakImg.height >= canvas.height && Mdy[i] > 0)//撞到下面的牆且速度(S*X)向下
-                Mdy[i] = -1 * Mdy[i];
+                    Mdy[i] = -1 * Mdy[i];
             }
 
-            for(let z = 0; z < 10; z++)
-            {
-                if (Math.abs(x - MonsterAttackX[z]) <= 26 && Math.abs(y - MonsterAttackY[z]) <= 26) PlayerBlood -= 2;
+            for (let z = 0; z < 20; z++) {
+                if (Math.abs(x - MonsterAttackX[z] + 20) <= 26 && Math.abs(y - MonsterAttackY[z] + 20) <= 52) PlayerBlood -= 2;
             }
         }
         //death
@@ -143,12 +139,15 @@ Monster = {
 
     BossDraw: function () {
         ctx.drawImage(MonsterImg, Mx, My, 87, 110);
+
         if (MosterBlood > 20) {
-            ctx.drawImage(MonsterAttcakImg, MonsterAttackX[0], MonsterAttackY[0], 32, 32);
+            for (let v = 0; v < 3; v++) {
+                ctx.drawImage(MonsterAttcakImg, MonsterAttackX[v], MonsterAttackY[v], 32, 32);
+            }
         }
+
         else if (MosterBlood <= 20 && MosterBlood > 0) {
-            for(let i = 0 ; i < 10; i++)
-            {
+            for (let i = 0; i < 20; i++) {
                 ctx.drawImage(MonsterAttcakImg, MonsterAttackX[i], MonsterAttackY[i], 26, 26);
             }
         }
@@ -156,4 +155,8 @@ Monster = {
         ctx.fillText("HP:", 660, 90,);//字, x, y
         ctx.fillText(MosterBlood, 730, 90,);
     },
+}
+
+function getRandomArbitrary(min, max) {
+    return Math.random() * (max - min) + min;
 }

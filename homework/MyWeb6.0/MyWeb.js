@@ -96,6 +96,8 @@ function morningMode() {
   document.getElementById("SideOption").style.background = "rgb(243, 235, 188)";
   document.getElementById("GameText").style.color = "black";
   document.getElementById("DrawChooser").style.color = "black";
+  document.getElementById("night").style.display = "block"
+  document.getElementById("morning").style.display = "none"
 }
 function nightMode() {
   document.getElementsByTagName("body")[0].style.background = "DimGrey";
@@ -104,6 +106,8 @@ function nightMode() {
   document.getElementById("SideOption").style.background = "#d0cfda";
   document.getElementById("GameText").style.color = "rgb(255, 255, 255);";
   document.getElementById("DrawChooser").style.color = "white";
+  document.getElementById("night").style.display = "none"
+  document.getElementById("morning").style.display = "block"
 }
 
 

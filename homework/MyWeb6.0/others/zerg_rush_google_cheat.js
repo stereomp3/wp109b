@@ -234,8 +234,8 @@
         for (var i = 0; i < nZerglings; ++i) {
             zerglings.push(
                 new Zergling(
-                    random() * 100,
-                    random() * 100,
+                    random() * 300,
+                    random() * 300,
                     this
                 )
             );
