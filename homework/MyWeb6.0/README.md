@@ -51,8 +51,8 @@ https://opengameart.org/content/bosses-and-monsters-spritesheets-ars-notoria<br>
 5. 利用canvas畫出圖片 <br>
 6. 在canvas上面加入HTML元素 <br>
 
-**遊戲完全純手工打造**
-
+**遊戲完全純手工打造** <br>
+-> [遊戲技術說明](https://github.com/stereomp3/wp109b/tree/main/homework/MyWeb6.0/game) <br>
 * other:
 
   1. 留言板: <br>
@@ -64,6 +64,7 @@ https://opengameart.org/content/bosses-and-monsters-spritesheets-ars-notoria<br>
 
   3. 彩蛋: <br>
 -> 按了會把部分網頁吃掉 <br>
+-> [彩蛋技術說明](https://github.com/stereomp3/wp109b/tree/main/homework/MyWeb6.0/others) <br>
 
 <hr>
 
@@ -237,7 +238,7 @@ function sideOptionClose() {
 
 * game: <br>
 參考另一篇README <br>
--> [GameIntrodution](https://github.com/stereomp3/wp109b/tree/main/homework/MyWeb6.0/game)
+-> [遊戲技術說明](https://github.com/stereomp3/wp109b/tree/main/homework/MyWeb6.0/game)
 
 * other: <br>
 裡面使用的顯示隱藏技術和前面的Main_1.一樣，在此不贅述。 <br>
@@ -339,5 +340,5 @@ function save() {
 
 3. 彩蛋: <br>
 參考另一篇README <br>
--> [Zerg](https://github.com/stereomp3/wp109b/tree/main/homework/MyWeb6.0/others)
+-> [彩蛋技術說明](https://github.com/stereomp3/wp109b/tree/main/homework/MyWeb6.0/others)
 
