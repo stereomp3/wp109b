@@ -1,7 +1,8 @@
 ## 來源和用途
 
 * main: <br>
-參考網址： <br>
+參考網址： https://www.taipeitimes.com/ <br>
+https://www.w3schools.com/css/css_form.asp
 **版面配置沒有使用套版** <br>
 
 * game: <br>
@@ -12,16 +13,16 @@
 https://opengameart.org/content/meteor-animated-64x64
 https://opengameart.org/content/explosion
 https://opengameart.org/content/animated-fireball
-https://opengameart.org/content/sparks-fire-ice-blood
+https://opengameart.org/content/sparks-fire-ice-blood <br>
 moster : https://opengameart.org/content/animated-skeleton
 https://opengameart.org/content/animated-snake
 https://opengameart.org/content/bosses-and-monsters-spritesheets-ars-notoria<br>
 **遊戲完全純手工打造** 
 
 * other: <br>
-  1. 留言板: <br>
-  2. 繪畫板: <br>
-  3. 彩蛋: <br>
+  1. 留言板: https://www.w3schools.com/css/tryit.asp?filename=trycss_form_responsive <br>
+  2. 繪畫板: https://gitlab.com/ccc109/wp 08-canvas裡的05-painter和04-save <br>
+  3. 彩蛋: https://codepen.io/dr5274/pen/mvmeOL <br>
 
 <hr>
 
