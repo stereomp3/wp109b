@@ -6,7 +6,17 @@
 
 * game: <br>
 遊戲圖片來源： <br>
-**遊戲完全純手工打造** <br>
+人物:https://opengameart.org/content/3-cyberpunk-characters <br>
+背景:https://opengameart.org/content/city-background-repetitive-3 <br>
+素材:https://opengameart.org/content/explosion-set-1-m484-games
+https://opengameart.org/content/meteor-animated-64x64
+https://opengameart.org/content/explosion
+https://opengameart.org/content/animated-fireball
+https://opengameart.org/content/sparks-fire-ice-blood
+moster : https://opengameart.org/content/animated-skeleton
+https://opengameart.org/content/animated-snake
+https://opengameart.org/content/bosses-and-monsters-spritesheets-ars-notoria<br>
+**遊戲完全純手工打造** 
 
 * other: <br>
   1. 留言板: <br>
