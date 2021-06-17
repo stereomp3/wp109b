@@ -149,6 +149,6 @@ function GameInit() {
     MonsterAttcakImg = document.getElementById("monsterAttack");
     canvas = document.getElementById("MyCanvas");
     ctx = canvas.getContext("2d");
-    backImg = document.getElementById("background");
+
     ctx.drawImage(backImg, 0, 0, canvas.width, canvas.height);
 }

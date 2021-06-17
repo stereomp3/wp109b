@@ -2,7 +2,7 @@
 
 * main: <br>
 參考網址： https://www.taipeitimes.com/ <br>
-https://www.w3schools.com/css/css_form.asp
+https://www.w3schools.com/css/css_form.asp <br>
 **版面配置沒有使用套版** <br>
 
 * game: <br>
@@ -11,7 +11,7 @@ https://www.w3schools.com/css/css_form.asp
 https://opengameart.org/content/3-cyberpunk-characters <br>
 背景: <br>
 https://opengameart.org/content/city-background-repetitive-3 <br>
-素材:
+素材: <br>
 https://opengameart.org/content/explosion-set-1-m484-games
 https://opengameart.org/content/meteor-animated-64x64
 https://opengameart.org/content/explosion
@@ -51,8 +51,8 @@ https://opengameart.org/content/bosses-and-monsters-spritesheets-ars-notoria<br>
 5. 利用canvas畫出圖片 <br>
 6. 在canvas上面加入HTML元素 <br>
 
-**遊戲完全純手工打造**
-
+**遊戲完全純手工打造** <br>
+-> [遊戲技術說明](https://github.com/stereomp3/wp109b/tree/main/homework/MyWeb6.0/game) <br>
 * other:
 
   1. 留言板: <br>
@@ -64,6 +64,7 @@ https://opengameart.org/content/bosses-and-monsters-spritesheets-ars-notoria<br>
 
   3. 彩蛋: <br>
 -> 按了會把部分網頁吃掉 <br>
+-> [彩蛋技術說明](https://github.com/stereomp3/wp109b/tree/main/homework/MyWeb6.0/others) <br>
 
 <hr>
 
@@ -73,7 +74,7 @@ https://opengameart.org/content/bosses-and-monsters-spritesheets-ars-notoria<br>
 
 1. 按下不同按鈕顯示不同頁面 <br> 
 說明: 取得id把其他的關閉(none())，再把要顯示的block出來。 <br>
-[MyWeb.js](https://github.com/stereomp3/wp109b/blob/main/homework/MyWeb6.0/MyWeb.js) <br>
+source: [MyWeb.js](https://github.com/stereomp3/wp109b/blob/main/homework/MyWeb6.0/MyWeb.js) <br>
 ```
 var itd = document.getElementById("introduction");
 var src = document.getElementById("source");
@@ -127,7 +128,7 @@ function none() { //關閉全部顯示畫面
 
 2. 按下右上角圖示可改變版面風格 <br>
 說明: 按下按鈕後，取得body和有關屬性值，做出顏色調整。 <br>
-[MyWeb.js](https://github.com/stereomp3/wp109b/blob/main/homework/MyWeb6.0/MyWeb.js) <br>
+source: [MyWeb.js](https://github.com/stereomp3/wp109b/blob/main/homework/MyWeb6.0/MyWeb.js) <br>
 
 ```
 function morningMode() {
@@ -149,7 +150,7 @@ function nightMode() {
 ```
 3. 左上的按鈕可以顯示隱藏內容 <br>
 說明: 跟前面的1.很像，但這裡用迴圈的方式(document.getElementsByClassName("dropdown")[i])改變他們的屬性值。 <br>
-[MyWeb.js](https://github.com/stereomp3/wp109b/blob/main/homework/MyWeb6.0/MyWeb.js) <br>
+source: [MyWeb.js](https://github.com/stereomp3/wp109b/blob/main/homework/MyWeb6.0/MyWeb.js) <br>
 
 ```
 function sideOptionOpen() {
@@ -169,7 +170,7 @@ function sideOptionClose() {
 ```
 4. 選項按鈕固定在螢幕最上端 <br>
 說明: 看到https://www.taipeitimes.com/，https://www.w3schools.com/css/css_form.asp。兩個網站的選項都會固定，所以就查到下面的功能。 <br>
-[MyWeb.html](https://github.com/stereomp3/wp109b/blob/main/homework/MyWeb6.0/MyWeb.html) <br>
+source: [MyWeb.html](https://github.com/stereomp3/wp109b/blob/main/homework/MyWeb6.0/MyWeb.html) <br>
 
 ```
 這個是參考http://www.eion.com.tw/Blogger/?Pid=1154
@@ -197,7 +198,7 @@ function sideOptionClose() {
 ```
 5. 整體大小會隨著視窗改變而變化 <br>
 說明: 利用@media only screen and (max-width: value px)在寬度是1200px和600px做改變。 <br>
-[MyWeb.css](https://github.com/stereomp3/wp109b/blob/main/homework/MyWeb6.0/MyWeb.css) <br>
+source: [MyWeb.css](https://github.com/stereomp3/wp109b/blob/main/homework/MyWeb6.0/MyWeb.css) <br>
 
 ```
 利用CSS去做修改
@@ -237,14 +238,14 @@ function sideOptionClose() {
 
 * game: <br>
 參考另一篇README <br>
--> [GameIntrodution](https://github.com/stereomp3/wp109b/tree/main/homework/MyWeb6.0/game)
+-> [遊戲技術說明](https://github.com/stereomp3/wp109b/tree/main/homework/MyWeb6.0/game)
 
 * other: <br>
 裡面使用的顯示隱藏技術和前面的Main_1.一樣，在此不贅述。 <br>
 
-  1. 留言板: <br>
+1. 留言板: <br>
 技術說明: 利用CSS進行排版(row, container)，再用select做出下拉選單，option做出選項，再用textarea讓使用者可以在裡面打字，本來input裡面的type要用submit，但因為沒有伺服器，所以這裡設置成button。 <br>
-[MyWeb.html](https://github.com/stereomp3/wp109b/blob/main/homework/MyWeb6.0/MyWeb.html) <br>
+source: [MyWeb.html](https://github.com/stereomp3/wp109b/blob/main/homework/MyWeb6.0/MyWeb.html) <br>
 
 ```
 <div class="container" id="FormTable" style="display: none;"> 
@@ -280,10 +281,10 @@ function sideOptionClose() {
 </div>
 ```
 
-  2. 繪畫板: <br>
+2. 繪畫板: <br>
 
 繪畫說明: 這邊設置2個function: changePenColor()和changePenWidth()對應到button上的onclick，可以讓選到的顏色和筆寬放入Pctx.strokeStyle和Pctx.lineWidth裡面。 <br>
-[paintBoard.js](https://github.com/stereomp3/wp109b/blob/main/homework/MyWeb6.0/others/paintBoard.js) <br>
+source: [paintBoard.js](https://github.com/stereomp3/wp109b/blob/main/homework/MyWeb6.0/others/paintBoard.js) <br>
 
 ```
 var p_color = "#000000";
@@ -325,7 +326,7 @@ function changePenWidth() {
 ```
 
 儲存說明: 利用canvas裡面的toDataURL()存取Pcanvas裡面的圖，再把它放入<img>裡面顯示。 <br>
-[paintBoard.js](https://github.com/stereomp3/wp109b/blob/main/homework/MyWeb6.0/others/paintBoard.js) <br>
+source: [paintBoard.js](https://github.com/stereomp3/wp109b/blob/main/homework/MyWeb6.0/others/paintBoard.js) <br>
 
 ```
 function save() {
@@ -337,7 +338,7 @@ function save() {
 }
 ```
 
-  3. 彩蛋: <br>
+3. 彩蛋: <br>
 參考另一篇README <br>
--> [Zerg](https://github.com/stereomp3/wp109b/tree/main/homework/MyWeb6.0/others)
+-> [彩蛋技術說明](https://github.com/stereomp3/wp109b/tree/main/homework/MyWeb6.0/others)
 
