@@ -342,3 +342,6 @@ function save() {
 參考另一篇README <br>
 -> [彩蛋技術說明](https://github.com/stereomp3/wp109b/tree/main/homework/MyWeb6.0/others)
 
+
+* [網頁製作歷史](https://github.com/stereomp3/wp109b/blob/main/homework/MyWeb6.0/WebHistory.md)
+
