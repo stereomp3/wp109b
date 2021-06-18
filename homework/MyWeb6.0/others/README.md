@@ -1,10 +1,10 @@
 ## 技術手段
 
-參考網頁: https://j11y.io/javascript/zerg-rush-in-javascript/
-程式碼基本上都是用: https://github.com/padolsey/ZergRush/blob/master/ZergRush.js
-有修改一些參數(初始位置，感測範圍，一開始生成範圍)
+參考網頁: https://j11y.io/javascript/zerg-rush-in-javascript/ <br>
+程式碼基本上都是用: https://github.com/padolsey/ZergRush/blob/master/ZergRush.js <br>
+有修改一些參數(初始位置，感測範圍，一開始生成範圍) <br>
 
-這個有使用JQuery!
+這個有使用JQuery! <br>
 
 創建了一堆Zerg。每個 Zerg 搜索目標，
 即附近的任何 DOM 元素。Zerg實例將首先觀察它的
