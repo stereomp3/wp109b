@@ -169,7 +169,7 @@ function sideOptionClose() {
 }
 ```
 4. 選項按鈕固定在螢幕最上端 <br>
-說明: 看到https://www.taipeitimes.com/，https://www.w3schools.com/css/css_form.asp。兩個網站的選項都會固定，所以就查到下面的功能。 <br>
+說明: 看到https://www.taipeitimes.com/，https://www.w3schools.com/css/css_form.asp。兩個網站的選項都會固定，所以就查到下面的功能。利用變數bodyTop去接收 window.pageYOffset(這個是y的高度)，偵測到bodyTop>= 80時，把document.getElementById("TopMenu").style.position = "fixed";設為固定在top:0px，其他時候就是相對位置<br>
 source: [MyWeb.html](https://github.com/stereomp3/wp109b/blob/main/homework/MyWeb6.0/MyWeb.html) <br>
 
 ```
