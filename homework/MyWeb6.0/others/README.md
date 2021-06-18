@@ -1,5 +1,9 @@
+## 技術手段
+
 參考網頁: https://www.taipeitimes.com/
 https://www.w3schools.com/html/tryit.asp?filename=tryhtml_table_id2
+
+這個有使用JQuery!
 
 創建了一堆Zerg。每個 Zerg 搜索目標，
 即附近的任何 DOM 元素。Zerg實例將首先觀察它的
@@ -22,7 +26,7 @@ for (radius = 10; radius < Zergling.VISION; radius += 50) {
   }
 
 ```
-有些元素不是目標。例如，我們希望避免
+有些元素不是目標。我們希望避免
 頁面上的其他Zerg把非目標幹掉。我們也希望避免任何過大
 的BODY元素。添加了一項antiZerg功能，以便
 頁面上的元素可以保護自己免受Zerg攻擊：
