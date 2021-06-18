@@ -1,7 +1,6 @@
 ## 技術手段
 
-參考網頁: https://www.taipeitimes.com/
-https://www.w3schools.com/html/tryit.asp?filename=tryhtml_table_id2
+參考網頁: https://j11y.io/javascript/zerg-rush-in-javascript/
 
 這個有使用JQuery!
 
