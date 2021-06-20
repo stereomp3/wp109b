@@ -7,7 +7,7 @@
 學號末兩碼| 41
 教師 | [陳鍾誠](https://www.nqu.edu.tw/educsie/index.php?act=blog&code=list&ids=4)
 學校科系 | [金門大學資訊工程系](https://www.nqu.edu.tw/educsie/index.php)
-課程內容| https://gitlab.com/ccc109/w
+課程內容| https://gitlab.com/ccc109
 我的筆記| [總筆記整理(期中所有筆記)](https://github.com/stereomp3/wp109b/wiki/NoteSortOut.md)
 我的網站| **[我的網站  (目前網頁6.0版)](https://stereomp3.github.io/wp109b/homework/MyWeb6.0/MyWeb.html)**
 !所有筆記都含有圖片!  |  !每個筆記最上方都有word檔可以提供下載筆記內容!
