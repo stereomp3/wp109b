@@ -59,3 +59,25 @@ https://stereomp3.github.io/wp109b/homework/MyWeb5.0/MyWeb.html
 https://stereomp3.github.io/wp109b/homework/MyWeb6.0/MyWeb.html
 
 <hr>
+
+## 第七版網站(MyWeb7.0)[最終版本!]    **遊戲大改版!!!加入彩蛋!!**
+1. 整體:
+<li>增加版面設計和可讀性</li>
+<li>增加font-awesome小圖示</li>
+<li>左側新增Sidenav</li> 
+<li>整體排版加強</li> <br>
+
+2. 遊戲:
+<li>遊戲新增兩位角色</li>
+<li>遊戲新增血條，暫停鍵，遊戲選項，角色選取頁面!!</li>
+<li>遊戲選項放到左邊</li>
+<li>新增雙人對打，和雙人合作模式!!!</li> <br>
+
+3. 其他功能:
+<li>繪畫版大更新，可以存取4個圖案，和刪除圖案</li>
+<li>繪畫版排版加強</li>
+<li>彩蛋功能完善!!</li> <br>
+
+https://stereomp3.github.io/wp109b/homework/MyWeb7.0/MyWeb.html
+
+<hr>
