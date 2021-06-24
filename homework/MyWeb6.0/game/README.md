@@ -1,7 +1,7 @@
 ## 技術手段
 
 1. 遊戲fps控制 <br>
-說明: 這裡使用window.requestAnimationFrame製作動畫，但是速度無法控制，所以就自訂函數startAnimating(fps)，首先，讀入fpsInterval(想要的禎數)， **preTimestap(紀錄時間)** ，再通過window.requestAnimationFrame(loop, canvas);呼叫loop，這時， **preTimestap(紀錄時間)** 會不動，但 **timestamp(紀錄目前時間)** 會因為在loop裡，而一直增加，最後，用progress計算時間差，時間差要大於想要的禎數才會進入主遊戲動畫，這樣就完成fps控制了。
+   * 說明: 這裡使用window.requestAnimationFrame製作動畫，但是速度無法控制，所以就自訂函數startAnimating(fps)，首先，讀入fpsInterval(想要的禎數)， **preTimestap(紀錄時間)** ，再通過window.requestAnimationFrame(loop, canvas);呼叫loop，這時， **preTimestap(紀錄時間)** 會不動，但 **timestamp(紀錄目前時間)** 會因為在loop裡，而一直增加，最後，用progress計算時間差，時間差要大於想要的禎數才會進入主遊戲動畫，這樣就完成fps控制了。
 
 ```
 function startAnimating(fps) {
@@ -42,7 +42,7 @@ function MainGame() {
 ```
 
 3. 角色和怪物模組化，分開呼叫 <br>
-角色說明: 裡面主要是用flag去判斷是要放哪張角色圖片，如果是攻擊就是Pflag++，如果是一般情況就是flag++，如果是跳就是Jflag++，dirFlag主要是定方向，if(dirFlag)就是方向為右。玩家和怪物的攻擊判定是用Math.abs(x - Mx)絕對值去做判斷，所以有時候圖片明明沒打到還是有傷害，頭疼。 <br>
+   * 角色說明: 裡面主要是用flag去判斷是要放哪張角色圖片，如果是攻擊就是Pflag++，如果是一般情況就是flag++，如果是跳就是Jflag++，dirFlag主要是定方向，if(dirFlag)就是方向為右。玩家和怪物的攻擊判定是用Math.abs(x - Mx)絕對值去做判斷，所以有時候圖片明明沒打到還是有傷害，頭疼。 <br>
 
 ```
 let flag = 0, Jflag = 0, Pflag = 0, WPflag = 0, SPflag = 0, timer = 0;
@@ -64,7 +64,7 @@ Player = {
 }
 ```
 
-怪物說明: 怪物基本上跟玩家差不多，只不過是把它設成ai，讓子彈追蹤玩家，讓怪獸徘徊，讓子彈反彈，但程式碼很長，有興趣可以看最下面的source。 <br>
+   * 怪物說明: 怪物基本上跟玩家差不多，只不過是把它設成ai，讓子彈追蹤玩家，讓怪獸徘徊，讓子彈反彈，但程式碼很長，有興趣可以看最下面的source。 <br>
 
 ```
 let MonsterFlag = 0; MonsterTimer = 0;
@@ -106,7 +106,7 @@ Monster = {
 }
 ```
 
-背景說明: 判定人物碰到canvas的邊界會讓BackImgFlag++或--，而改變背景。 <br>
+   * 背景說明: 判定人物碰到canvas的邊界會讓BackImgFlag++或--，而改變背景。 <br>
 
 ```
 var BackImgFlag = 0;
@@ -138,10 +138,10 @@ Backgroumd = {
 }
 ```
 
-source: [角色](https://github.com/stereomp3/wp109b/blob/main/homework/MyWeb6.0/game/Player.js)， [怪物](https://github.com/stereomp3/wp109b/blob/main/homework/MyWeb6.0/game/Monster.js)， [背景](https://github.com/stereomp3/wp109b/blob/main/homework/MyWeb6.0/game/Background.js)
+   * source: [角色](https://github.com/stereomp3/wp109b/blob/main/homework/MyWeb6.0/game/Player.js)， [怪物](https://github.com/stereomp3/wp109b/blob/main/homework/MyWeb6.0/game/Monster.js)， [背景](https://github.com/stereomp3/wp109b/blob/main/homework/MyWeb6.0/game/Background.js)
 
 4. 利用canvas畫出圖片 <br>
-說明:
+   * 說明: 如下方表示
 
 ```
 var canvas, Pcanvas, ctx, Pctx, Img, SubImg, backImg, MonsterImg, MonsterAttcakImg;
@@ -172,7 +172,7 @@ function draw() {
 ```
 
 5. 在canvas上面加入HTML元素 <br>
-說明: 利用style裡面的z-index，把要放在canvas上的html元素z-index設大一點，再用margin控制它的位置。
+   * 說明: 利用style裡面的z-index，把要放在canvas上的html元素z-index設大一點，再用margin控制它的位置。
 
 ```
 這是在canvas上面的button
@@ -187,7 +187,7 @@ function draw() {
 }
 ```
 6. 遊戲預載入圖片 <br>
-說明: 如果圖片沒有載入，會導致螢幕閃爍，這裡用很多矩陣去存取所有的圖片，並讓他們保持讀取狀態
+   * 說明: 如果圖片沒有載入，會導致螢幕閃爍，這裡用很多矩陣去存取所有的圖片，並讓他們保持讀取狀態
 
 ```
 let preloadImage = [];
