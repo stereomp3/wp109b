@@ -18,7 +18,7 @@
         this.rush = rush; // ZergRush instance
         this.speed = 3;
         this.x = x + document.body.offsetWidth/9*4;
-        this.y = y + + document.body.offsetWidth/11*4;
+        this.y = y + document.body.offsetWidth/11*4;
 
         this.width = document.body.offsetWidth/100;
         this.height = document.body.offsetWidth/100;

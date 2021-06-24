@@ -1,7 +1,7 @@
 ## 技術手段
 
 1. 遊戲fps控制 <br>
-說明: 這裡使用window.requestAnimationFrame製作動畫，但是速度無法控制，所以就自訂函數startAnimating(fps)，首先，讀入fpsInterval(想要的禎數)， **preTimestap(紀錄時間)** ，再通過window.requestAnimationFrame(loop, canvas);呼叫loop，這時， **preTimestap(紀錄時間)** 會不動，但 **timestamp(紀錄目前時間)** 會因為在loop裡，而一直增加，最後，用progress計算時間差，時間差要大於想要的禎數才會進入主遊戲動畫，這樣就完成fps控制了。
+   * 說明: 這裡使用window.requestAnimationFrame製作動畫，但是速度無法控制，所以就自訂函數startAnimating(fps)，首先，讀入fpsInterval(想要的禎數)， **preTimestap(紀錄時間)** ，再通過window.requestAnimationFrame(loop, canvas);呼叫loop，這時， **preTimestap(紀錄時間)** 會不動，但 **timestamp(紀錄目前時間)** 會因為在loop裡，而一直增加，最後，用progress計算時間差，時間差要大於想要的禎數才會進入主遊戲動畫，這樣就完成fps控制了。
 
 ```
 function startAnimating(fps) {
@@ -26,7 +26,7 @@ function MainGame() {
 }
 ```
 2. 角色利用keycode控制 <br>
-說明: 在遊戲一開始時，加入整個文件(網頁)的事件，再利用自訂矩陣keystate[event.code]存取每個按鍵的布林值，在角色控制時，利用if(keystate[LeftDir])判斷按鍵，向這個就是按下A鍵(遊戲中人物向左) <br>
+   * 說明: 在遊戲一開始時，加入整個文件(網頁)的事件，再利用自訂矩陣keystate[event.code]存取每個按鍵的布林值，在角色控制時，利用if(keystate[LeftDir])判斷按鍵，向這個就是按下A鍵(遊戲中人物向左) <br>
 
 ```
 var RightDir = "KeyD", LeftDir = "KeyA", UpDir = "KeyW", downDir = "KeyS", Jump = "KeyK", shift = "KeyL", punch = "KeyJ", keystate = [];//wasd, jkl
@@ -42,7 +42,7 @@ function MainGame() {
 ```
 
 3. 角色和怪物模組化，分開呼叫 <br>
-角色說明: 裡面主要是用flag去判斷是要放哪張角色圖片，如果是攻擊就是Pflag++，如果是一般情況就是flag++，如果是跳就是Jflag++，dirFlag主要是定方向，if(dirFlag)就是方向為右。玩家和怪物的攻擊判定是用Math.abs(x - Mx)絕對值去做判斷，所以有時候圖片明明沒打到還是有傷害，頭疼。 <br>
+   * 角色說明: 裡面主要是用flag去判斷是要放哪張角色圖片，如果是攻擊就是Pflag++，如果是一般情況就是flag++，如果是跳就是Jflag++，dirFlag主要是定方向，if(dirFlag)就是方向為右。玩家和怪物的攻擊判定是用Math.abs(x - Mx)絕對值去做判斷，所以有時候圖片明明沒打到還是有傷害，頭疼。 <br>
 
 ```
 let flag = 0, Jflag = 0, Pflag = 0, WPflag = 0, SPflag = 0, timer = 0;
@@ -63,8 +63,8 @@ Player = {
   },
 }
 ```
-
-怪物說明: 怪物基本上跟玩家差不多，只不過是把它設成ai，讓子彈追蹤玩家，讓怪獸徘徊，讓子彈反彈，但程式碼很長，有興趣可以看最下面的source。 <br>
+*
+   * 怪物說明: 怪物基本上跟玩家差不多，只不過是把它設成ai，讓子彈追蹤玩家，讓怪獸徘徊，讓子彈反彈，但程式碼很長，有興趣可以看最下面的source。 <br>
 
 ```
 let MonsterFlag = 0; MonsterTimer = 0;
@@ -105,8 +105,8 @@ Monster = {
     },
 }
 ```
-
-背景說明: 判定人物碰到canvas的邊界會讓BackImgFlag++或--，而改變背景。 <br>
+*
+   * 背景說明: 判定人物碰到canvas的邊界會讓BackImgFlag++或--，而改變背景。 <br>
 
 ```
 var BackImgFlag = 0;
@@ -137,11 +137,11 @@ Backgroumd = {
     }
 }
 ```
-
-source: [角色](https://github.com/stereomp3/wp109b/blob/main/homework/MyWeb6.0/game/Player.js)， [怪物](https://github.com/stereomp3/wp109b/blob/main/homework/MyWeb6.0/game/Monster.js)， [背景](https://github.com/stereomp3/wp109b/blob/main/homework/MyWeb6.0/game/Background.js)
+*
+   * source: [角色](https://github.com/stereomp3/wp109b/blob/main/homework/MyWeb6.0/game/Player.js)， [怪物](https://github.com/stereomp3/wp109b/blob/main/homework/MyWeb6.0/game/Monster.js)， [背景](https://github.com/stereomp3/wp109b/blob/main/homework/MyWeb6.0/game/Background.js)
 
 4. 利用canvas畫出圖片 <br>
-說明:
+   * 說明:
 
 ```
 var canvas, Pcanvas, ctx, Pctx, Img, SubImg, backImg, MonsterImg, MonsterAttcakImg;
@@ -172,7 +172,7 @@ function draw() {
 ```
 
 5. 在canvas上面加入HTML元素 <br>
-說明: 利用style裡面的z-index，把要放在canvas上的html元素z-index設大一點，再用margin控制它的位置。
+   * 說明: 利用style裡面的z-index，把要放在canvas上的html元素z-index設大一點，再用margin控制它的位置。
 
 ```
 這是在canvas上面的button
@@ -187,9 +187,10 @@ function draw() {
 }
 ```
 6. 遊戲預載入圖片 <br>
-說明: 如果圖片沒有載入，會導致螢幕閃爍，這裡用很多矩陣去存取所有的圖片，並讓他們保持讀取狀態
+   * 說明: 如果圖片沒有載入，會導致螢幕閃爍，這裡用很多矩陣去存取所有的圖片，並讓他們保持讀取狀態
 
 ```
+//這邊列出一部份，完整的在gameinit.js裡面
 let preloadImage = [];
 let preloadImagesR = Array(9).fill().map(() => Array(6));//m列n行Array(m).fill().map(() => Array(n))
 let preloadImagesL = Array(9).fill().map(() => Array(6));//m列n行
@@ -245,3 +246,117 @@ function preload() {
     }
 }
 ```
+
+7. 被打到會紅屏 <br>
+   * 說明:利用血條變化來判定是否受到傷害，如果受到傷害，就用ctx.fillRect畫一個全屏的紅色
+
+```
+function PIsHurt() {//玩家被打到紅屏
+    if (PlayerLiveBar != PLiveBarRegister || Player2LiveBar != P2LiveBarRegister) {
+        ctx.fillStyle = "rgba(255,0,0,0.3)"//最後一個是透明度
+        ctx.fillRect(0, 0, canvas.width, canvas.height)
+        PLiveBarRegister = PlayerLiveBar
+        P2LiveBarRegister = Player2LiveBar
+    }
+    else {
+        ctx.fillStyle = "rgba(255,0,0,0)"
+        ctx.fillRect(0, 0, canvas.width, canvas.height)
+    }
+}
+
+```
+8. 遊戲設置血條 <br>
+   * 說明:寫到這裡，就有感覺視窗和程式碼分開了，利用HTML的button的width(CSS)變化做出血條的效果
+
+```
+//CSS
+#PlayerLiveBar, #MonsterLiveBar, #Player2LiveBar{
+    margin-top: 5%;
+    height: 25px;
+    background: rgb(255, 1, 1);
+    border: 3px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    position: absolute; 
+    display: none;
+    z-index: 2;
+}
+#PlayerLiveBar{ left: 25%; }
+#MonsterLiveBar{ left: 66%; }
+#Player2LiveBar{ left: 43%;}
+```
+
+```
+//JS
+//把寫條轉文字放入width裡面，如果血量低於0，則血量條消失
+if(PlayerLiveBar>=0)document.getElementById("PlayerLiveBar").style.width = PlayerLiveBar.toString()+"px"
+else document.getElementById("PlayerLiveBar").style.display = "none"
+```
+9. 遊戲設置暫停按鈕 <br>
+   * 說明:利用font-awesome的圖，搭配onclick，讓在 GameStop = true 時，遊戲停住
+
+```
+//HTML
+
+<i class="fa fa-pause-circle" aria-hidden="true" id="GameStop" 
+onclick="GameStop = true; GameStartId.display = 'block'; GameStopId.display = 'none';" ></i>
+
+<i class="fa fa-play-circle" aria-hidden="true" id="GameStart" style="display: none;
+"onclick="GameStop = false; GameStopId.display = 'block'; GameStartId.display = 'none';" ></i>
+```
+
+```
+//JS
+if (progress > fpsInterval && !GameStop) {//GameStop=true停止遊戲
+        startAnimating(12);
+        if (GamePlayMode == 2) {//two player mode (2)
+            upgrade();
+            draw();
+
+            if (GameStart == 0) {
+                //...
+            }
+        }
+        else if (MonsterStart == 2) {
+            //...
+        }
+        else if (GameStart == 1)//Game ing (1,3)
+        {
+            //..
+        }
+        else {//..}
+    }
+    window.requestAnimationFrame(loop, canvas);
+}
+```
+
+10. 遊戲可以選擇多角色 <br>
+   * 說明: 利用矩陣去存取變數`PlayerChoose = [1, 1]`，PlayerChoose[0]是P1，PlayerChoose[1]是P2，裡面的值對應到不同的角色
+
+```
+//HTML
+
+<img onclick="GameBegin(); PlayerChoose[0] = 1;" id="character1" src="picture/material/Character1/R/idle/0.png" alt="error">
+<img onclick="GameBegin(); PlayerChoose[0] = 2;" id="character2" src="picture/material/Character2/R/idle/0.png" alt="error">
+<img onclick="GameBegin(); PlayerChoose[0] = 3;" id="character3" src="picture/material/Character3/R/idle/0.png" alt="error">
+<img onclick="GameInit(); MainGame(); PlayerChoose[1] = 1;" id="P2character1" src="picture/material/Character1/R/idle/0.png" alt="error">
+<img onclick="GameInit(); MainGame(); PlayerChoose[1] = 2;" id="P2character2" src="picture/material/Character2/R/idle/0.png" alt="error">
+<img onclick="GameInit(); MainGame(); PlayerChoose[1] = 3;" id="P2character3" src="picture/material/Character3/R/idle/0.png" alt="error">
+
+//按下不同的按鈕，會選到不同的角色
+```
+11. 遊戲可以雙人對戰和雙人合作! <br>
+   * 說明: 利用許多矩陣和變數讓Boss判定玩家位置，增加這模式讓我程式碼瞬間暴增QQ
+
+```
+//新增參數
+var Player2_x = 600, Player2_y = 430, dPlayer2_x = 20, dPlayre2_y = 30, SupportP2_x = 0, SupportP2_y = 0;
+var RightDir2 = "ArrowRight", LeftDir2 = "ArrowLeft", UpDir2 = "ArrowUp", downDir2 = "ArrowDown", Jump2 = "Numpad2", shift2 = "Numpad3", punch2 = "Numpad1";//player2
+let flag2 = 0, Jflag2 = 0, Pflag2 = 0, WPflag2 = 0, SPflag2 = 0; dirFlag2 = false;
+let PlayerLiveBar = 100, Player2LiveBar = 100; PLiveBarRegister = 100; P2LiveBarRegister = 100//製作受擊特效
+var PlayerChoose = [1, 1], GamePlayMode = 1;//1是單人，2是雙人對戰，3是雙人合作
+
+光是新增的變數就這麼多了，但其實製作內容是很相同的，大多是複製貼上，
+但判定攻擊和位置還是挺花時間的，可以到上面的js檔看看長得要命的程式碼
+```
+
+* 其他還有很多我沒說到的功能，就等著你們看我的source code去探索啦!!!!!

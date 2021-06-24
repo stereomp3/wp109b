@@ -1,12 +1,12 @@
 ## 技術手段
 
-參考網頁: https://j11y.io/javascript/zerg-rush-in-javascript/ <br>
-程式碼基本上都是用: https://github.com/padolsey/ZergRush/blob/master/ZergRush.js <br>
-有修改一些參數(初始位置，感測範圍，一開始生成範圍) <br>
+* 參考網頁: https://j11y.io/javascript/zerg-rush-in-javascript/ <br>
+* 程式碼基本上都是用: https://github.com/padolsey/ZergRush/blob/master/ZergRush.js <br>
+* 有修改一些參數(初始位置，感測範圍，一開始生成範圍，比例對應) <br>
 
-這個有使用JQuery! <br>
+* 這個有使用JQuery! <br>
 
-創建了一堆Zerg。每個 Zerg 搜索目標，
+* 創建了一堆Zerg。每個 Zerg 搜索目標，
 即附近的任何 DOM 元素。Zerg實例將首先觀察它的
 附近，elementFromPoint以八度轉彎並圍繞一個
 穩步增加的半徑呼叫：
@@ -27,7 +27,7 @@ for (radius = 10; radius < Zergling.VISION; radius += 50) {
   }
 
 ```
-有些元素不是目標。我們希望避免
+* 有些元素不是目標。我們希望避免
 頁面上的其他Zerg把非目標幹掉。我們也希望避免任何過大
 的BODY元素。添加了一項antiZerg功能，以便
 頁面上的元素可以保護自己免受Zerg攻擊：
@@ -62,7 +62,7 @@ Zergling.isSuitableTarget = function isSuitableTarget(candidate) {
 };
 ```
 
-一旦我們感應到目標，就開始朝著它前進。
+* 一旦我們感應到目標，就開始朝著它前進。
 
 ```
 alcMovement: function() {
@@ -80,7 +80,7 @@ alcMovement: function() {
 }, //...
 ```
 
-每一步，Zerg都需要檢查它是否已經到要幹掉的目標位置：
+* 每一步，Zerg都需要檢查它是否已經到要幹掉的目標位置：
 
 ```
 hasReachedTarget: function() {
@@ -95,7 +95,7 @@ hasReachedTarget: function() {
 }, //...
 ```
 
-當一隻跳蟲到達它的目標時，它就會開始殺死它：
+* 當一隻跳蟲到達它的目標時，它就會開始殺死它：
 
 ```
 if (this.hasReachedTarget()) {
@@ -104,7 +104,7 @@ if (this.hasReachedTarget()) {
 }
 ```
 
-殺的過程
+*殺的過程
 
 ```
 if (this.isKilling) {
@@ -123,10 +123,10 @@ if (this.isKilling) {
   return;
 }
 ```
-設置this.target為null意味著Zerg
+* 設置this.target為null意味著Zerg
 將在下一步開始尋找新目標。
 
-為了管理所有的Zerg，這裡整理了一個ZergRush類：
+* 為了管理所有的Zerg，這裡整理了一個ZergRush類：
 
 ```
 function ZergRush(nZerglings) {
@@ -153,8 +153,7 @@ function ZergRush(nZerglings) {
 ```
 
 
-所有Zerg從頁面中間的隨機位置開始
-（從{700,500}到 的任意位置{300,300}）。
+所有Zerg從頁面中間的隨機位置開始，用 document.body.offsetWidth/..，讓紅點不會因為視窗改變而改位置
 
 Zerg目前只是小紅點，如下所示：
 
@@ -168,9 +167,17 @@ this.dom = $('<zergling>').css({
   position: 'absolute',
   display: 'block',
   background: 'red',
-  left: x+700,
-  top: y+500,
+  left: x+ document.body.offsetWidth/9*4,
+  top: y+document.body.offsetWidth/11*4,
   borderRadius: '5px',
   zIndex: 9999
 }).
+```
+* 呼叫Zerg出來並設置數量(50)
+
+```
+var z;
+function go() {
+    z = new ZergRush(50);//呼叫出zerg數目
+};
 ```

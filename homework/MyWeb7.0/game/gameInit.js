@@ -87,7 +87,7 @@ function MainGame() {
             GameStopId.display = "block"
         }
 
-        if (progress > fpsInterval && !GameStop) {
+        if (progress > fpsInterval && !GameStop) {//GameStop=true停止遊戲
             startAnimating(12);
             if (GamePlayMode == 2) {//two player mode (2)
                 upgrade();

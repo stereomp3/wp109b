@@ -224,7 +224,7 @@ function getRandomArbitrary(min, max) {
 
 function PIsHurt() {//玩家被打到紅屏
     if (PlayerLiveBar != PLiveBarRegister || Player2LiveBar != P2LiveBarRegister) {
-        ctx.fillStyle = "rgba(255,0,0,0.3)"
+        ctx.fillStyle = "rgba(255,0,0,0.3)"//最後一個是透明度
         ctx.fillRect(0, 0, canvas.width, canvas.height)
         PLiveBarRegister = PlayerLiveBar
         P2LiveBarRegister = Player2LiveBar
