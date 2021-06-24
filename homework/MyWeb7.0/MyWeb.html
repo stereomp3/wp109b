@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="MyWeb.css">
+    <link rel="stylesheet" href="MyWebMoble.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body onload="preload(); GameInit(); PBinit();">
+
+
+    <script>//下滑改變屬型  
+        function getScrollTop() {//參考http://www.eion.com.tw/Blogger/?Pid=1154       
+            var bodyTop = 0;
+            if (typeof window.pageYOffset != "undefined") {
+                bodyTop = window.pageYOffset;
+
+            } else if (typeof document.compatMode != "undefined"
+                && document.compatMode != "BackCompat") {
+                bodyTop = document.documentElement.scrollTop;
+
+            } else if (typeof document.body != "undefined") {
+                bodyTop = document.body.scrollTop;
+            }
+            //顯示出捲動後的高度值
+            //document.getElementById("jsScrollTop").innerHTML = bodyTop;
+            if (bodyTop >= 80) document.getElementById("TopMenu").style.position = "fixed";
+            else document.getElementById("TopMenu").style.position = "relative";
+            window.requestAnimationFrame(getScrollTop);
+        }
+        window.requestAnimationFrame(getScrollTop);
+    </script>
+
+    <div id="header">
+        <h1 id="jsScrollTop">
+            <i class="fa fa-heart" aria-hidden="true"></i> Website 7.0 \(^ V ^)/ <i class="fa fa-heart-o" aria-hidden="true"></i>
+            <a onclick="morningMode();" id="morning"
+                style="display: block; float: right; cursor: pointer; ">&#127761</a>
+            <a onclick="nightMode();" id="night" style="display: none; float: right; cursor: pointer; ">&#127765</a>
+        </h1>
+    </div>
+
+    <div id="TopMenu">
+        <button onclick="Source()">source</button>
+        <button onclick="Others()">others</button>
+        <button onclick="Game()">game</button>
+        <button onclick="Informations()">Informations</button>
+        <button onclick="Introduction()" style="background: #777474d2;">Introduction</button>
+        <a onclick="sideOptionOpen()" id="sideOptionOpen">&#9776</a>
+        <a onclick="sideOptionClose()" id="sideOptionClose" style="display: none;">&#9587</a>
+    </div>
+
+    <div id="LeftSideSpace">&nbsp;</div>
+
+    <!--//////下面是側攔////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+    <div style="width: 100%; height: 1696px;">
+        <div id="SideOption">
+
+            <div class="dropdown">
+                <p style="font-size: 50px;">introdution</p>
+                <div class="dropdown-content">
+                    <div class="side">
+                        <p class="form1">
+                            姓名:魏仲彥
+                        </p>
+                        <p class="form1">
+                            學歷:高中畢業
+                        </p>
+                        <p class="form1">
+                            興趣:鋼琴，畫畫，在電腦前面耍費
+                        </p>
+                        <p class="form1">
+                            專長:吃飯，睡覺
+                        </p>
+                        <p class="form1">
+                            個人特質:擅長看別人甚麼時候生氣，吃飯絕對不請客
+                        </p>
+                        <p class="form1">
+                            其他:這就要由大家一起來觀察了>0< </p>
+                    </div>
+
+                    <div class="side">
+                        <img src="picture/boy.jpg" alt="error" style="width:540px;height:360px;">
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="dropdown">
+                <p style="font-size: 50px;">information</p>
+                <div class="dropdown-content">
+                    <div class="side">
+                        <a href="https://www.facebook.com/ericjjkk" target=_blank; class="form1">
+                            my facebook <i class="fa fa-facebook-official" aria-hidden="true"></i><br><br>
+                        </a>
+                        <a href="https://github.com/stereomp3/wp109b/wiki" target=_blank; class="form1">
+                            My git hub <i class="fa fa-github-square" aria-hidden="true"></i><br><br>
+                        </a>
+                        <a href="https://www.w3schools.com/" target=_blank; class="form1">
+                            learning HTML <br><br>
+                        </a>
+                    </div>
+
+                    <div class="side">
+                        <img src="picture/photo.jpg" alt="error" style="width:610px;height:475px;">
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="dropdown">
+                <p style="font-size: 50px;">others</p>
+                <div class="dropdown-content">
+
+                    <div class="side">
+                        <p class="form1">
+                            其他沒其他
+                        </p>
+                        <p class="form1">
+                            我愛鋼琴
+                        </p>
+                        <p class="form1">
+                            也愛睡覺
+                        </p>
+                        <p class="form1">
+                            愛看動漫(刀劍，柯南，入間，航海王)
+                        </p>
+                        <p class="form1">
+                            也愛畫畫
+                        </p>
+                        <p class="form1">
+                            其他沒其他了
+                        </p>
+                    </div>
+
+                    <div class="side">
+                        <img src="picture/others.png" alt="error" style="width:540px;height:360px;">
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="dropdown">
+                <p style="font-size: 50px;">game</p>
+                <div class="dropdown-content">
+
+                    <div class="side">
+                        <p class="form1">
+                            遊戲介紹
+                        </p>
+                        <p class="form1">
+                            製作人 : 魏仲彥
+                        </p>
+                        <p class="form1">
+                            繪師 : 魏仲彥
+                        </p>
+                        <p class="form1">
+                            指導老師 : 陳鍾誠老師
+                        </p>
+                    </div>
+
+                    <div class="side">
+                        <img src="picture/GAME.png" alt="error" style="width:540px;height:360px;">
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="dropdown">
+                <p style="font-size: 50px;">source</p>
+                <div class="dropdown-content">
+
+                    <div class="side" style="width: 100%;">
+                        <p class="form1">
+                            人物:https://opengameart.org/content/3-cyberpunk-characters
+                        </p>
+                        <p class="form1">
+                            背景:https://opengameart.org/content/city-background-repetitive-3
+                        </p>
+                        <p class="form1">
+                            素材:https://opengameart.org/content/explosion-set-1-m484-games
+                            https://opengameart.org/content/meteor-animated-64x64
+                            https://opengameart.org/content/explosion
+                            https://opengameart.org/content/animated-fireball
+                            https://opengameart.org/content/sparks-fire-ice-blood
+                        </p>
+                        <p class="form1">
+                            moster : https://opengameart.org/content/animated-skeleton
+                            https://opengameart.org/content/animated-snake
+                            https://opengameart.org/content/bosses-and-monsters-spritesheets-ars-notoria
+                        </p>
+                        <p class="form1">
+                            參考版面: https://www.taipeitimes.com/
+                            https://www.w3schools.com/css/css_form.asp
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="dropdown">
+                <p style="font-size: 50px; height: 800px;"></p>
+            </div>
+
+        </div>
+        <!--////////////下面是網站介紹////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+        <div class="column">
+            <div id="introduction" style="display: block;">
+                
+                <h2>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-chevron-circle-up" aria-hidden="true"></i>歡迎到網站簡介(Introduction)</h2>
+                <h3 style="font-size: 40px;" class="container">
+                    (￣▽￣)~*可以到<a href="https://github.com/stereomp3/wp109b/wiki" target=_blank;>git hub<i class="fa fa-github" aria-hidden="true"></i></a> 去看我的課堂筆記呦~~
+                </h3>
+                <table style="width:100%;">
+                    <tr>
+                        <th>網站介紹</th>
+                        <td>
+                            <strong>!![大推]點擊game可以玩精心製作的小遊戲(有夠難做இдஇ)!!</strong> <br>
+                            左邊的 &#9776 可以看到隱藏的選單 <br>
+                            點擊information可以看到我的資訊 <br> 
+                            點擊information可以看到我的資訊 <br>
+                            點擊oters可以看到其他有的沒的 <br>
+                            點擊soure可以看到資料參考和圖片來源 <br>
+                            Website 右邊有月亮可以點及切換介面顏色呦 <br>
+                        </td>
+                        <td>重要度: &#10031&#10031&#10031</td>
+                    </tr>
+                    <tr>
+                        <th>資訊介紹</th>
+                        <td>有用沒用的資訊都在這大概</td>
+                        <td>重要度: &#10031</td>
+                    </tr>
+                    <tr>
+                        <th>遊戲</th>
+                        <td>
+                            我只能說，遊戲真的很難做，做完才知道體諒遊戲製造商 <br>
+                            寫邏輯真的難 (ఠ్ఠ ˓̭ ఠ్ఠ) <br>
+                            我寫的遊戲沒有用框架，完全純手工打造~~ <br>
+                            只有圖片是外面來的spirtsheet，資料來源遊戲下面和source
+
+                        </td>
+                        <td>重要度: &#10031&#10031&#10031&#10031&#10031&#10031</td>
+                    </tr>
+                    <tr>
+                        <th>其他</th>
+                        <td>
+                            這裡有其他的東西(≖‿ゝ≖)✧
+                            像是繪畫版(功能完整!!)，留言板(0.0)
+                        </td>
+                        <td>重要度: &#10031&#10031&#10031&#10031</td>
+                    </tr>
+                    <tr>
+                        <th>參考資料</th>
+                        <td>裡面的網站配置我都是看看再作改編，做得太醜請見諒(￣口￣)!!</td>
+                        <td>重要度: &#10031&#10031&#10031&#10031</td>
+                    </tr>
+                </table>
+                <br>
+            </div>
+        </div>
+        <!--///////////////////////下面是資訊介紹/////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+        <div class="column">
+            <div id="informations" style="display: none;">
+                <h2>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-chevron-circle-up" aria-hidden="true"></i>歡迎到資訊介紹(Information)</h2>
+
+                <h3 style="font-size: 40px;" class="container"> 我的網站連結</h3>
+
+                <h3 style="font-size: 30px;">
+                    <i class="fa fa-stop" aria-hidden="true"></i> 可以到<a href="https://github.com/stereomp3/wp109b/wiki" target=_blank;>git hub<i class="fa fa-github" aria-hidden="true"></i></a>看我的精美筆記喔 (=`д´=)
+                </h3>
+                <a href="https://www.facebook.com/ericjjkk" target=_blank; style="font-size: 30px;">
+                    <i class="fa fa-stop" aria-hidden="true"></i> my facebook <i class="fa fa-facebook-official" aria-hidden="true"></i><br><br>
+                </a>
+
+                <a href="https://www.w3schools.com/" target=_blank; style="font-size: 30px;">
+                    <i class="fa fa-stop" aria-hidden="true"></i> learning HTML <br><br>
+                </a>
+
+                <h3 style="font-size: 40px;" class="container"> 下面有不錯的時事網址可以看優</h3>
+                <br><br>
+                <a href="https://www.ithome.com.tw/" target=_blank; style="font-size: 30px;">
+                    <i class="fa fa-stop" aria-hidden="true"></i> 資訊業時事&nbsp;&nbsp;&nbsp;&nbsp;
+                </a>
+                <a href="https://www.mem.com.tw/" target=_blank; style="font-size: 30px;">
+                    電子雜誌&nbsp;&nbsp;&nbsp;&nbsp;
+                </a>
+                <a href="https://www.itri.org.tw/ListStyle.aspx?DisplayStyle=13&SiteID=1&MmmID=1036233405427625204"
+                    target=_blank; style="font-size: 30px;"> <br><br>
+                    <i class="fa fa-stop" aria-hidden="true"></i> 技術研究院&nbsp;&nbsp;&nbsp;&nbsp;
+                </a>
+                <a href="https://www.edntaiwan.com//" target=_blank; style="font-size: 30px;">
+                    電子業時事 &nbsp;&nbsp;&nbsp;&nbsp;
+                </a>
+                <a href="https://www.eettaiwan.com/news/" target=_blank; style="font-size: 30px;">
+                    電子工程 &nbsp;&nbsp;&nbsp;&nbsp;
+                </a>
+
+                <h3 style="font-size: 40px;" class="container">
+                    O-(///￣皿￣)☞ ─═≡☆<a href="https://github.com/stereomp3/wp109b/wiki">git hub<i class="fa fa-github" aria-hidden="true"></i></a>有我的課堂筆記！！
+                </h3>
+                <br>
+            </div>
+        </div>
+        <!--/////////////////////下面是遊戲區////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+        <div class="column">
+            <div id="game" style="display: none; text-align: center;">
+                <i class="fa fa-pause-circle" aria-hidden="true" id="GameStop" 
+                onclick="GameStop = true; GameStartId.display = 'block'; GameStopId.display = 'none';" ></i>
+                <i class="fa fa-play-circle" aria-hidden="true" id="GameStart" style="display: none;"
+                onclick="GameStop = false; GameStopId.display = 'block'; GameStartId.display = 'none';" ></i>
+
+                <button onclick="document.getElementById('GameText').style.display ='block'" class="Sidenav"
+                style="top: 410px; background-color: rgb(0, 0, 0);">遊戲介紹</button>
+                
+                <div id="GameInitOptionFrame"></div>
+                <img onclick="GameInitOptionShow(); GameInit();" id="GameInitOption3" src="picture/material/background/56.png" alt="error">
+                <img onclick="PVM();" id="GameInitOption" src="picture/material/background/55.png" alt="error">
+                <img onclick="PVP();" id="GameInitOption2" src="picture/material/background/54.png" alt="error">
+                <img onclick="PPVM();" id="GameInitOption4" src="picture/material/background/59.png" alt="error">
+                <img onclick="GameBegin(); PlayerChoose[0] = 1;" id="character1" src="picture/material/Character1/R/idle/0.png" alt="error">
+                <img onclick="GameBegin(); PlayerChoose[0] = 2;" id="character2" src="picture/material/Character2/R/idle/0.png" alt="error">
+                <img onclick="GameBegin(); PlayerChoose[0] = 3;" id="character3" src="picture/material/Character3/R/idle/0.png" alt="error">
+                <img onclick="GameInit(); MainGame(); PlayerChoose[1] = 1;" id="P2character1" src="picture/material/Character1/R/idle/0.png" alt="error">
+                <img onclick="GameInit(); MainGame(); PlayerChoose[1] = 2;" id="P2character2" src="picture/material/Character2/R/idle/0.png" alt="error">
+                <img onclick="GameInit(); MainGame(); PlayerChoose[1] = 3;" id="P2character3" src="picture/material/Character3/R/idle/0.png" alt="error">
+
+                <div id="PlayerLiveBar"></div>
+                <div id="Player2LiveBar"></div>
+                <div id="MonsterLiveBar"></div>
+                
+                <canvas id="MyCanvas" width="800" height="550" style="border:0.1px solid rgb(82, 80, 79); width: 100%;  height: auto;">  </canvas>
+                
+                <div style="display: none;">
+                    <!--P1-->
+                    <img src="picture/material/Character1/R/move/0.png" alt="error" style="width:273px;height:517px;" id="picture">
+                    <img src="picture/material/0.png" alt="error" style="width:273px;height:517px;" id="SubPicture">
+                    <!--P2-->
+                    <img src="picture/material/Character2/R/move/0.png" alt="error" style="width:273px;height:517px;" id="picture2">
+                    <img src="picture/material/0.png" alt="error" style="width:273px;height:517px;" id="SubPicture2">
+                    <img src="picture/material/background/0.png" alt="error" style="width:273px;height:517px;" id="background">
+                    <img src="picture/material/monster/snake/L/idle/0.png" alt="error" style="width:273px;height:517px;" id="monster">
+                    <img src="picture/material/monster/boss/attack/0.png" alt="error" style="width:273px;height:517px;" id="monsterAttack">
+                </div>
+                <div class="NormalDropdown">
+                    <p style="color: #ff3d3d;">資料來源 (hover me!)</p>
+                    <div class="DropdownContent">
+                        <a href="https://opengameart.org/content/3-cyberpunk-characters"
+                            target=_blank;>人物:https://opengameart.org/content/3-cyberpunk-characters</a> <br>
+                        <a href="https://opengameart.org/content/city-background-repetitive-3"
+                            target=_blank;>背景:https://opengameart.org/content/city-background-repetitive-3</a> <br>
+                        <a href="https://opengameart.org/content/animated-snake"
+                            target=_blank;>monster:https://opengameart.org/content/animated-snake</a>
+                    </div>
+                </div>
+                <br>
+
+                <h3 style="font-size: 40px;" class="container">
+                    <a href="https://github.com/stereomp3/wp109b/tree/main/homework/MyWeb7.0" target=_blank;>git hub<i class="fa fa-github" aria-hidden="true"></i></a>
+                    裡面有遊戲程式碼哦!ლ(ﾟдﾟლ) !
+                </h3>
+
+            </div>
+        </div>
+
+        <!--///////////////遊戲區旁邊的文字////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+        <div id="GameText">
+            <i onclick="document.getElementById('GameText').style.display ='none'" class="fa fa-window-close" 
+            aria-hidden="true" style="float: right; font-size: 30px; cursor: pointer;"></i>
+
+
+            <p style="font-size: 30px;">歡迎來到遊戲區!!</p>      
+            <pre style="font-size: 20px; overflow:auto">
+                Player1                         Player2
+角色控制 :                      
+            a                   (左)          Arrow Left          (左)    
+            d                   (右)          Arrow Left          (右) 
+            k                   (跳)          2                   (跳)   
+            l                   (加速)        3                   (加速)
+
+技能施放 :                
+            j                   (踢)          1                   (踢)
+            j + w               (出拳)        1 + Arrow Up        (出拳)
+            j + s               (特攻)        1 + Arrow Down      (特攻)  
+
+
+遊戲暫停 :   可以按右上角的暫停鈕或是按 p
+            </pre>
+        </div>
+        <!--//////////////下面是其他補充1留言板/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+        <div class="column">
+            <div id="others" style="display: none; font-size: 30px;">
+                <h2>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-chevron-circle-up" aria-hidden="true"></i></i>其他補充(others)</h2>
+                <button onclick="formTable()" class="Sidenav" style="top: 410px; background-color: rgb(35, 151, 41);">留言板</button>
+                <button onclick="PaintBoard()" class="Sidenav" style="top: 480px; background-color: #04AA6D;">繪畫板</button>
+                <div class="container" id="FormTable" style="display: none;">
+                    <div class="row">
+                        <div>
+                            <label for="Qution">你覺得這個網站哪個地方最吸引你?</label>
+                        </div>
+                        <div>
+                            <select id="Qution" name="Qution">
+                                <option>精心設計的文字內容</option>
+                                <option>充滿特色的版面設計</option>
+                                <option>製作人的名字</option>
+                                <option>指導老師的名字</option>
+                                <option>我覺得是好吃的滷肉飯</option>
+                                <option>我覺得是好吃的牛排</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div>
+                            <label for="subject">對網站的意見和看法?</label>
+                        </div>
+                        <div>
+                            <textarea id="subject" name="subject" placeholder="Write something.."
+                                style="height:200px"></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <input type="button" onclick="alert('感謝您提供寶貴的意見，可是這個網站沒有伺服端 இдஇ')" value="繳交">
+                    </div>
+                </div>
+                <!--/////////////////2繪畫版//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+                <div id="paintBoard" style="display: block; color:ivory; overflow: auto;">
+                    <h5 id="DrawChooser">
+
+                        <a onclick="changePenColor(); document.getElementById('colorChooserCheck').style.display = 'none';" 
+                        id="colorChooserCheck">confirm color</a> 
+
+                        <i class="fa fa-square-o" aria-hidden="true"></i>
+                        選擇顏色 &nbsp;
+                        <i class="fa fa-play" aria-hidden="true"></i>&nbsp;&nbsp;             
+
+                        <input type="color" onclick="document.getElementById('colorChooserCheck').style.display = 'block';"
+                        id="colorChooser" value="#000000"> <br>
+                        
+
+                        <i class="fa fa-square" aria-hidden="true"></i>
+                        選擇筆寬 &nbsp;
+                        <i class="fa fa-play" aria-hidden="true"></i> &nbsp;
+                        <input type="range" id="WidthChooser" value="3" min="1" max="30" onclick="changePenWidth();">&nbsp;&nbsp;
+                        <br>
+
+                        <i class="fa fa-genderless" aria-hidden="true"></i>
+                        <a onclick="Pctx.fillStyle = 'white'; Pctx.fillRect(0, 0, Pcanvas.width, Pcanvas.height)">clearimg</a>
+                        <i class="fa fa-genderless" aria-hidden="true"></i>
+                        <a onclick="save()">save img</a>
+                        <i class="fa fa-genderless" aria-hidden="true"></i>
+                        <a onclick="Delete()">刪掉最新</a>
+                        
+                        </h3>
+                        <canvas id="cSketchPad" width="900" height="400"
+                            style="border:0.1px solid rgb(82, 80, 79);"></canvas>
+                        <!--不顯示，直到有圖片-->
+
+                        <div id="ImgInsertBefore0">&nbsp;</div>
+                </div>
+
+                <h3 style="font-size: 40px;" class="container">
+                    參考至canvas裡的05-painter和04-save ٩(๑❛ᴗ❛๑)۶
+                    真的沒什麼好補充的了，可以到<a href="https://github.com/stereomp3/wp109b/wiki" target=_blank;>git hub<i class="fa fa-github" aria-hidden="true"></i></a>
+                    去看我的精美小筆記 ლ(・ω・ლ)
+                </h3>
+                <br>
+            </div>
+
+        </div>
+        <!--//////////////////下面是資料來源//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+        <div class="column">
+            <div id="source" style="display: none;">
+                <h2>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-chevron-circle-up" aria-hidden="true"></i>參考來源(source)</h>
+
+                    <h3 style="font-size: 40px;" class="container">
+                        <a href="https://github.com/stereomp3/wp109b/wiki" target=_blank;>git hub<i class="fa fa-github" aria-hidden="true"></i></a>(●'ω`●）
+                    </h3>
+
+                    <pre style="color: #350202; overflow: auto; font-size: 15px;">
+
+<i class="fa fa-stop" aria-hidden="true"></i> 人物: 
+<a href='https://opengameart.org/content/3-cyberpunk-characters' target=_blank;>https://opengameart.org/content/3-cyberpunk-characters</a> 
+
+<i class="fa fa-stop" aria-hidden="true"></i> 背景: 
+<a href='https://opengameart.org/content/city-background-repetitive-3' target=_blank;>https://opengameart.org/content/city-background-repetitive-3</a>
+
+<i class="fa fa-stop" aria-hidden="true"></i> 素材:
+<a href='https://opengameart.org/content/low-resolution-text-backgrounds' target=_blank;>https://opengameart.org/content/low-resolution-text-backgrounds</a>
+<a href='https://opengameart.org/content/eggs' target=_blank;>https://opengameart.org/content/eggs</a>
+
+<i class="fa fa-stop" aria-hidden="true"></i> moster : 
+<a href='https://opengameart.org/content/animated-skeleton' target=_blank;>https://opengameart.org/content/animated-skeleton</a>
+<a href='https://opengameart.org/content/animated-snake' target=_blank;>https://opengameart.org/content/animated-snake</a>
+<a href='https://opengameart.org/content/bosses-and-monsters-spritesheets-ars-notoria' target=_blank;>https://opengameart.org/content/bosses-and-monsters-spritesheets-ars-notoria</a>
+
+<i class="fa fa-stop" aria-hidden="true"></i> 參考網頁: 
+<a href='https://www.taipeitimes.com/' target=_blank;> https://www.taipeitimes.com/</a>
+<a href='https://www.w3schools.com/css/css_form.asp ' target=_blank;>https://www.w3schools.com/css/css_form.asp </a>
+<a href='https://www.w3schools.com/css/tryit.asp?filename=trycss_form_responsive' target=_blank;>https://www.w3schools.com/css/tryit.asp?filename=trycss_form_responsive</a>
+<a href='https://www.w3schools.com/html/tryit.asp?filename=tryhtml_table_id2 ' target=_blank;>https://www.w3schools.com/html/tryit.asp?filename=tryhtml_table_id2 </a>
+<a href='https://www.w3schools.com/howto/howto_css_sidenav_buttons.asp ' target=_blank;>https://www.w3schools.com/howto/howto_css_sidenav_buttons.asp</a>
+<i class="fa fa-stop" aria-hidden="true"></i> 符號:
+<a href='https://www.w3schools.com/charsets/ref_utf_dingbats.asp ' target=_blank;>https://www.w3schools.com/charsets/ref_utf_dingbats.asp </a>
+<a href='https://aileens.pixnet.net/blog/post/37773448-%E7%B6%B2%E8%B7%AF%E8%A1%A8%E6%83%85%E7%AC%A6%E8%99%9F%E5%A4%A7%E5%85%A8%28%E8%BD%89%29' target=_blank;>https://aileens.pixnet.net/blog/post/37773448-%E7%B6%B2%E8%B7%AF%E8%A1%A8%E6%83%85%E7%AC%A6%E8%99%9F%E5%A4%A7%E5%85%A8%28%E8%BD%89%29</a>        
+<a href='https://lovefree365.pixnet.net/blog/post/403192625-%E4%BE%86%E8%87%AA%E6%97%A5%E6%9C%AC%E7%9A%84%E8%A1%A8%E6%83%85%E7%AC%A6%E8%99%9F%E0%B2%A0_%E0%B2%A0~%E9%A1%8F%E6%96%87%E5%AD%97%E3%8A%95%E8%A1%A8%E6%83%85%E7%AC%A6%E8%99%9F ' target=_blank;>https://lovefree365.pixnet.net/blog/post/403192625-%E4%BE%86%E8%87%AA%E6%97%A5%E6%9C%AC%E7%9A%84%E8%A1%A8%E6%83%85%E7%AC%A6%E8%99%9F%E0%B2%A0_%E0%B2%A0~%E9%A1%8F%E6%96%87%E5%AD%97%E3%8A%95%E8%A1%A8%E6%83%85%E7%AC%A6%E8%99%9F </a>
+                    </pre>
+
+                    <br>
+            </div>
+        </div>
+    </div>
+    <img class="EasterEgg" onclick="EggHatch()" title="Click me to show??" src="picture/material/egg/eggspot3.png" alt="error">
+    <img class="EasterEgg" onclick="EggHatch()" src="picture/material/egg/crackspot3.png" alt="error">
+    <img class="EasterEgg" onclick="EggHatch()" src="picture/material/egg/hatchspot3.png" alt="error">
+    <button onclick="EggHide()" class="Sidenav" id="Zerg_egg_hide" style="top: 340px; background-color: rgb(199, 33, 33); display: none;">復原</button>
+    <button onclick="EggHatch()" class="Sidenav" id="Zerg_egg_show" style="top: 340px; background-color: rgb(199, 33, 33);">彩蛋</button>
+    
+    <!--///////下面是跑馬燈和引用的JS///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+    <div id="footer">
+        <marquee height="30" style="font-size: 20px;">110910541's Website (金門大學 資工系 魏仲彥 製作)</marquee>
+    </div>
+    <script src="MyWeb.js"></script>
+    <script src="game/Background.js"></script>
+    <script src="game/Player.js"></script>
+    <script src="game/Monster.js"></script>
+    <script src="game/gameInit.js"></script>
+    <script src="others/paintBoard.js"></script>
+    <script src="others/zerg_rush_google_cheat.js"></script>
+    <script src="others/jQuery.js"></script>
+
+</body>
+
+</html>

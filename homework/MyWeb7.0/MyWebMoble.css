@@ -1,0 +1,121 @@
+@media only screen and (max-width:1200px){
+    
+    /*Main Control*/
+    #LeftSideSpace{display: none;}
+    .column{
+        float: right;
+        width: 80%;
+    }
+    #SideOption{ width: 100%;}
+    #TopMenu a {
+        width: 100%;
+        color: rgb(239, 239, 239);
+        background: DimGrey;
+    }
+    #TopMenu button{
+        width: 20%;
+        padding: 15px 22px;
+        font-size: 15px;
+    }
+
+    /*game*/
+    #MyCanvas{
+        width: 400;
+        height: 275;
+    }
+    #MonsterLiveBar, #Player2LiveBar, #PlayerLiveBar{ margin-top: 7%;}
+    #PlayerLiveBar{ left: 27%; }
+    #MonsterLiveBar{ left: 81%;}
+    #Player2LiveBar{ left: 51%;}
+
+    #GameText{ 
+        top: 10px;
+        left: 0px; 
+        font-size: 15px;
+    }
+
+    #GameInitOptionFrame{
+        margin-top: 12%;
+        left: 40%;
+        width: 40%;
+        height: 55%;
+    }
+    #GameInitOption, #GameInitOption2, #GameInitOption3, #GameInitOption4{
+        width: 25%;
+        left: 48%;
+    }
+    #GameInitOption, #GameInitOption3{ margin-top: 16%;}
+    #GameInitOption2{ margin-top: 24%;}
+    #GameInitOption4{margin-top: 32%;}
+
+    #character1, #character2, #P2character1, #P2character2, #character3, #P2character3{ margin-top: 24%; }
+    #character1, #P2character1{left: 42%;}
+    #character2, #P2character2{left: 55%;}
+    #character3, #P2character3{left: 68%;}
+
+    #GameStart, #GameStop{ left: 93%;}
+
+    #GameText{ 
+        margin-top: 15%;
+        width: 80%;
+        left: 20%;
+    }
+
+    /*other*/
+    .Sidenav{
+        width: 200px;
+    }
+    #colorChooserCheck{margin-left: 26%;}
+  }
+  /*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+  @media only screen and (max-width:800px){
+    #GameInitOptionFrame{ height: 40%;}
+    #colorChooserCheck{margin-left: 28%;}
+  }
+  /*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+  @media only screen and (max-width:600px) {
+
+    /*Main Control*/
+    #TopMenu button{ font-size: 8px;}
+    .column{
+        width: 100%;
+    }
+    /*Game*/
+    #GameText{ 
+        margin-top: 25%;
+        width: 100%;
+        left: 0%;
+    }
+    #PlayerLiveBar, #MonsterLiveBar, #Player2LiveBar{
+        margin-top: 8%;
+        
+        height: 20px;
+    }
+    #PlayerLiveBar{left: 9%;}
+    #MonsterLiveBar{left: 76%;}
+    #Player2LiveBar{left: 40%;}
+
+    #GameInitOptionFrame{
+        margin-top: 15%;
+        left: 25%;
+        width: 50%;
+    }
+    #GameInitOption, #GameInitOption2, #GameInitOption3, #GameInitOption4{ 
+        width: 35%;  
+        left: 33%;
+    }
+    #GameInitOption, #GameInitOption3{margin-top: 21%;}
+    #GameInitOption2{margin-top: 31%;}
+    #GameInitOption4{margin-top: 41%;}
+
+    #character1, #character2, #P2character1, #P2character2, #character3, #P2character3{ margin-top: 33%;}
+    #character1, #P2character1{left: 28%;}
+    #character2, #P2character2{left: 46%;}
+    #character3, #P2character3{left: 64%;}
+
+    /*other*/
+    .Sidenav{
+        width: 151px;
+    }
+    #colorChooserCheck{margin-left: 46%;}
+  }

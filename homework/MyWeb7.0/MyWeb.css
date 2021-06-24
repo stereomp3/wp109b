@@ -1,0 +1,389 @@
+body{
+    background-color: DimGrey;
+    margin: 0;
+    overflow: auto;
+}
+li{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#header{
+    color: rgb(146, 133, 113);
+    width: 100%;
+    padding: 0 0;
+    border: 1px solid #ddd;
+    text-align: center;
+    color: white;
+    background: #d0cfda;
+}
+
+#TopMenu{
+    width: 100%;
+    position: relative;
+    top: 0px;
+    z-index: 999;
+    overflow: hidden;
+    background: rgb(239, 239, 239);
+}
+#TopMenu a {
+    width: 1%; 
+    float: left; 
+    font-size: 36px; 
+    padding: 0; 
+    border: 0;
+    color: DimGrey; 
+    cursor: pointer; 
+    position: relative;
+}
+#TopMenu button {
+    width: 17%;
+    float: right;
+    display: block;
+    color: black;
+    text-align: center;
+    margin: 0px;
+    padding: 15px 22px;
+    border: 0;
+    cursor: pointer;
+    font-size: 20px;
+    /*text-decoration: none;*/
+}
+
+#TopMenu button:hover {
+  background-color: #e8e8f1;
+  border-radius: 5px;
+  padding: 13px 22px;
+  border: 2px solid #929299;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  color: black;
+}
+
+/*側邊下滑*/
+#SideOption{
+    position: absolute;
+    display: none;
+    background-color: #d0cfda;
+    float: left;
+    width: 20%;
+    z-index: 998;
+}
+
+.dropdown {
+    /*visibility: hidden;*/
+  	position: relative;
+    /*left: 50px;*/
+    display: none;
+    font-size: 13px;
+    width: 1px;
+  	background: red;
+  	transition: width 2s;
+}
+
+.dropdown:hover{
+	background-color: #ff0000;    
+    width: 775px;
+    cursor: pointer;/*鼠標在上面會變手*/
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+.dropdown-content{
+    display: none;
+    position: absolute;
+    min-width: 200px;
+    background-color: #f9f9f9;    
+    box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);/*第1個代表影子左移， 第2個代表影子下移， 第3個代表影子模糊度， 第4個代表影子範圍*/
+    padding: 1px 15px;
+    z-index: 999;
+    font-size: 13px;
+}
+
+/*一般下滑*/
+.NormalDropdown{
+    left: 50px;
+    font-size: 20px;
+}
+.NormalDropdown:hover{ 
+    background-color: #251717;    
+    cursor: pointer;/*鼠標在上面會變手*/
+}
+.NormalDropdown:hover .DropdownContent {
+	display: block;
+}
+.DropdownContent{
+    display: none;
+    /*position: absolute;*/
+    left: 570px;
+    min-width: 200px;
+    background-color: #f9f9f9;    
+    box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);/*第1個代表影子左移， 第2個代表影子下移， 第3個代表影子模糊度， 第4個代表影子範圍*/
+    padding: 1px 15px;
+    z-index: 1;
+    font-size: 13px;
+}
+.form1{
+	background-color: #ffffff;
+    color: rgb(5, 5, 5);
+    font-size: 20px;
+    left: 0px;
+}
+
+.side{
+    float: left;
+    width: 20%;
+}
+#LeftSideSpace{
+    float: left;
+    width: 20%;
+    display: block;
+}
+.column{
+    float: left;
+    width: 60%;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    overflow: hidden;
+}
+.column div h2{
+    padding: 0px 20px 50px 20px; 
+    color: #1a0d15; 
+    font-size: 50px;
+}
+#footer{
+    width: 100%;
+    background-color: rgb(239, 239, 239);
+    color: rgb(8, 8, 8);
+    padding: 16px;
+    font-size: 13px;
+    text-align: center;
+}
+
+/*//////////////////////////////////////////////////////////////////Game//////////////////////////////////////////////////////////////////*/
+#GameInitOption, #GameInitOption2, #GameInitOption3, #GameInitOption4{
+    width: 20%;
+    height: auto;
+    position: absolute; 
+    z-index: 5; 
+    cursor: pointer;
+    left: 40%;
+}
+
+#GameInitOption, #GameInitOption3{ margin-top: 12%;} 
+#GameInitOption:hover{border-bottom: 5px solid #f5efba;}
+
+#GameInitOption2{ margin-top: 18%;}
+#GameInitOption2:hover{border-bottom: 5px solid #878daf;}
+
+#GameInitOption4{ margin-top: 24%;}
+#GameInitOption4:hover{border-bottom: 5px solid #96a3ee;}
+
+#GameInitOption3{ display: none; }
+#GameInitOption3:hover{border-bottom: 5px solid #fcb881;}
+
+#GameInitOptionFrame{
+    width: 30%;
+    height: 55%;
+    position: absolute; 
+    z-index: 5; 
+    cursor: pointer;
+    background: #251717;
+    opacity: 0.5;
+    margin-top: 9%;
+    left: 35%;
+}
+#character1, #character2, #P2character1, #P2character2, #character3, #P2character3{
+    width: 8%;
+    height: auto;
+    position: absolute; 
+    z-index: 5; 
+    cursor: pointer;
+    margin-top: 16%;
+    display: none;
+}
+#character1, #P2character1{ left: 36%;} 
+#character2, #P2character2{ left: 46%;}
+#character3, #P2character3{ left: 56%;}
+
+#character1:hover{border-bottom: 5px solid #ff5b5b;}
+#character2:hover{border-bottom: 5px solid #54ddff;}
+#character3:hover{border-bottom: 5px solid #6fbb58;}
+#P2character1:hover{border-bottom: 5px solid #ff5b5b;}
+#P2character2:hover{border-bottom: 5px solid #54ddff;}
+#P2character3:hover{border-bottom: 5px solid #6fbb58;}
+
+#GameStart, #GameStop{
+    position: absolute; 
+    font-size: 7vw;
+    z-index: 9;
+    left: 73%;
+    cursor: pointer;
+}
+
+#GameText{
+    display: none; 
+    position: absolute; 
+    left: 20%; 
+    color: rgb(250, 249, 244);
+    z-index: 10;
+    background: #000000;
+    padding: 50px;
+    width: 60%;
+    height: auto;
+}
+#PlayerLiveBar, #MonsterLiveBar, #Player2LiveBar{
+    margin-top: 5%;
+    height: 25px;
+    background: rgb(255, 1, 1);
+    border: 3px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    position: absolute; 
+    display: none;
+    z-index: 2;
+}
+#PlayerLiveBar{ left: 25%; }
+#MonsterLiveBar{ left: 66%; }
+#Player2LiveBar{ left: 43%;}
+/*////////////////////////////////////////Other///////////////////////////////////////////////////////////////////////////*/
+.Sidenav{
+    width: 250px;
+    position: fixed;
+    color: ivory;  
+    text-align: right;
+    margin: 10px;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px; 
+    left: -150px;
+    transition: 0.3s;
+    padding: 15px;
+    z-index: 7777;
+}
+.Sidenav:hover{
+    left: -15px;
+}
+#DrawChooser{
+    display: none; 
+    margin: 0px;
+}
+#DrawChooser a{
+    background: #000000; 
+    border-radius: 5px;
+    padding: 5px 9px 0px 9px;
+    cursor: pointer;
+}
+#DrawChooser a:hover{background: #04AA6D;}
+#colorChooserCheck{
+    display: none; 
+    position: absolute; 
+    z-index: 1; 
+    margin-left: 15%;
+}
+.PaintImg{
+    width: 50%;
+    margin: 0px;
+    height: auto;
+    float:left;
+    border: 3px solid rgb(0, 0, 0);
+}
+     /*////////////////////////////////////////////彩蛋/////////////////////////////////////////////////////////////////////////*/
+.EasterEgg{
+    display: none;
+    position: absolute;
+    z-index: 998;
+    top: 20%;
+    left: 20%;
+    width: 60%;
+    height: auto;
+    cursor: pointer; 
+}
+.EasterEgg:hover {
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+  }
+  
+@keyframes shake {/*從0%到100%平均分配時間(0.5s/10)*/
+    0% { transform: translate(1px, 1px) rotate(0deg); }/*translate位移程度*/
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }/*rotate旋轉幅度*/
+    20% { transform: translate(-3px, 0px) rotate(-3deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(3deg); }
+    60% { transform: translate(-3px, 1px) rotate(5deg); }
+    70% { transform: translate(3px, 1px) rotate(5deg); }
+    80% { transform: translate(-1px, -1px) rotate(5deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+        /*///////////////////////////////////////////////留言板//////////////////////////////////////////////////////////////////////////////*/
+
+* {
+    box-sizing: border-box;
+  }
+  
+  input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
+  input[type=button] {
+    background-color: #f5fcf5;
+    color: rgb(17, 16, 16);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+  }
+  /*固定的文字*/
+  label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+    border: 1 solid black;
+  }
+  
+  /*外面的邊框*/
+  .container {
+    border-radius: 5px;
+    background-color: #777474d2;
+    padding: 20px;
+  }
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  /*///////////////////////////////////////////Introduction/////////////////////////////////////////////////////////////////////////*/
+
+/*set table*/
+table, th, td {
+    padding: 10px;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+/*table content*/
+tr:nth-child(even) {
+    background-color: #eee;
+    font-size: 20px;
+}
+tr:nth-child(odd) {
+    background-color: #fff;
+    font-size: 20px;
+}
+/*table header*/
+th { 
+    background-color: rgb(66, 54, 43);
+    color: white;
+    width: 20px;
+    font-size: 30px;
+}
+
+
+
