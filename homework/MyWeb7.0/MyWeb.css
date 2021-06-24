@@ -219,6 +219,7 @@ li{
     z-index: 9;
     left: 73%;
     cursor: pointer;
+    display: none;
 }
 
 #GameText{

@@ -63,6 +63,8 @@ function MainGame() {
     document.getElementById("PlayerLiveBar").style.display = "block";
     if (GamePlayMode == 2 || GamePlayMode == 3) document.getElementById("Player2LiveBar").style.display = "block";//PVP
     if (GamePlayMode != 2) document.getElementById("MonsterLiveBar").style.display = "block";//PVM
+    //打開暫停選項
+    document.getElementById("GameStop").style.display = "block";
 
     startAnimating(12);//設置fps
     if (init == 1) return;
@@ -70,6 +72,7 @@ function MainGame() {
     document.addEventListener("keydown", function (event) {//這裡的evt是接收玩家的鍵盤事件
         keystate[event.code] = true//鍵盤按下
         if (keystate[stop]) { GameStop = !GameStop }
+        if (GameStop && keystate[stop]) { ctx.fillStyle = 'rgba(0,0,0,0.3)'; ctx.fillRect(0, 0, canvas.width, canvas.height); }
     }, true);
     document.addEventListener("keyup", function (event) {
         keystate[event.code] = false;//放開取消事件，避免短期按太多按件
@@ -222,7 +225,8 @@ function GameRestart() {
     document.getElementById("PlayerLiveBar").style.display = "none";
     document.getElementById("Player2LiveBar").style.display = "none";
     document.getElementById("MonsterLiveBar").style.display = "none";
-    //背景切換到0.png
+    //暫停鍵關掉
+    document.getElementById("GameStop").style.display = "none";
 }
 
 function GameInitOptionShow() {

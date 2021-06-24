@@ -313,9 +313,12 @@
         <!--/////////////////////下面是遊戲區////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
         <div class="column">
             <div id="game" style="display: none; text-align: center;">
+                
                 <i class="fa fa-pause-circle" aria-hidden="true" id="GameStop" 
-                onclick="GameStop = true; GameStartId.display = 'block'; GameStopId.display = 'none';" ></i>
-                <i class="fa fa-play-circle" aria-hidden="true" id="GameStart" style="display: none;"
+                onclick="GameStop = true; GameStartId.display = 'block'; GameStopId.display = 'none';
+                ctx.fillStyle = 'rgba(0,0,0,0.3)'; ctx.fillRect(0, 0, canvas.width, canvas.height);" ></i>
+
+                <i class="fa fa-play-circle" aria-hidden="true" id="GameStart" 
                 onclick="GameStop = false; GameStopId.display = 'block'; GameStartId.display = 'none';" ></i>
 
                 <button onclick="document.getElementById('GameText').style.display ='block'" class="Sidenav"
