@@ -1,4 +1,5 @@
 ## 技術手段
+**遊戲完全純手工打造!**
 
 1. 遊戲fps控制 <br>
    * 說明: 這裡使用window.requestAnimationFrame製作動畫，但是速度無法控制，所以就自訂函數startAnimating(fps)，首先，讀入fpsInterval(想要的禎數)， **preTimestap(紀錄時間)** ，再通過window.requestAnimationFrame(loop, canvas);呼叫loop，這時， **preTimestap(紀錄時間)** 會不動，但 **timestamp(紀錄目前時間)** 會因為在loop裡，而一直增加，最後，用progress計算時間差，時間差要大於想要的禎數才會進入主遊戲動畫，這樣就完成fps控制了。
