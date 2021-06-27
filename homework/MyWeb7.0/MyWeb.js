@@ -99,6 +99,7 @@ function morningMode() {
   document.getElementById("night").style.display = "block"
   document.getElementById("morning").style.display = "none"
   for(let i=0; i<4 ; i++)document.querySelectorAll("#DrawChooser a")[i].style.background = "ivory"
+  document.getElementById("webHeader").innerHTML = 'Website 7.0 （￣￢￣）'
 }
 function nightMode() {
   document.getElementsByTagName("body")[0].style.background = "DimGrey";
@@ -109,6 +110,7 @@ function nightMode() {
   document.getElementById("night").style.display = "none"
   document.getElementById("morning").style.display = "block"
   for(let i=0; i<4 ; i++)document.querySelectorAll("#DrawChooser a")[i].style.background = "black"
+  document.getElementById("webHeader").innerHTML = 'Website 7.0 \\（￣▽￣）/'
 }
 
 

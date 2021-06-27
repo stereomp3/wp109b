@@ -79,6 +79,7 @@ function MainGame() {
     }, true);
 
     var loop = function () {
+        
         timestamp = Date.now();//調整速率
         progress = timestamp - preTimestamp;
         if (GameStop) {
