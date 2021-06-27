@@ -95,6 +95,7 @@ function morningMode() {
   document.getElementById("header").style.color = "DimGrey";
   document.getElementById("header").style.background = "rgb(243, 235, 188)";
   document.getElementById("SideOption").style.background = "rgb(243, 235, 188)";
+  document.getElementById("SideOption").style.color = "black";
   document.getElementById("DrawChooser").style.color = "black";
   document.getElementById("night").style.display = "block"
   document.getElementById("morning").style.display = "none"
@@ -104,8 +105,9 @@ function morningMode() {
 function nightMode() {
   document.getElementsByTagName("body")[0].style.background = "DimGrey";
   document.getElementById("header").style.color = "white";
-  document.getElementById("header").style.background = "#d0cfda";
-  document.getElementById("SideOption").style.background = "#d0cfda";
+  document.getElementById("header").style.background = "#031927";
+  document.getElementById("SideOption").style.background = "#031927";
+  document.getElementById("SideOption").style.color = "ivory";
   document.getElementById("DrawChooser").style.color = "ivory";
   document.getElementById("night").style.display = "none"
   document.getElementById("morning").style.display = "block"
