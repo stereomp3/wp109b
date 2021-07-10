@@ -61,7 +61,6 @@ li{
 /*側邊下滑*/
 #SideOption{
     position: absolute;
-    display: none;
     background-color: #031927;
     color: ivory;
     float: left;
@@ -74,9 +73,8 @@ li{
     /*visibility: hidden;*/
   	position: relative;
     /*left: 50px;*/
-    display: none;
     font-size: 13px;
-    width: 1px;
+    width: 0;
   	background: red;
   	transition: width 2s;
 }
@@ -267,7 +265,6 @@ li{
     left: -15px;
 }
 #DrawChooser{
-    display: none; 
     margin: 0px;
 }
 #DrawChooser a{

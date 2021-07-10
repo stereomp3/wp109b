@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="MyWeb.css">
+    <link rel="stylesheet" href="MyWebMoble.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body onload="initWeb(); preload(); ">
+
+
+    <script>//下滑改變屬型  
+        function getScrollTop() {//參考http://www.eion.com.tw/Blogger/?Pid=1154       
+            var bodyTop = 0;
+            if (typeof window.pageYOffset != "undefined") {
+                bodyTop = window.pageYOffset;
+
+            } else if (typeof document.compatMode != "undefined"
+                && document.compatMode != "BackCompat") {
+                bodyTop = document.documentElement.scrollTop;
+
+            } else if (typeof document.body != "undefined") {
+                bodyTop = document.body.scrollTop;
+            }
+            //顯示出捲動後的高度值
+            //document.getElementById("jsScrollTop").innerHTML = bodyTop;
+            if (bodyTop >= 80) document.getElementById("TopMenu").style.position = "fixed";
+            else document.getElementById("TopMenu").style.position = "relative";
+            window.requestAnimationFrame(getScrollTop);
+        }
+        window.requestAnimationFrame(getScrollTop);
+    </script>
+
+    <div id="header">
+        <h1 id="jsScrollTop">
+            <strong id="webHeader"> Website 8.0 \（￣▽￣）/</strong>
+            <a onclick="morningMode();" id="morning"
+                style="display: block; float: right; cursor: pointer; ">&#127761</a>
+            <a onclick="nightMode();" id="night" style="display: none; float: right; cursor: pointer; ">&#127765</a>
+        </h1>
+    </div>
+
+    <div id="TopMenu">
+        <button onclick="source.start()">source</button>
+        <button onclick="others.start()">others</button>
+        <button onclick="game.start()">game</button>
+        <button onclick="intformation.start()">Informations</button>
+        <button onclick="introduction.start()" style="background: #777474d2;">Introduction</button>
+        <a onclick="sideOption.start()" id="sideOptionOpen">&#9776</a>
+        <a onclick="sideOption.close()" id="sideOptionClose" style="display: none;">&#9587</a>
+    </div>
+
+    <div id="LeftSideSpace">&nbsp;</div>
+
+    <!--//////下面是側攔////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+    <div style="width: 0; height: 1696px;" id="SideOption">
+    </div>
+        <!--////////////下面是網站介紹////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+    <div style="width: 100%; height: 1696px;">
+        <main style="background-color: DimGrey;">
+        </main>
+    </div>
+    <img class="EasterEgg" onclick="EggHatch()" title="Click me to show??" src="picture/material/egg/eggspot3.png" alt="error">
+    <img class="EasterEgg" onclick="EggHatch()" src="picture/material/egg/crackspot3.png" alt="error">
+    <img class="EasterEgg" onclick="EggHatch()" src="picture/material/egg/hatchspot3.png" alt="error">
+    <button onclick="EggHide()" class="Sidenav" id="Zerg_egg_hide" style="top: 340px; background-color: rgb(199, 33, 33); display: none;">復原</button>
+    <button onclick="EggHatch()" class="Sidenav" id="Zerg_egg_show" style="top: 340px; background-color: rgb(199, 33, 33);">彩蛋</button>
+    
+    <!--///////下面是跑馬燈和引用的JS///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+    <div id="footer">
+        <marquee height="30" style="font-size: 20px;">110910541's Website (金門大學 資工系 魏仲彥 製作)</marquee>
+    </div>
+    <script src="MyWeb.js"></script>
+    <script src="game/Background.js"></script>
+    <script src="game/Player.js"></script>
+    <script src="game/Monster.js"></script>
+    <script src="game/gameInit.js"></script>
+    <script src="others/paintBoard.js"></script>
+    <script src="others/zerg_rush_google_cheat.js"></script>
+    <script src="others/jQuery.js"></script>
+    <script src="others/jQuery.js"></script>
+    <script src="main/game.js"></script>
+    <script src="main/information.js"></script>
+    <script src="main/introduction.js"></script>
+    <script src="main/main.js"></script>
+    <script src="main/others.js"></script>
+    <script src="main/source.js"></script>
+    <script src="main/sideOption.js"></script>
+
+</body>
+
+</html>
