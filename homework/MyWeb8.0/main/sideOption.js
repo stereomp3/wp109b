@@ -16,8 +16,6 @@ sideOption.html = `
         <a  onclick="EggHatch()" id="Zerg_egg_show">Zerg egg</a>
         <a onclick="EggHide()" id="Zerg_egg_hide" style="display: none;">recovery</a>
         <br>
-    <div class="dropdown">
-        <p style="font-size: 45px; height: 800px;"></p>
     </div>
 `
 MobileOption.html = `
@@ -45,8 +43,6 @@ MobileOption.html = `
         <a  onclick="EggHatch()" id="Zerg_egg_show">Zerg egg</a>
         <a onclick="EggHide()" id="Zerg_egg_hide" style="display: none;">recovery</a>
         <br>
-    <div class="dropdown">
-        <p style="font-size: 45px; height: 800px;"></p>
     </div>
 `
 AboutMe.html = `   
