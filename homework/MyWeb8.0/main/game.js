@@ -93,6 +93,8 @@ game.html=`
 `
 
 game.start = function () {
+    FakeHash = game
+    TopColorIndex = 4
     show(game.html)
     GameInit(); 
 }

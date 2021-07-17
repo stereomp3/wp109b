@@ -60,5 +60,7 @@ introduction.html = `
 </div>
 `
 introduction.start = function () {
+    FakeHash = introduction
+    TopColorIndex = 6
     show(introduction.html)
 }

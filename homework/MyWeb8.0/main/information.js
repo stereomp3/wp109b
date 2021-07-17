@@ -1,14 +1,14 @@
-const intformation = {}
+const information = {}
 
-intformation.html=`
+information.html=`
 <div class="column">
 <div id="informations">
                 <h2>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-chevron-circle-up" aria-hidden="true"></i>歡迎到資訊介紹(Information)</h2>
 
                 <div class="NormalDropdown">
-                    <p style="color: #ff3d3d; font-size: 30px;"><a href="https://github.com/stereomp3/wp109b/blob/main/homework/MyWeb7.0/WebHistory.md"target=_blank;>我的網站演化史 (hover me!)</a></p>
+                    <a  style="color: #ff3d3d; font-size: 30px; text-decoration : none;"href="https://github.com/stereomp3/wp109b/blob/main/homework/MyWeb7.0/WebHistory.md"target=_blank;>我的網站演化史 (hover me!)</a>
                     <div class="DropdownContent" style="font-size: 15px;">
-                        <pre>                    
+                        <pre style = "overflow : scroll; height : 300px;">                    
 <a href="https://stereomp3.github.io/wp109b/week4/button.html#"target=_blank;>第一版網站</a>
 <hr>
 <a href="https://stereomp3.github.io/wp109b/homework/MyWeb2.0/MyWeb.html"target=_blank;>第二版網站(MyWeb2.0)</a>
@@ -33,19 +33,19 @@ intformation.html=`
 <li>新增網頁介紹，和選單，及資料來源</li>
 <li>修復小問題</li> <br>
 <hr>
-<a href="https://stereomp3.github.io/wp109b/homework/MyWeb4.0/MyWeb.html"target=_blank;>第五版網站(MyWeb5.0)</a> 
+<a href="https://stereomp3.github.io/wp109b/homework/MyWeb5.0/MyWeb.html"target=_blank;>第五版網站(MyWeb5.0)</a> 
 <li>新增遊戲封面和結束畫面，加入新怪物</li>
 <li>新增亮色系畫面</li>
 <li>新增塗鴉牆</li>
 <li>修復小問題</li>
 <hr>
-<a href="https://stereomp3.github.io/wp109b/homework/MyWeb4.0/MyWeb.html"target=_blank;>第六版網站(MyWeb6.0)</a> 
+<a href="https://stereomp3.github.io/wp109b/homework/MyWeb6.0/MyWeb.html"target=_blank;>第六版網站(MyWeb6.0)</a> 
 <li>遊戲封面改動，一些能力調整</li>
 <li>整體畫面可隨者裝置不同而做調整</li>
 <li>新增彩蛋(半完成)</li>
 <li>整體優化</li>
 <hr>
-<a href="https://stereomp3.github.io/wp109b/homework/MyWeb4.0/MyWeb.html"target=_blank;>第七版網站(MyWeb7.0)[最終版本!]    **遊戲大改版!!!加入彩蛋!!**</a>
+<a href="https://stereomp3.github.io/wp109b/homework/MyWeb7.0/MyWeb.html"target=_blank;>第七版網站(MyWeb7.0)   **遊戲大改版!!!加入彩蛋!!**</a>
 1. 整體:
 <li>增加版面設計和可讀性</li>
 <li>增加font-awesome小圖示</li>
@@ -60,11 +60,22 @@ intformation.html=`
 <li>繪畫版大更新，可以存取4個圖案，和刪除圖案</li>
 <li>繪畫版排版加強</li>
 <li>彩蛋功能完善!!</li> <br>
-2021/6/25
+<hr>
+<a href="https://stereomp3.github.io/wp109b/homework/MyWeb8.0/MyWeb.html"target=_blank;>第八版網站(MyWeb8.0)   **個人介紹大改版**</a>
+1. 整體:
+<li>改善手機閱讀體驗</li>
+<li>左側選項欄改變內容</li>
+<li>CSS改善</li> 
+<li>結構性上升，整體模組化，用JS的innerHTML放入HTML的字</li>
+<li>程式碼可讀性上升</li>
+
+to be continuous.. .
 <hr>
                         </pre>
                     </div>
                 </div>
+
+                <hr>
 
                 <h3 style="font-size: 40px;" class="container"> 我的網站連結 </h3>
 
@@ -106,6 +117,8 @@ intformation.html=`
         </div>
 `
 
-intformation.start = function () {
-    show(intformation.html)
+information.start = function () {
+    FakeHash = information
+    TopColorIndex = 5
+    show(information.html)
 }

@@ -2,21 +2,27 @@ body{
     background-color: DimGrey;
     margin: 0;
     overflow: auto;
+    transition: 1s;
 }
 li{
     font-family: 'Courier New', Courier, monospace;
 }
 
+#LeftSideSpace {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
 #header{
     color: rgb(146, 133, 113);
     width: 100%;
-    padding: 0 0;
-    border: 1px solid #ddd;
+    padding: 1px 30px;
     text-align: center;
     color: white;
     background: #031927;
+    transition: 1s;
 }
-
+#MobleTop{display: none;}
 #TopMenu{
     width: 100%;
     position: relative;
@@ -24,32 +30,33 @@ li{
     z-index: 999;
     overflow: hidden;
     background: rgb(239, 239, 239);
+    color: rgb(12, 3, 131);
 }
-#TopMenu a {
+#TopMenu button {
     width: 1%; 
     float: left; 
-    font-size: 36px; 
+    font-size: 45px; 
     padding: 0; 
     border: 0;
     color: DimGrey; 
     cursor: pointer; 
     position: relative;
 }
-#TopMenu button {
+#TopMenu a {
     width: 17%;
     float: right;
     display: block;
     color: black;
     text-align: center;
-    margin: 0px;
+    margin: 0;
     padding: 15px 22px;
     border: 0;
     cursor: pointer;
     font-size: 20px;
-    /*text-decoration: none;*/
+    text-decoration: none;/*取消下面的線*/
 }
 
-#TopMenu button:hover {
+#TopMenu a:hover {
   background-color: #e8e8f1;
   border-radius: 5px;
   padding: 13px 22px;
@@ -67,35 +74,21 @@ li{
     width: 19%;
     z-index: 998;
     margin-right: 10px;
+    transition: 1s;
+    overflow-x: hidden;
+    padding-top: 60px;
 }
-
-.dropdown {
-    /*visibility: hidden;*/
-  	position: relative;
-    /*left: 50px;*/
-    font-size: 13px;
-    width: 0;
-  	background: red;
-  	transition: width 2s;
+#SideOption a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+    cursor: pointer;
 }
-
-.dropdown:hover{
-	background-color: #ff0000;    
-    width: 775px;
-    cursor: pointer;/*鼠標在上面會變手*/
-}
-.dropdown:hover .dropdown-content {
-	display: block;
-}
-.dropdown-content{
-    display: none;
-    position: absolute;
-    min-width: 200px;
-    background-color: #f9f9f9;    
-    box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);/*第1個代表影子左移， 第2個代表影子下移， 第3個代表影子模糊度， 第4個代表影子範圍*/
-    padding: 1px 15px;
-    z-index: 999;
-    font-size: 13px;
+#SideOption a:hover {
+    color: #f1f1f1;
 }
 
 /*一般下滑*/
@@ -104,7 +97,7 @@ li{
     font-size: 20px;
 }
 .NormalDropdown:hover{ 
-    background-color: #251717;    
+    background-color: #000000;    
     cursor: pointer;/*鼠標在上面會變手*/
 }
 .NormalDropdown:hover .DropdownContent {
@@ -272,6 +265,7 @@ li{
     border-radius: 5px;
     padding: 5px 9px 0px 9px;
     cursor: pointer;
+    color:ivory;
 }
 #DrawChooser a:hover{background: #04AA6D;}
 #colorChooserCheck{
@@ -383,6 +377,51 @@ th {
     width: 20px;
     font-size: 30px;
 }
+   /*///////////////////////////////////////////self-made-form/////////////////////////////////////////////////////////////////////////*/ 
+.AboutMe-grid {
+    overflow: auto;
+    display: grid;
+    grid-template-columns: 20% 78%;
+    grid-gap: 10px;
+    background-color: rgba(80, 77, 77, 0.5);;
+    padding: 2px;
+  }
 
+.MyInformation-grid {
+    height: 800px;
+    overflow: auto;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-gap: 10px;
+    background-color: rgba(80, 77, 77, 0.5);
+    padding: 2px;
+}
+.MyInformation-grid > pre{
+    background-color: rgba(255, 249, 249, 0.9);
+    padding: 20px;
+    font-size: 50px;
+    text-decoration: none;
+}
+.MyInterest-grid {
+    height: 800px;
+    overflow: auto;
+    display: grid;
+    grid-template-columns: 90%;
+    grid-gap: 20px;
+    background-color: rgba(80, 77, 77, 0.5);
+    padding: 2px;
+}
+  
+
+.grid_odd {
+    background-color: rgba(185, 185, 185, 0.9);
+    padding: 20px;
+    font-size: 30px;
+}
+.grid_even {
+    background-color: rgba(255, 249, 249, 0.9);
+    padding: 20px;
+    font-size: 30px;
+}
 
 

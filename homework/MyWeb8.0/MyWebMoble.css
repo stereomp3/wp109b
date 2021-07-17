@@ -7,16 +7,8 @@
         width: 80%;
     }
     #SideOption{ width: 100%; overflow: hidden;}
-    #TopMenu a {
-        width: 100%;
-        color: rgb(239, 239, 239);
-        background: DimGrey;
-    }
-    #TopMenu button{
-        width: 20%;
-        padding: 15px 22px;
-        font-size: 15px;
-    }
+    #TopMenu { display: none;}
+    #MobleTop { display: block;}
 
     /*game*/
     #MyCanvas{
@@ -76,7 +68,6 @@
   @media only screen and (max-width:600px) {
 
     /*Main Control*/
-    #TopMenu button{ font-size: 8px;}
     .column{
         width: 100%;
     }

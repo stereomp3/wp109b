@@ -37,7 +37,7 @@ others.html=`
                 </div>
                 <!--/////////////////2繪畫版//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
 
-                <div id="paintBoard" style="display: block; color:ivory; overflow: auto;">
+                <div id="paintBoard" style="display: block; overflow: auto;">
                     <h5 id="DrawChooser">
 
                         <a onclick="changePenColor(); document.getElementById('colorChooserCheck').style.display = 'none';" 
@@ -73,8 +73,7 @@ others.html=`
                 </div>
 
                 <h3 style="font-size: 40px;" class="container">
-                    參考至canvas裡的05-painter和04-save ٩(๑❛ᴗ❛๑)۶
-                    真的沒什麼好補充的了，可以到<a href="https://github.com/stereomp3/wp109b/wiki" target=_blank;>git hub<i class="fa fa-github" aria-hidden="true"></i></a>
+                    可以到<a href="https://github.com/stereomp3/wp109b/wiki" target=_blank;>git hub<i class="fa fa-github" aria-hidden="true"></i></a>
                     去看我的精美小筆記 ლ(・ω・ლ)
                 </h3>
                 <br>
@@ -83,6 +82,8 @@ others.html=`
 `
 
 others.start = function () {
+    FakeHash = others
+    TopColorIndex = 3
     show(others.html)
     PBinit();
 }

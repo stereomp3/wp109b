@@ -44,5 +44,7 @@ source.html=`
 `
 
 source.start = function () {
+    FakeHash = source
+    TopColorIndex = 2
     show(source.html)
 }

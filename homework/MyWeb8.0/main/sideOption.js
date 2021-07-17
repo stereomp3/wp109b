@@ -1,169 +1,159 @@
 const sideOption = {}
+const AboutMe = {}
+const MyInformation = {}
+const MyInterest = {}
+const MobileSide = {}
+const MobileOption = {}
 
-sideOption.html=`
-<div>
+sideOption.html = `
+    <div>
+        <a onclick = "AboutMe.start()">About me</a>
+        <br>
+        <a onclick = "MyInformation.start()">My information</a>
+        <br>
+        <a onclick = "MyInterest.start()">My interest</a>
+        <br>
+        <a  onclick="EggHatch()" id="Zerg_egg_show">Zerg egg</a>
+        <a onclick="EggHide()" id="Zerg_egg_hide" style="display: none;">recovery</a>
+        <br>
+    <div class="dropdown">
+        <p style="font-size: 45px; height: 800px;"></p>
+    </div>
+`
+MobileOption.html = `
+    <div>
+        <a onclick="introduction.start()">Introduction</a>
+        <br>
+        <a onclick="information.start()" >Informations</a>
+        <br>
+        <a onclick="game.start()" >game</a>
+        <br>
+        <a onclick="others.start()" >others</a>
+        <br>
+        <a onclick="source.start()" >source</a>
+        <br>
+        <br>
+        
+        <a onclick = "AboutMe.start(); sideOption.close()">About me</a>
+        <br>
+        <a onclick = "MyInformation.start(); sideOption.close()">My information</a>
+        <br>
+        <a onclick = "MyInterest.start(); sideOption.close()">My interest</a>
+        <br>
+        <br>
 
-            <div class="dropdown">
-                <p style="font-size: 45px;">introdution</p>
-                <div class="dropdown-content">
-                    <div class="side">
-                        <p class="form1">
-                            姓名:魏仲彥
-                        </p>
-                        <p class="form1">
-                            學歷:高中畢業
-                        </p>
-                        <p class="form1">
-                            興趣:鋼琴，畫畫，在電腦前面耍費
-                        </p>
-                        <p class="form1">
-                            專長:吃飯，睡覺
-                        </p>
-                        <p class="form1">
-                            個人特質:擅長看別人甚麼時候生氣，吃飯絕對不請客
-                        </p>
-                        <p class="form1">
-                            其他:這就要由大家一起來觀察了>0< </p>
-                    </div>
+        <a  onclick="EggHatch()" id="Zerg_egg_show">Zerg egg</a>
+        <a onclick="EggHide()" id="Zerg_egg_hide" style="display: none;">recovery</a>
+        <br>
+    <div class="dropdown">
+        <p style="font-size: 45px; height: 800px;"></p>
+    </div>
+`
+AboutMe.html = `   
+    <div class="AboutMe-grid">
+        <div style="margin-top: 80px" class = "grid_odd">姓名</div>
+        <div style="margin-top: 80px" class = "grid_odd">魏仲彥</div>  
+        <div class = "grid_even">學歷</div>
+        <div class = "grid_even">高中畢業</div>
+        <div class = "grid_odd">興趣</div>  
+        <div class = "grid_odd">跑步、畫畫</div>
+        <div class = "grid_even">專長</div>
+        <div class = "grid_even">Coding、鋼琴</div>
+        <div style="margin-bottom: 20px" class = "grid_odd">個人特質</div>
+        <div style="margin-bottom: 20px" class = "grid_odd">積極、樂觀、正向，可以很快融入團體中!</div>
+    </div>
+`
+MyInformation.html = `
+    <div class="MyInformation-grid">
 
-                    <div class="side">
-                        <img src="picture/boy.jpg" alt="error" style="width:540px;height:360px;">
-                    </div>
-                </div>
-            </div>
+        <pre style="margin: 10% 0 5% 5%">
 
-            <br>
 
-            <div class="dropdown">
-                <p style="font-size: 45px;">information</p>
-                <div class="dropdown-content">
-                    <div class="side">
-                        <a href="https://www.facebook.com/ericjjkk" target=_blank; class="form1">
-                            my facebook <i class="fa fa-facebook-official" aria-hidden="true"></i><br><br>
-                        </a>
-                        <a href="https://github.com/stereomp3/wp109b/wiki" target=_blank; class="form1">
-                            My git hub <i class="fa fa-github-square" aria-hidden="true"></i><br><br>
-                        </a>
-                        <a href="https://www.w3schools.com/" target=_blank; class="form1">
-                            learning HTML <br><br>
-                        </a>
-                    </div>
+   <a href="https://www.facebook.com/ericjjkk" style="text-decoration: none; color: black;" target=_blank;><i class="fa fa-facebook-square" aria-hidden="true"></i></a>   <a href="https://github.com/stereomp3/wp109b/wiki" style="text-decoration: none; color: black;" target=_blank;><i class="fa fa-github" aria-hidden="true"></i></a>   <a href="https://store.steampowered.com/" style="text-decoration: none; color: black;" target=_blank;><i class="fa fa-steam" aria-hidden="true"></i></a>   <a href="https://www.youtube.com/" style="text-decoration: none; color: black;" target=_blank;><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+        </pre>      
+    </div>
+`
+MyInterest.html = `
+    <div class="MyInterest-grid">
 
-                    <div class="side">
-                        <img src="picture/photo.jpg" alt="error" style="width:610px;height:475px;">
-                    </div>
-                </div>
-            </div>
+        <div style="margin-top: 50px" class ="grid_odd" >
+        &#127929 <br>
+            我喜歡鋼琴，其實在國小學習階段時還蠻討厭的XD，但越學到後面就覺得彈鋼琴是一種紓壓，尤其是彈即興，可以自由自在地彈出想要彈的，在自己的音樂中暢遊!
+        </div>
 
-            <br>
+        <div class = "grid_even">
+        &#128214<br>
+            看書一直是我很好的休閒，每本書都會有它想說的故事，和作者想表達的世界觀。 <br>
+            每次有新的想法和新的世界進來，就會讓我的心不停地顫抖，猶如身歷其境。 <br>
+            我對新事物都會想去一探究竟，這也是我喜歡書的一個原因吧。
+        </div>  
 
-            <div class="dropdown">
-                <p style="font-size: 45px;">others</p>
-                <div class="dropdown-content">
+        <div class = "grid_odd">
+        &#128397 <br>
+            我喜歡畫畫，畫畫可以把我內心所想呈現出來，而且當做完一件作品時，那種成就感，令人回味無窮!
+        </div>
 
-                    <div class="side">
-                        <p class="form1">
-                            其他沒其他
-                        </p>
-                        <p class="form1">
-                            我愛鋼琴
-                        </p>
-                        <p class="form1">
-                            也愛睡覺
-                        </p>
-                        <p class="form1">
-                            愛看動漫(刀劍，柯南，入間，航海王)
-                        </p>
-                        <p class="form1">
-                            也愛畫畫
-                        </p>
-                        <p class="form1">
-                            其他沒其他了
-                        </p>
-                    </div>
+        <div class = "grid_even">
+        &#129342<br>
+            我愛運動，在所有運動裡，我比較喜歡打籃球和慢跑，慢跑可以沉澱心靈，可以整理一天的思緒，我非常喜歡。<br>
+            而籃球當然是要和朋友打摟，可以互相切磋，互相配合。
+        </div>
 
-                    <div class="side">
-                        <img src="picture/others.png" alt="error" style="width:540px;height:360px;">
-                    </div>
-                </div>
-            </div>
-
-            <br>
-
-            <div class="dropdown">
-                <p style="font-size: 45px;">game</p>
-                <div class="dropdown-content">
-
-                    <div class="side">
-                        <p class="form1">
-                            遊戲介紹
-                        </p>
-                        <p class="form1">
-                            製作人 : 魏仲彥
-                        </p>
-                        <p class="form1">
-                            繪師 : 魏仲彥
-                        </p>
-                        <p class="form1">
-                            指導老師 : 陳鍾誠老師
-                        </p>
-                    </div>
-
-                    <div class="side">
-                        <img src="picture/GAME.png" alt="error" style="width:540px;height:360px;">
-                    </div>
-                </div>
-            </div>
-
-            <br>
-
-            <div class="dropdown">
-                <p style="font-size: 45px;">source</p>
-                <div class="dropdown-content">
-
-                    <div class="side" style="width: 100%;">
-                        <p class="form1">
-                            人物:https://opengameart.org/content/3-cyberpunk-characters
-                        </p>
-                        <p class="form1">
-                            背景:https://opengameart.org/content/city-background-repetitive-3
-                        </p>
-                        <p class="form1">
-                            素材:https://opengameart.org/content/explosion-set-1-m484-games
-                            https://opengameart.org/content/meteor-animated-64x64
-                            https://opengameart.org/content/explosion
-                            https://opengameart.org/content/animated-fireball
-                            https://opengameart.org/content/sparks-fire-ice-blood
-                        </p>
-                        <p class="form1">
-                            moster : https://opengameart.org/content/animated-skeleton
-                            https://opengameart.org/content/animated-snake
-                            https://opengameart.org/content/bosses-and-monsters-spritesheets-ars-notoria
-                        </p>
-                        <p class="form1">
-                            參考版面: https://www.taipeitimes.com/
-                            https://www.w3schools.com/css/css_form.asp
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <br>
-
-            <div class="dropdown">
-                <p style="font-size: 45px; height: 800px;"></p>
-            </div>
+        <div style="margin-bottom: 50px" class = "grid_odd">
+        &#127929 <br>
+            現在大學又多了一個喜歡的事物，就是打Code。
+            把本來是0的程式碼，慢慢打上去，就和玩樂高一樣!
+        </div>
+    </div>
+        
+`
+MobileSide.innerHTML = `
+    <a onclick="source.start()" >source</a>
+    <a onclick="others.start()" >others</a>
+    <a onclick="game.start()" >game</a>
+    <a onclick="information.start()" >Informations</a>
+    <a onclick="introduction.start()">Introduction</a>
+    <button onclick="sideOption.start()" id="sideOptionOpen">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+    </button>
+    <button onclick="sideOption.close()" id="sideOptionClose" style="display: none;">
+        <i class="fa fa-times" aria-hidden="true"></i>
+    </button>
 `
 
+
 sideOption.start = function () {
-    openNav(sideOption.html)   
-    document.getElementById("SideOption").style.width = "20%"
-    document.getElementById("sideOptionClose").style.display = "block";
-    document.getElementById("sideOptionOpen").style.display = "none";
+    if(document.body.clientWidth >= 1200) openNav(sideOption.html)
+    else MobileOpenNav(MobileOption.html)
 }
 sideOption.close = function () {
-    openNav(``)   
-    document.getElementById("SideOption").style.width = "0"
-    document.getElementById("sideOptionClose").style.display = "none";
-    document.getElementById("sideOptionOpen").style.display = "block";
+
+    if(document.body.clientWidth >= 1200)
+    {
+        closeNav('')
+        show(FakeHash.html)
+    }
+    MobileCloseNav(``)
+    document.getElementById('MobileOptionOpen').style.display = '' 
+    document.getElementById('MobileOptionClose').style.display = 'none'
+}
+
+AboutMe.start = function () {
+    showContent(AboutMe.html)
+    document.querySelector("main").style.background = "url(picture/boy.jpg)";
+}
+MyInformation.start = function () {
+    showContent(MyInformation.html)
+    document.querySelector("main").style.background = "url(picture/photo.jpg)";
+}
+MyInterest.start = function () {
+    showContent(MyInterest.html)
+    document.querySelector("main").style.background = "url(picture/others.png)";
+    document.querySelector("main").style.backgroundSize = "cover" // 設定圖片填滿
+    document.querySelector("main").style.backgroundPositionX = "center"
+}
+function showContent(html) { 
+    document.getElementById('LeftSideSpace').style.marginLeft = "38%";
+    document.documentElement.scrollTop = 0
+    main.innerHTML = html 
 }
