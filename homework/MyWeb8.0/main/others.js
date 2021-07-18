@@ -3,7 +3,7 @@ const others = {}
 others.html=`
 <div class="column">
 <div id="others" style="font-size: 30px;">
-                <h2>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-chevron-circle-up" aria-hidden="true"></i></i>其他補充(others)</h2>
+                <h2>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-chevron-circle-up" aria-hidden="true"></i></i>其他功能(others)</h2>
                 <button onclick="formTable()" class="Sidenav" style="top: 410px; background-color: rgb(35, 151, 41);">留言板</button>
                 <button onclick="PaintBoard()" class="Sidenav" style="top: 480px; background-color: #04AA6D;">繪畫板</button>
                 <div class="container" id="FormTable" style="display: none;">
