@@ -15,7 +15,7 @@ sideOption.html = `
         <br>
         <a  onclick="EggHatch()" id="Zerg_egg_show">Zerg egg</a>
         <a onclick="EggHide()" id="Zerg_egg_hide" style="display: none;">recovery</a>
-        <a href = "#"> Back to Menu </a>
+        <a href = "../#"> Back to Menu </a>
         <br>
     </div>
 `
